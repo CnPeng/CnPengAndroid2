@@ -8,4 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--  CnPeng 2018/8/16 下午5:00 MainActivity中TextView的样式-->
+    <style name="main_text_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#d8f9b8</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">#3c3c3c</item>
+    </style>
+
 </resources>
