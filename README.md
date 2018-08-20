@@ -9,7 +9,10 @@
 ---|---
 昵称|CnPeng
 简书|[https://www.jianshu.com/u/414acf7abc2b](https://www.jianshu.com/u/414acf7abc2b)
-公众号|CnPeng https://github.com/CnPeng/CnPengAndroid2/blob/master/app/src/main/res/drawable/code_qr_weixin.png
+公众号名称|CnPeng
+公众号二维码|![](公众号二维码.png)
+CSDN|[https://blog.csdn.net/north1989](https://blog.csdn.net/north1989)
+
 
 
 
