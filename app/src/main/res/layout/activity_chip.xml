@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1、Chip的基本使用" />
+
+            <!--1、布局文件中的基本使用。默认前后图标都不展示，点击后没有选中状态-->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_normal1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="未设置样式，默认样式为 Chip.Action" />
+
+
+            <!--2、Action chips, 与未设置主题的chip特点一致。即 不设置style时默认就是 action chip-->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_action"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="ActionChip" />
+
+            <!--3、Filter Chips 点击之后，前面会展示一个选中图标，有选中状态；不展示末尾的删除图标
+            通常用在 ChipGroup 中 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_filter"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="FilterChip01" />
+
+
+            <!--4、Entry Chips , 默认在末尾展示删除按钮；点击后前面展示选中图标，有选中状态
+            通常可以作为 chipDrawable 使用，比如在填选邮件收件人时可以使用 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_entry"
+                style="@style/Widget.MaterialComponents.Chip.Entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="EntryChip " />
+
+
+            <!--5、Choice Chips ，默认不展示前后的图标，但点击后有选中状态
+                通常用在 ChipGroup 中 -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_choice"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="ChoiceChip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="2、Chip的属性设置" />
+            <!--chip的完整属性-->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_withAttrs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checkable="true"
+                android:text="设置了多种属性的Chip"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/colorAccent"
+                app:checkedIcon="@android:drawable/checkbox_on_background"
+                app:checkedIconVisible="true"
+                app:chipBackgroundColor="#1b89d8"
+                app:chipCornerRadius="15dp"
+                app:chipEndPadding="5dp"
+                app:chipIcon="@android:drawable/arrow_down_float"
+                app:chipIconSize="45dp"
+                app:chipIconTint="#f4d004"
+                app:chipIconVisible="true"
+                app:chipMinHeight="80dp"
+                app:chipStartPadding="5dp"
+                app:chipStrokeColor="#4df903"
+                app:chipStrokeWidth="3dp"
+                app:closeIconEndPadding="10dp"
+                app:closeIconSize="45dp"
+                app:closeIconStartPadding="10dp"
+                app:closeIconTint="#f4d004"
+                app:closeIconVisible="true"
+                app:iconEndPadding="5dp"
+                app:iconStartPadding="5dp"
+                app:rippleColor="#f90c00"
+                app:showMotionSpec="@animator/motionspec_def"
+                app:textEndPadding="5dp"
+                app:textStartPadding="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="3、ChipGroup的使用——多行，多选" />
+
+            <!--ChipGroup 默认状态，会换行，可多选-->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:chipSpacing="25dp"
+                app:chipSpacingHorizontal="35dp"
+                app:chipSpacingVertical="10dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipInGroup1"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="chipInGroup1"
+                    android:textAppearance="?android:textAppearanceMedium" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipInGroup2"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="chipInGroup2"
+                    android:textAppearance="?android:textAppearanceMedium" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipInGroup3"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="chipInGroup3"
+                    android:textAppearance="?android:textAppearanceMedium" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="4、ChipGroup的使用——单行、单选" />
+
+            <!--ChipGroup 不换行，单选-->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:checkedChip="@id/chipInGroup2_1"
+                    app:chipSpacing="25dp"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipInGroup2_1"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="chipInGroup2——1"
+                        android:textAppearance="?android:textAppearanceMedium" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipInGroup2_2"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="chipInGroup2——2"
+                        android:textAppearance="?android:textAppearanceMedium" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipInGroup2_3"
+                        style="@style/Widget.MaterialComponents.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="chipInGroup2——3"
+                        android:textAppearance="?android:textAppearanceMedium" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <!--5、EditText + ChipDrawable-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="5、EditText中应用ChipDrawable" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/bt_applyChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击应用 Chip 到EditTExt" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:text="这是xml构建的chipDrawable"
+    app:chipEndPadding="10dp"
+    app:chipStartPadding="10dp" />
