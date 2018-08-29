@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.WindowBackGroundTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/logo</item>
+    </style>
+
     <!--  CnPeng 2018/8/16 下午5:00 MainActivity中TextView的样式-->
     <style name="main_text_item">
         <item name="android:layout_width">match_parent</item>

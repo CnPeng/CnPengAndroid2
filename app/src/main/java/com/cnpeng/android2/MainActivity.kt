@@ -12,6 +12,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        /**
+         * CnPeng 2018/8/29 下午8:33 参考 https://juejin.im/post/5b50b017f265da0f7b2f649c 启动页优化，防止白屏
+         *
+         * 其思路是，在 Manifest 中为该activity配置一个设置了 windowBackground 的 theme, 这样在启动后完成绘制前的
+         * 这一段时间就会展示这个 windowBackground.当 进入activity后，再重置theme
+         */
+        setTheme(R.style.AppTheme)
+
         setContentView(R.layout.activity_main)
         mActivity = this
 
