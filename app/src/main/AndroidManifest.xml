@@ -27,6 +27,8 @@
         <activity
             android:name=".a01_chips.ChipActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity android:name=".a02_maxLinesTv.MaxLinesTvActivity"/>
+
     </application>
 
 </manifest>

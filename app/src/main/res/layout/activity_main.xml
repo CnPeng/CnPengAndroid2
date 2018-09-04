@@ -26,9 +26,9 @@
                 android:text="a01_chip和chipGroup使用" />
 
             <TextView
-                android:id="@+id/tv_02"
+                android:id="@+id/tv_maxLinesAct"
                 style="@style/main_text_item"
-                android:text="a02_chip和chipGroup使用" />
+                android:text="a02_控制TvMaxLines" />
 
         </LinearLayout>
     </ScrollView>

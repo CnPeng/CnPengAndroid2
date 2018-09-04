@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.cnpeng.android2.a01_chips.ChipActivity
+import com.cnpeng.android2.a02_maxLinesTv.MaxLinesTvActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun initClickListener() {
         tv_chip.setOnClickListener(this)
+        tv_maxLinesAct.setOnClickListener(this)
 
     }
 
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         when (viewID) {
             R.id.tv_chip -> intent.setClass(mActivity, ChipActivity::class.java)
+            R.id.tv_maxLinesAct -> intent.setClass(mActivity, MaxLinesTvActivity::class.java)
 
         }
         startActivity(intent)
