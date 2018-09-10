@@ -30,6 +30,11 @@
                 style="@style/main_text_item"
                 android:text="a02_控制TvMaxLines" />
 
+            <TextView
+                android:id="@+id/tv_bottomPop"
+                style="@style/main_text_item"
+                android:text="a03_页面底部弹出的POP" />
+
         </LinearLayout>
     </ScrollView>
 

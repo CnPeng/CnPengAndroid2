@@ -1,11 +1,12 @@
 package com.cnpeng.android2
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.a01_chips.ChipActivity
-import com.cnpeng.android2.a02_maxLinesTv.MaxLinesTvActivity
+import com.cnpeng.android2.b01_maxLinesTv.MaxLinesTvActivity
+import com.cnpeng.android2.b02_bottomPop.BottomPopActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun initClickListener() {
         tv_chip.setOnClickListener(this)
         tv_maxLinesAct.setOnClickListener(this)
+        tv_bottomPop.setOnClickListener(this)
 
     }
 
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (viewID) {
             R.id.tv_chip -> intent.setClass(mActivity, ChipActivity::class.java)
             R.id.tv_maxLinesAct -> intent.setClass(mActivity, MaxLinesTvActivity::class.java)
-
+            R.id.tv_bottomPop -> intent.setClass(mActivity, BottomPopActivity::class.java)
         }
         startActivity(intent)
     }

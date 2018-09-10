@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CnPengAndroid2</string>
+    <string name="showBottomPopWithAnim">点击从页面底部弹出带有动画效果的POP</string>
 </resources>

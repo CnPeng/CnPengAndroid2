@@ -1,7 +1,6 @@
-package com.cnpeng.android2.a02_maxLinesTv
+package com.cnpeng.android2.b01_maxLinesTv
 
 import android.os.Bundle
-import android.view.View
 import android.view.ViewTreeObserver
 import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.R
