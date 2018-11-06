@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.a01_chips.ChipActivity
 import com.cnpeng.android2.b01_maxLinesTv.MaxLinesTvActivity
 import com.cnpeng.android2.b02_bottomPop.BottomPopActivity
+import com.google.android.flexbox.FlexboxLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
