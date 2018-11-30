@@ -66,6 +66,8 @@
         android:autoStart="true"
         android:flipInterval="3000"
         app:layout_constraintLeft_toRightOf="@id/tv_taobao2"
+        android:inAnimation="@animator/inanimator_flipper"
+        android:outAnimation="@animator/outanimator_flipper"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title2" />
 

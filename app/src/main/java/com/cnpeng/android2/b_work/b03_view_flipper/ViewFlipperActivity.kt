@@ -84,7 +84,7 @@ class ViewFlipperActivity : AppCompatActivity() {
         val flipperAdapter = AdapterFlipperViewAdapter(mStrList, mActivity)
         adapterViewFlipper.adapter = flipperAdapter
 
-        setAdapterViewFlipperAnimator()
+//        setAdapterViewFlipperAnimator()
     }
 
 
