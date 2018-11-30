@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/dp10"
     tools:context=".b_work.b03_view_flipper.ViewFlipperActivity">
 
     <TextView
@@ -15,11 +16,24 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_taobao1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="淘宝头条 | "
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title1" />
+
     <ViewFlipper
         android:id="@+id/viewFlipper"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:autoStart="true"
+        android:inAnimation="@anim/inanimation_viewflipper"
+        android:outAnimation="@anim/outanimation_viewflipper"
+        app:layout_constraintLeft_toRightOf="@id/tv_taobao1"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title1" />
 
@@ -27,16 +41,29 @@
         android:id="@+id/tv_title2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:padding="5dp"
         android:text="AdapterViewFlipper实现方式"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewFlipper" />
+        app:layout_constraintTop_toBottomOf="@id/tv_taobao1" />
+
+
+    <TextView
+        android:id="@+id/tv_taobao2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="淘宝头条 | "
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title2" />
 
     <AdapterViewFlipper
         android:id="@+id/adapterViewFlipper"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/tv_taobao2"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title2" />
 
 

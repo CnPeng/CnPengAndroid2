@@ -2,6 +2,7 @@ package com.cnpeng.android2.b_work.b03_view_flipper
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.animation.TranslateAnimation
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -38,6 +39,7 @@ class ViewFlipperActivity : AppCompatActivity() {
 
     private fun initAdapterViewFlipper() {
 
+        //CnPeng 2018/11/30 2:21 PM 添加view数据
         for ((index, str) in strList.withIndex()) {
             val textView = TextView(mActivity)
             textView.text = str
@@ -51,6 +53,26 @@ class ViewFlipperActivity : AppCompatActivity() {
             }
             viewFlipper.addView(textView)
         }
+
+//        setViewFlipperAnimation()
+    }
+
+    /**
+     * CnPeng 2018/11/30 2:22 PM
+     * 功用：设置ViewFlipper的切换动画
+     * 说明：
+     */
+    private fun setViewFlipperAnimation() {
+        val inAnimation = TranslateAnimation(0f, 0f, 100f, 0f)
+        inAnimation.duration = 1500
+        inAnimation.start()
+
+        val outAnimation = TranslateAnimation(0f, 0f, 0f, -100f)
+        outAnimation.duration = 1500
+        outAnimation.start()
+
+        viewFlipper.inAnimation = inAnimation
+        viewFlipper.outAnimation = outAnimation
     }
 
     private fun initViewFlipper() {
