@@ -62,8 +62,10 @@
         android:id="@+id/adapterViewFlipper"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:autoStart="true"
         app:layout_constraintLeft_toRightOf="@id/tv_taobao2"
         app:layout_constraintRight_toRightOf="parent"
+        android:flipInterval="1500"
         app:layout_constraintTop_toBottomOf="@id/tv_title2" />
 
 

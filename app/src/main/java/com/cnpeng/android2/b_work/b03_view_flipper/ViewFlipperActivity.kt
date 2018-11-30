@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_view_flipper.*
  */
 class ViewFlipperActivity : AppCompatActivity() {
     private lateinit var mActivity: ViewFlipperActivity
-    var strList = mutableListOf<String>()
+    var mStrList = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,14 +33,14 @@ class ViewFlipperActivity : AppCompatActivity() {
         mActivity = this
 
         for (i in 1..15) {
-            strList.add("这是第" + i + "个元素")
+            mStrList.add("这是第" + i + "个元素")
         }
     }
 
     private fun initAdapterViewFlipper() {
 
         //CnPeng 2018/11/30 2:21 PM 添加view数据
-        for ((index, str) in strList.withIndex()) {
+        for ((index, str) in mStrList.withIndex()) {
             val textView = TextView(mActivity)
             textView.text = str
 
@@ -54,13 +54,13 @@ class ViewFlipperActivity : AppCompatActivity() {
             viewFlipper.addView(textView)
         }
 
-//        setViewFlipperAnimation()
+        //setViewFlipperAnimation()
     }
 
     /**
      * CnPeng 2018/11/30 2:22 PM
      * 功用：设置ViewFlipper的切换动画
-     * 说明：
+     * 说明：这是代码设置的方式，也可以从布局文件中通过 inanimation 、outanimation 属性设置
      */
     private fun setViewFlipperAnimation() {
         val inAnimation = TranslateAnimation(0f, 0f, 100f, 0f)
@@ -76,6 +76,9 @@ class ViewFlipperActivity : AppCompatActivity() {
     }
 
     private fun initViewFlipper() {
+        val flipperAdapter = AdapterFlipperViewAdapter(mStrList,mActivity)
+        adapterViewFlipper.adapter = flipperAdapter
+
 
 
     }
