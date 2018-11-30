@@ -20,15 +20,22 @@
             android:orientation="vertical"
             android:showDividers="middle">
 
+
             <TextView
-                android:id="@+id/tv_maxLinesAct"
+                android:id="@+id/tv_flipper"
                 style="@style/main_text_item"
-                android:text="01_控制TvMaxLines" />
+                android:text="03_flipper(仿淘宝头条的滚动广告)" />
 
             <TextView
                 android:id="@+id/tv_bottomPop"
                 style="@style/main_text_item"
                 android:text="02_页面底部弹出的POP" />
+
+            <TextView
+                android:id="@+id/tv_maxLinesAct"
+                style="@style/main_text_item"
+                android:text="01_控制TvMaxLines" />
+
 
         </LinearLayout>
     </ScrollView>

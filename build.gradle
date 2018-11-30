@@ -2,7 +2,7 @@
 
 buildscript {
     ext.kotlin_version = '1.2.61'
-//    ext.anko_version = "0.9"
+    ext.anko_version = "0.10.7"
 
     repositories {
         google()
