@@ -84,7 +84,7 @@ class ViewFlipperActivity : AppCompatActivity() {
         val flipperAdapter = AdapterFlipperViewAdapter(mStrList, mActivity)
         adapterViewFlipper.adapter = flipperAdapter
 
-//        setAdapterViewFlipperAnimator()
+        // setAdapterViewFlipperAnimator()
     }
 
 
@@ -95,6 +95,7 @@ class ViewFlipperActivity : AppCompatActivity() {
      * -1、在AdapterViewFlipper中 DEFAULT_INTERVAL 为 10000，即 10秒。
      * -2、在执行inAnimation 和 outAnimation 时，如果两者的duration之和 小于等于 我们设置的 interval，则动画能正常展示；否则，动画不能正常展示
      * -3、不能使用动画集合，因为设置动画时只接收 ObjectAnimator及其子类，而 AnimatorSet 是其叔叔
+     * -4、如果是从xml中设置动画的话，初始化view的时候，第一条也会执行一个渐入的动画；如果是通过代码设置，则第一条直接显示在视图中
      */
     private fun setAdapterViewFlipperAnimator() {
         //CnPeng 2018/11/30 4:14 PM 注意，下面这一行是从Java代码转义过来的，在Java环境下，最后一个参数我们会手动构造一个float[] ,但在kotlin中会报错
