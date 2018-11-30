@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.WindowBackGroundTheme">
@@ -24,12 +25,21 @@
             </intent-filter>
         </activity>
 
+        <!--——————————————————工作用DEMO————————————————————-->
         <activity
-            android:name=".a01_chips.ChipActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
-        <activity android:name=".b01_maxLinesTv.MaxLinesTvActivity"/>
-        <activity android:name=".b02_bottomPop.BottomPopActivity"/>
+            android:name=".b_work.WorkDemoActivity"
+            android:label="@string/title_activity_work_demo"
+            android:theme="@style/AppTheme" />
 
+
+        <activity android:name=".b_work.b01_maxLines_tv.MaxLinesTvActivity" />
+        <activity android:name=".b_work.b02_bottom_pop.BottomPopActivity" />
+
+        <!--——————————————————自主学习DEMO————————————————————-->
+        <activity android:name=".d_mine.MyDemoActivity"/>
+        <activity
+            android:name=".d_mine.a01_chips.ChipActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
     </application>
 
 </manifest>

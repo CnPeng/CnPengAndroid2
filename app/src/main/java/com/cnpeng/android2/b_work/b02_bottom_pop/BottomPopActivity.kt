@@ -1,4 +1,4 @@
-package com.cnpeng.android2.b02_bottomPop
+package com.cnpeng.android2.b_work.b02_bottom_pop
 
 import android.graphics.Point
 import android.os.Bundle

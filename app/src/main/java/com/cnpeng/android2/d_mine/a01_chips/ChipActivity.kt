@@ -1,4 +1,4 @@
-package com.cnpeng.android2.a01_chips
+package com.cnpeng.android2.d_mine.a01_chips
 
 import android.os.Bundle
 import android.text.Spanned

@@ -1,4 +1,4 @@
-package com.cnpeng.android2.b01_maxLinesTv
+package com.cnpeng.android2.b_work.b01_maxLines_tv
 
 import android.os.Bundle
 import android.view.ViewTreeObserver
@@ -39,7 +39,7 @@ class MaxLinesTvActivity : AppCompatActivity() {
 
         bt.setOnClickListener {
             tv_maxLines.text = et.editableText.toString()
-            tv_maxLines.text = "  android:text=//获取限定行数末尾的字符索引 val limitLastStrIndex = tv_maxLines.layout.getLineEnd(lineLimit); val subsStr = tv_maxLines.editableText.subSequence(0, limitLastStrIndex - 3).toString() val strToShow = subsStr.plus(tv_maxLines.text = strToShow "
+//            tv_maxLines.text = "  android:text=//获取限定行数末尾的字符索引 val limitLastStrIndex = tv_maxLines.layout.getLineEnd(lineLimit); val subsStr = tv_maxLines.editableText.subSequence(0, limitLastStrIndex - 3).toString() val strToShow = subsStr.plus(tv_maxLines.text = strToShow "
         }
     }
 }

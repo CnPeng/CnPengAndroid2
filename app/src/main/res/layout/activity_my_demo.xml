@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".d_mine.MyDemoActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,24 +21,11 @@
             android:showDividers="middle">
 
             <TextView
-                android:id="@+id/tv_mineDemo"
+                android:id="@+id/tv_chip"
                 style="@style/main_text_item"
-                android:text="01_MineDemo" />
+                android:text="01_chip和chipGroup使用" />
 
-            <TextView
-                android:id="@+id/tv_workDemo"
-                style="@style/main_text_item"
-                android:text="02_WorkDemo" />
 
-            <TextView
-                android:id="@+id/tv_bookDemo"
-                style="@style/main_text_item"
-                android:text="03_BookDemo" />
-
-            <TextView
-                android:id="@+id/tv_blogDemo"
-                style="@style/main_text_item"
-                android:text="04_BlogDemo" />
 
         </LinearLayout>
     </ScrollView>

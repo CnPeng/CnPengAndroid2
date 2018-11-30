@@ -21,24 +21,14 @@
             android:showDividers="middle">
 
             <TextView
-                android:id="@+id/tv_mineDemo"
+                android:id="@+id/tv_maxLinesAct"
                 style="@style/main_text_item"
-                android:text="01_MineDemo" />
+                android:text="01_控制TvMaxLines" />
 
             <TextView
-                android:id="@+id/tv_workDemo"
+                android:id="@+id/tv_bottomPop"
                 style="@style/main_text_item"
-                android:text="02_WorkDemo" />
-
-            <TextView
-                android:id="@+id/tv_bookDemo"
-                style="@style/main_text_item"
-                android:text="03_BookDemo" />
-
-            <TextView
-                android:id="@+id/tv_blogDemo"
-                style="@style/main_text_item"
-                android:text="04_BlogDemo" />
+                android:text="02_页面底部弹出的POP" />
 
         </LinearLayout>
     </ScrollView>

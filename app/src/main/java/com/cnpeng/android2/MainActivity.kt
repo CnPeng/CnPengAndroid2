@@ -4,12 +4,19 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.cnpeng.android2.a01_chips.ChipActivity
-import com.cnpeng.android2.b01_maxLinesTv.MaxLinesTvActivity
-import com.cnpeng.android2.b02_bottomPop.BottomPopActivity
-import com.google.android.flexbox.FlexboxLayoutManager
+import com.cnpeng.android2.b_work.WorkDemoActivity
+import com.cnpeng.android2.d_mine.MyDemoActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * CnPeng 2018/8/16 10:01 AM
+ * 功用：主页
+ * 说明：
+ * - 1、a系列包名为读书笔记
+ * - 2、b系列为工作用DEMO
+ * - 3、c系列为零散的博客阅读笔记
+ * - 4、d系列为自主学习的代码内容
+ */
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var mActivity: MainActivity
 
@@ -31,9 +38,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initClickListener() {
-        tv_chip.setOnClickListener(this)
-        tv_maxLinesAct.setOnClickListener(this)
-        tv_bottomPop.setOnClickListener(this)
+        tv_mineDemo.setOnClickListener(this)
+        tv_workDemo.setOnClickListener(this)
+        tv_bookDemo.setOnClickListener(this)
+        tv_blogDemo.setOnClickListener(this)
 
     }
 
@@ -42,11 +50,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val viewID = v?.id
 
         when (viewID) {
-            R.id.tv_chip -> intent.setClass(mActivity, ChipActivity::class.java)
-            R.id.tv_maxLinesAct -> intent.setClass(mActivity, MaxLinesTvActivity::class.java)
-            R.id.tv_bottomPop -> intent.setClass(mActivity, BottomPopActivity::class.java)
+            R.id.tv_mineDemo -> intent.setClass(mActivity, MyDemoActivity::class.java)
+            R.id.tv_workDemo -> intent.setClass(mActivity, WorkDemoActivity::class.java)
+            // TODO: CnPeng 2018/11/30 10:51 AM bookDemo 和 BlogDemo还么有增加跳转事件
         }
         startActivity(intent)
     }
-
 }

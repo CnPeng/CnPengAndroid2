@@ -9,8 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ellipsize="end"
-        android:maxLines="4"
-      />
+        android:hint="这里显示输入的文本效果,现在控制的最大行数为2"
+        android:maxLines="2"
+        android:textColorHint="@color/acacac" />
 
     <EditText
         android:id="@+id/et"
