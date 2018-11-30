@@ -3,6 +3,7 @@ package com.cnpeng.android2
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.b_work.WorkDemoActivity
 import com.cnpeng.android2.d_mine.MyDemoActivity
@@ -53,7 +54,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_mineDemo -> intent.setClass(mActivity, MyDemoActivity::class.java)
             R.id.tv_workDemo -> intent.setClass(mActivity, WorkDemoActivity::class.java)
             // TODO: CnPeng 2018/11/30 10:51 AM bookDemo 和 BlogDemo还么有增加跳转事件
+            R.id.tv_bookDemo -> Toast.makeText(mActivity, "暂无内容", Toast.LENGTH_SHORT).show()
+            R.id.tv_blogDemo -> Toast.makeText(mActivity, "暂无内容", Toast.LENGTH_SHORT).show()
         }
-        startActivity(intent)
+
+        if (null != intent.component) {
+            startActivity(intent)
+        }
     }
 }
