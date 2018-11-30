@@ -1,5 +1,6 @@
 package com.cnpeng.android2.b_work.b03_view_flipper
 
+import android.animation.ObjectAnimator
 import android.graphics.Color
 import android.os.Bundle
 import android.view.animation.TranslateAnimation
@@ -61,25 +62,55 @@ class ViewFlipperActivity : AppCompatActivity() {
      * CnPeng 2018/11/30 2:22 PM
      * 功用：设置ViewFlipper的切换动画
      * 说明：这是代码设置的方式，也可以从布局文件中通过 inanimation 、outanimation 属性设置
+     * -1、在ViewFlipper中 DEFAULT_INTERVAL 为 3000，即 3秒。
+     * -2、在执行inAnimation 和 outAnimation 时，如果两者的duration之和等于我们设置的 interval，则动画能正常展示；否则，duration 为 interval/2
      */
     private fun setViewFlipperAnimation() {
         val inAnimation = TranslateAnimation(0f, 0f, 100f, 0f)
         inAnimation.duration = 1500
-        inAnimation.start()
+        //CnPeng 2018/11/30 4:20 PM 此处不需要调用start。viewFlipper在展示child的时候会主动触发动画。但是，调用了在界面上也看不出特殊
+        //        inAnimation.start()
 
         val outAnimation = TranslateAnimation(0f, 0f, 0f, -100f)
         outAnimation.duration = 1500
-        outAnimation.start()
+        //        outAnimation.start()
 
         viewFlipper.inAnimation = inAnimation
         viewFlipper.outAnimation = outAnimation
     }
 
     private fun initViewFlipper() {
-        val flipperAdapter = AdapterFlipperViewAdapter(mStrList,mActivity)
+        val flipperAdapter = AdapterFlipperViewAdapter(mStrList, mActivity)
         adapterViewFlipper.adapter = flipperAdapter
 
+        setAdapterViewFlipperAnimator()
+    }
 
 
+    /**
+     * CnPeng 2018/11/30 4:31 PM
+     * 功用：
+     * 说明：
+     * -1、在AdapterViewFlipper中 DEFAULT_INTERVAL 为 10000，即 10秒。
+     * -2、在执行inAnimation 和 outAnimation 时，如果两者的duration之和等于我们设置的 interval，则动画能正常展示；否则，duration 为 interval/2
+     *
+     */
+    private fun setAdapterViewFlipperAnimator() {
+        //CnPeng 2018/11/30 4:14 PM 注意，下面这一行是从Java代码转义过来的，在Java环境下，最后一个参数我们会手动构造一个float[] ,但在kotlin中会报错
+        // val animator = ObjectAnimator.ofFloat(adapterViewFlipper, "translationY", arrayOf(100f, 0f))
+
+        //CnPeng 2018/11/30 4:15 PM 最后一个参数是可变数组，我们不需要构造array，直接写array的值即可。
+        val inAnimator = ObjectAnimator.ofFloat(adapterViewFlipper, "translationY", 100f, 0f)
+        inAnimator.duration = 1500
+
+        //CnPeng 2018/11/30 4:20 PM 此处不需要调用start。viewFlipper在展示child的时候会主动触发动画。如果调用了，执行动画的将是flipper本身
+        //        inAnimator.start()
+
+        val outAnimator = ObjectAnimator.ofFloat(adapterViewFlipper, "translationY", 0f, -100f)
+        outAnimator.duration = 1500
+        //        outAnimator.start()
+
+        adapterViewFlipper.inAnimation = inAnimator
+        adapterViewFlipper.outAnimation = outAnimator
     }
 }
