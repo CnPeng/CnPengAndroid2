@@ -1,5 +1,6 @@
 package com.cnpeng.android2.b_work.b03_view_flipper
 
+import android.animation.AnimatorInflater
 import android.animation.ObjectAnimator
 import android.graphics.Color
 import android.os.Bundle
@@ -38,7 +39,7 @@ class ViewFlipperActivity : AppCompatActivity() {
         }
     }
 
-    private fun initAdapterViewFlipper() {
+    private fun initViewFlipper() {
 
         //CnPeng 2018/11/30 2:21 PM 添加view数据
         for ((index, str) in mStrList.withIndex()) {
@@ -80,11 +81,12 @@ class ViewFlipperActivity : AppCompatActivity() {
         viewFlipper.outAnimation = outAnimation
     }
 
-    private fun initViewFlipper() {
+    private fun initAdapterViewFlipper() {
         val flipperAdapter = AdapterFlipperViewAdapter(mStrList, mActivity)
         adapterViewFlipper.adapter = flipperAdapter
 
         // setAdapterViewFlipperAnimator()
+//        setAdapterViewFlipperAnimator2()
     }
 
 
@@ -114,5 +116,22 @@ class ViewFlipperActivity : AppCompatActivity() {
 
         adapterViewFlipper.inAnimation = inAnimator
         adapterViewFlipper.outAnimation = outAnimator
+    }
+
+    /**
+     * CnPeng 2018/11/30 4:31 PM
+     * 功用：
+     * 说明：
+     * -1、在AdapterViewFlipper中 DEFAULT_INTERVAL 为 10000，即 10秒。
+     * -2、在执行inAnimation 和 outAnimation 时，如果两者的duration之和 小于等于 我们设置的 interval，则动画能正常展示；否则，动画不能正常展示
+     * -3、不能使用动画集合，因为设置动画时只接收 ObjectAnimator及其子类，而 AnimatorSet 是其叔叔
+     * -4、如果是从xml中设置动画的话，初始化view的时候，第一条也会执行一个渐入的动画；如果是通过代码设置，则第一条直接显示在视图中
+     */
+    private fun setAdapterViewFlipperAnimator2() {
+
+        val inAnimator = AnimatorInflater.loadAnimator(mActivity, R.animator.inanimator_flipper)
+        val outAnimator = AnimatorInflater.loadAnimator(mActivity, R.animator.outanimator_flipper)
+        adapterViewFlipper.inAnimation = inAnimator as ObjectAnimator?
+        adapterViewFlipper.outAnimation = outAnimator as ObjectAnimator?
     }
 }

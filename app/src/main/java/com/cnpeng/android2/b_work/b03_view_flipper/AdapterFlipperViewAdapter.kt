@@ -12,7 +12,7 @@ import android.widget.TextView
  * 功用：AdapterFlipperView使用的适配器
  * 其他：
  */
-class AdapterFlipperViewAdapter(strList: MutableList<String>, mActivity: ViewFlipperActivity) : BaseAdapter() {
+class AdapterFlipperViewAdapter (strList: MutableList<String>, mActivity: ViewFlipperActivity) : BaseAdapter() {
     var mStrList = strList
     var mContext = mActivity
 

@@ -30,6 +30,7 @@
         android:id="@+id/viewFlipper"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:animateFirstView="false"
         android:autoStart="true"
         android:inAnimation="@anim/inanimation_viewflipper"
         android:outAnimation="@anim/outanimation_viewflipper"
@@ -59,6 +60,8 @@
         app:layout_constraintTop_toBottomOf="@id/tv_title2" />
 
     <!--        android:flipInterval="1500" -->
+    <!-- android:inAnimation="@animator/inanimator_flipper"
+        android:outAnimation="@animator/outanimator_flipper"-->
     <AdapterViewFlipper
         android:id="@+id/adapterViewFlipper"
         android:layout_width="0dp"
