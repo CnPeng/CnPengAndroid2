@@ -2,11 +2,13 @@ package com.cnpeng.android2.b_work.b04_flow_layout
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cnpeng.android2.R
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexWrap
+import com.google.android.flexbox.FlexboxLayoutManager
 import kotlinx.android.synthetic.main.activity_flow_impl.*
 
 /**
@@ -23,11 +25,14 @@ import kotlinx.android.synthetic.main.activity_flow_impl.*
  * 2、该DEMO仅演示StaggerLayoutManager和FlexLayoutManager的实现方式
  */
 class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
-    lateinit var mRvAdapter: FlowAdapter
+    lateinit var mRvAdapter1: FlowAdapter
+    lateinit var mActviity: FlowImplActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flow_impl)
+
+        mActviity = this
 
         initRecyclerView()
 
@@ -43,11 +48,23 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun initRecyclerView() {
         val dataList = initTestData()
-        mRvAdapter = FlowAdapter(dataList)
-        rv_flowImpl.adapter = mRvAdapter
+        mRvAdapter1 = FlowAdapter(dataList)
+        rv_flowImpl.adapter = mRvAdapter1
 
-        mRvAdapter.mIsStaggerVertical = true
+        mRvAdapter1.mIsStaggerVertical = true
         rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, RecyclerView.VERTICAL)
+
+        /**
+         * CnPeng 2018/12/6 9:26 PM
+         * 之所以使用两个RV，是因为使用一个RV的情况下，从Stagger切换过来时会报下列错误：
+         * java.lang.ClassCastException: androidx.recyclerview.widget.RecyclerView$LayoutParams cannot be cast to com.google.android.flexbox.FlexItem
+         */
+        val mRvAdapter2 = FlowAdapter(dataList)
+        rv_flowImpl2.adapter = mRvAdapter2
+        val flexLayoutManager = FlexboxLayoutManager(mActviity, FlexDirection.ROW)
+        flexLayoutManager.flexWrap = FlexWrap.WRAP
+        rv_flowImpl2.layoutManager = flexLayoutManager
+        rv_flowImpl2.visibility = View.GONE
     }
 
     /**
@@ -76,16 +93,24 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         val viewId = v?.id
         when (viewId) {
             R.id.tv_staggerH -> {
-                mRvAdapter.mIsStaggerVertical = false
+                mRvAdapter1.mIsStaggerVertical = false
                 rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, RecyclerView.HORIZONTAL)
+                rv_flowImpl.visibility = View.VISIBLE
+                rv_flowImpl2.visibility = View.GONE
             }
 
             R.id.tv_staggerV -> {
-                mRvAdapter.mIsStaggerVertical = true
+                mRvAdapter1.mIsStaggerVertical = true
                 rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, RecyclerView.VERTICAL)
+
+                rv_flowImpl.visibility = View.VISIBLE
+                rv_flowImpl2.visibility = View.GONE
             }
 
-            R.id.tv_flex -> Toast.makeText(v.context, "暂未实现", Toast.LENGTH_SHORT).show()
+            R.id.tv_flex -> {
+                rv_flowImpl.visibility = View.GONE
+                rv_flowImpl2.visibility = View.VISIBLE
+            }
         }
     }
 }
