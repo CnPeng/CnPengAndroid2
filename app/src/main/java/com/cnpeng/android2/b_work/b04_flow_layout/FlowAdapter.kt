@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.item_flow_rv.view.*
  */
 class FlowAdapter(dataList: List<String>) : RecyclerView.Adapter<FlowAdapter.ItemHolder>() {
     private var mDataList = dataList
-    var mEmsLines: Int = 0
+    var mIsStaggerVertical: Boolean = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
 
@@ -35,7 +35,11 @@ class FlowAdapter(dataList: List<String>) : RecyclerView.Adapter<FlowAdapter.Ite
         val contentStr = mDataList[position]
         holder.textView.text = contentStr
 
-        holder.textView.setEms(1)
+        if (mIsStaggerVertical) {
+            holder.textView.setEms(1)
+        } else {
+            holder.textView.setEms(contentStr.length)
+        }
 
         if (0 == position % 2) {
             holder.itemView.setBackgroundColor(Color.BLUE)
@@ -49,7 +53,8 @@ class FlowAdapter(dataList: List<String>) : RecyclerView.Adapter<FlowAdapter.Ite
         var textView: TextView = tv
     }
 
-    public fun setEms(emsLines: Int) {
-        mEmsLines = emsLines
+    public fun isStaggerVertical(flag: Boolean) {
+        mIsStaggerVertical = flag
+        //        notifyDataSetChanged()
     }
 }
