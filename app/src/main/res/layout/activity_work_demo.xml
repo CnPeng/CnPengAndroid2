@@ -22,6 +22,11 @@
 
 
             <TextView
+                android:id="@+id/tv_flow"
+                style="@style/main_text_item"
+                android:text="04_流式视图的实现总结" />
+
+            <TextView
                 android:id="@+id/tv_flipper"
                 style="@style/main_text_item"
                 android:text="03_flipper(仿淘宝头条的滚动广告)" />

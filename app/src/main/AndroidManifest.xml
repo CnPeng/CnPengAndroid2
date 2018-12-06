@@ -37,7 +37,8 @@
         <activity
             android:name=".d_mine.a01_chips.ChipActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
-        <activity android:name=".b_work.b03_view_flipper.ViewFlipperActivity"/>
+        <activity android:name=".b_work.b03_view_flipper.ViewFlipperActivity" />
+        <activity android:name=".b_work.b04_flow_layout.FlowImplActivity"></activity>
     </application>
 
 </manifest>
