@@ -43,7 +43,6 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         tv_staggerH.setOnClickListener(this)
         tv_staggerV.setOnClickListener(this)
         tv_flex.setOnClickListener(this)
-
     }
 
     private fun initRecyclerView() {
@@ -56,7 +55,7 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
 
         /**
          * CnPeng 2018/12/6 9:26 PM
-         * 之所以使用两个RV，是因为使用一个RV的情况下，从Stagger切换过来时会报下列错误：
+         * 之所以使用两个RV，是因为使用一个RV的情况下，从Stagger切换到 FlexLayoutManager时会报下列错误：
          * java.lang.ClassCastException: androidx.recyclerview.widget.RecyclerView$LayoutParams cannot be cast to com.google.android.flexbox.FlexItem
          */
         val mRvAdapter2 = FlowAdapter(dataList)
