@@ -35,6 +35,7 @@ class FlowAdapter(dataList: List<String>) : RecyclerView.Adapter<FlowAdapter.Ite
         val contentStr = mDataList[position]
         holder.textView.text = contentStr
 
+        //CnPeng 2018/12/7 10:05 AM StaggeredGridLayoutManager时控制文本垂直显示，其他情况水平显示文本
         if (mIsStaggerVertical) {
             holder.textView.setEms(1)
         } else {

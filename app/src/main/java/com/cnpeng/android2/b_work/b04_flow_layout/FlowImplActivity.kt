@@ -50,14 +50,19 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         mRvAdapter1 = FlowAdapter(dataList)
         rv_flowImpl.adapter = mRvAdapter1
 
-        mRvAdapter1.mIsStaggerVertical = true
-        rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, RecyclerView.VERTICAL)
+        initStaggerLayout(true, RecyclerView.VERTICAL)
 
-        /**
-         * CnPeng 2018/12/6 9:26 PM
-         * 之所以使用两个RV，是因为使用一个RV的情况下，从Stagger切换到 FlexLayoutManager时会报下列错误：
-         * java.lang.ClassCastException: androidx.recyclerview.widget.RecyclerView$LayoutParams cannot be cast to com.google.android.flexbox.FlexItem
-         */
+        initFlexLayout(dataList)
+    }
+
+    /**
+     * CnPeng 2018/12/7 10:10 AM
+     * 功用：初始化flex视图
+     * 说明：
+     * 之所以使用两个RV，是因为使用一个RV的情况下，从Stagger切换到 Flex时会报下列错误：
+     * java.lang.ClassCastException: androidx.recyclerview.widget.RecyclerView$LayoutParams cannot be cast to com.google.android.flexbox.FlexItem
+     */
+    private fun initFlexLayout(dataList: List<String>) {
         val mRvAdapter2 = FlowAdapter(dataList)
         rv_flowImpl2.adapter = mRvAdapter2
         val flexLayoutManager = FlexboxLayoutManager(mActviity, FlexDirection.ROW)
@@ -92,18 +97,11 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         val viewId = v?.id
         when (viewId) {
             R.id.tv_staggerH -> {
-                mRvAdapter1.mIsStaggerVertical = false
-                rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, RecyclerView.HORIZONTAL)
-                rv_flowImpl.visibility = View.VISIBLE
-                rv_flowImpl2.visibility = View.GONE
+                initStaggerLayout(false, RecyclerView.HORIZONTAL)
             }
 
             R.id.tv_staggerV -> {
-                mRvAdapter1.mIsStaggerVertical = true
-                rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, RecyclerView.VERTICAL)
-
-                rv_flowImpl.visibility = View.VISIBLE
-                rv_flowImpl2.visibility = View.GONE
+                initStaggerLayout(true, RecyclerView.VERTICAL)
             }
 
             R.id.tv_flex -> {
@@ -111,5 +109,12 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
                 rv_flowImpl2.visibility = View.VISIBLE
             }
         }
+    }
+
+    private fun initStaggerLayout(b: Boolean, horizontal: Int) {
+        mRvAdapter1.mIsStaggerVertical = false
+        rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, RecyclerView.HORIZONTAL)
+        rv_flowImpl.visibility = View.VISIBLE
+        rv_flowImpl2.visibility = View.GONE
     }
 }
