@@ -56,5 +56,6 @@ class FlowAdapter(dataList: List<String>) : RecyclerView.Adapter<FlowAdapter.Ite
 
     public fun isStaggerVertical(flag: Boolean) {
         mIsStaggerVertical = flag
+//        notifyDataSetChanged()
     }
 }

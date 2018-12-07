@@ -63,4 +63,29 @@
         app:layout_constraintLeft_toRightOf="@id/tv_staggerH"
         app:layout_constraintRight_toRightOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp10"
+        android:background="@color/c_1b89d8"
+        android:padding="@dimen/dp10"
+        android:text="GridLayoutManager"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@id/tv_staggerV"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@color/c_1b89d8"
+        android:padding="@dimen/dp10"
+        android:text="Chip和ChipGroups"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="@id/tv_grid"
+        app:layout_constraintLeft_toRightOf="@id/tv_grid"
+        app:layout_constraintTop_toTopOf="@id/tv_grid" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

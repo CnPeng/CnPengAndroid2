@@ -1,11 +1,17 @@
 package com.cnpeng.android2.b_work.b04_flow_layout
 
+import android.content.Intent
+import android.graphics.Paint
+import android.graphics.Point
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.cnpeng.android2.R
+import com.cnpeng.android2.d_mine.a01_chips.ChipActivity
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
@@ -27,6 +33,7 @@ import kotlinx.android.synthetic.main.activity_flow_impl.*
 class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var mRvAdapter1: FlowAdapter
     lateinit var mActviity: FlowImplActivity
+    lateinit var mDataList: List<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,16 +50,20 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         tv_staggerH.setOnClickListener(this)
         tv_staggerV.setOnClickListener(this)
         tv_flex.setOnClickListener(this)
+        tv_grid.setOnClickListener(this)
+        tv_chip.setOnClickListener(this)
     }
 
     private fun initRecyclerView() {
-        val dataList = initTestData()
-        mRvAdapter1 = FlowAdapter(dataList)
+        mDataList = initTestData()
+        mRvAdapter1 = FlowAdapter(mDataList)
         rv_flowImpl.adapter = mRvAdapter1
 
-        initStaggerLayout(true, RecyclerView.VERTICAL)
+        initGridLayoutManager()
 
-        initFlexLayout(dataList)
+        //        initStaggerLayout(true, RecyclerView.VERTICAL)
+
+        initFlexLayout()
     }
 
     /**
@@ -62,8 +73,8 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
      * 之所以使用两个RV，是因为使用一个RV的情况下，从Stagger切换到 Flex时会报下列错误：
      * java.lang.ClassCastException: androidx.recyclerview.widget.RecyclerView$LayoutParams cannot be cast to com.google.android.flexbox.FlexItem
      */
-    private fun initFlexLayout(dataList: List<String>) {
-        val mRvAdapter2 = FlowAdapter(dataList)
+    private fun initFlexLayout() {
+        val mRvAdapter2 = FlowAdapter(mDataList)
         rv_flowImpl2.adapter = mRvAdapter2
         val flexLayoutManager = FlexboxLayoutManager(mActviity, FlexDirection.ROW)
         flexLayoutManager.flexWrap = FlexWrap.WRAP
@@ -108,12 +119,55 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
                 rv_flowImpl.visibility = View.GONE
                 rv_flowImpl2.visibility = View.VISIBLE
             }
+
+            R.id.tv_chip -> {
+                val intent = Intent(mActviity, ChipActivity::class.java)
+                startActivity(intent)
+            }
+
+            R.id.tv_grid -> {
+                initGridLayoutManager()
+            }
         }
     }
 
-    private fun initStaggerLayout(b: Boolean, horizontal: Int) {
-        mRvAdapter1.mIsStaggerVertical = false
-        rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, RecyclerView.HORIZONTAL)
+
+    private fun initGridLayoutManager() {
+
+        val point = Point()
+        windowManager.defaultDisplay.getSize(point)
+        val screenWidth = point.x
+        val gridLayoutManager = GridLayoutManager(mActviity, screenWidth)
+
+        val textPaint = Paint()
+
+        textPaint.textSize = 28f
+
+        //CnPeng 2018/12/7 4:46 PM 注意这个接口匿名对象的构建方式，前面加了个 object:
+        gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                val spanCount = gridLayoutManager.spanCount;
+
+
+                //条目的padding和margin值。在 xml 中我们设置了margin 为5dp,padding为10dp
+                val itemMarginAndPadding = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 15f, resources.displayMetrics)
+
+                val textWidth = textPaint.measureText(mDataList[position])
+
+                val itemWidth: Int = (itemMarginAndPadding + textWidth).toInt()
+
+                //如果文字的宽度超过屏幕的宽度，那么我们就设置为屏幕宽度
+                return if (itemWidth > spanCount) spanCount else itemWidth
+            }
+        }
+
+        rv_flowImpl.layoutManager = gridLayoutManager
+        rv_flowImpl.adapter = FlowAdapter(mDataList)
+    }
+
+    private fun initStaggerLayout(b: Boolean, orientation: Int) {
+        mRvAdapter1.mIsStaggerVertical = b
+        rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, orientation)
         rv_flowImpl.visibility = View.VISIBLE
         rv_flowImpl2.visibility = View.GONE
     }
