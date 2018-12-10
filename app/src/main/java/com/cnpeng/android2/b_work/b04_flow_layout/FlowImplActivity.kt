@@ -67,21 +67,6 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         initFlexLayout()
     }
 
-    /**
-     * CnPeng 2018/12/7 10:10 AM
-     * 功用：初始化flex视图
-     * 说明：
-     * 之所以使用两个RV，是因为使用一个RV的情况下，从Stagger切换到 Flex时会报下列错误：
-     * java.lang.ClassCastException: androidx.recyclerview.widget.RecyclerView$LayoutParams cannot be cast to com.google.android.flexbox.FlexItem
-     */
-    private fun initFlexLayout() {
-        val flexAdapter = FlowAdapter(mDataList)
-        rv_flowImpl2.adapter = flexAdapter
-        val flexLayoutManager = FlexboxLayoutManager(mActviity, FlexDirection.ROW)
-        flexLayoutManager.flexWrap = FlexWrap.WRAP
-        rv_flowImpl2.layoutManager = flexLayoutManager
-        rv_flowImpl2.visibility = View.GONE
-    }
 
     /**
      * CnPeng 2018/12/6 6:17 PM
@@ -176,10 +161,26 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
     private fun initStaggerLayout(b: Boolean, orientation: Int) {
 
         rv_flowImpl.adapter = mStaggerAndGvAdapter
+        rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, orientation)
 
         mStaggerAndGvAdapter.mIsStaggerVertical = b
-        rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, orientation)
         rv_flowImpl.visibility = View.VISIBLE
+        rv_flowImpl2.visibility = View.GONE
+    }
+
+    /**
+     * CnPeng 2018/12/7 10:10 AM
+     * 功用：初始化flex视图
+     * 说明：
+     * 之所以使用两个RV，是因为使用一个RV的情况下，从Stagger切换到 Flex时会报下列错误：
+     * java.lang.ClassCastException: androidx.recyclerview.widget.RecyclerView$LayoutParams cannot be cast to com.google.android.flexbox.FlexItem
+     */
+    private fun initFlexLayout() {
+        val flexAdapter = FlowAdapter(mDataList)
+        rv_flowImpl2.adapter = flexAdapter
+        val flexLayoutManager = FlexboxLayoutManager(mActviity, FlexDirection.ROW)
+        flexLayoutManager.flexWrap = FlexWrap.WRAP
+        rv_flowImpl2.layoutManager = flexLayoutManager
         rv_flowImpl2.visibility = View.GONE
     }
 }
