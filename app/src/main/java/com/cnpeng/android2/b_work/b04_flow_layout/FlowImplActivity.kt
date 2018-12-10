@@ -60,8 +60,9 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
 
         mStaggerAndGvAdapter = FlowAdapter(mDataList)
         rv_flowImpl.adapter = mStaggerAndGvAdapter
+
         initGridLayoutManager()
-        initStaggerLayout(true, RecyclerView.VERTICAL)
+        //        initStaggerLayout(true, RecyclerView.VERTICAL)
 
         initFlexLayout()
     }
@@ -168,12 +169,13 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         rv_flowImpl.layoutManager = gridLayoutManager
-        //        rv_flowImpl.adapter = FlowAdapter(mDataList)
+        rv_flowImpl.adapter = mStaggerAndGvAdapter
+        mStaggerAndGvAdapter.mIsStaggerVertical = false
     }
 
     private fun initStaggerLayout(b: Boolean, orientation: Int) {
-        //        mRvAdapter1 = FlowAdapter(mDataList)
-        //        rv_flowImpl.adapter = mRvAdapter1
+
+        rv_flowImpl.adapter = mStaggerAndGvAdapter
 
         mStaggerAndGvAdapter.mIsStaggerVertical = b
         rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, orientation)
