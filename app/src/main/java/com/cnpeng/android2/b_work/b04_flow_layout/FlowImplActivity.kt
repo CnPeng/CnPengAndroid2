@@ -23,11 +23,11 @@ import org.jetbrains.anko.toast
  * 功用：流式布局/标签实现方式的总结
  * 说明：
  * 1、流式布局/标签的实现方式大致有：
- *  -- 自定义FlowLayout。参考链接：https://github.com/hongyangAndroid/FlowLayout
- *  -- ChipGroups。     参考链接：https://www.jianshu.com/p/d64a75ec7c74
+ *  -- 自定义FlowLayout。链接：https://github.com/hongyangAndroid/FlowLayout
+ *  -- ChipGroups。     链接：https://www.jianshu.com/p/d64a75ec7c74
  *  -- RecyclerView+StaggerLayoutManager
- *  -- RecyclerView+FlexLayoutManager   参考链接：https://mp.weixin.qq.com/s/Mi3cK7xujmEMI_rc51-r4g
- *  -- RecyclerView+GridLayoutManager+Span  参考链接：https://blog.csdn.net/zhq217217/article/details/80421646
+ *  -- RecyclerView+FlexLayoutManager   链接：https://mp.weixin.qq.com/s/Mi3cK7xujmEMI_rc51-r4g
+ *  -- RecyclerView+GridLayoutManager+Span  链接：https://blog.csdn.net/zhq217217/article/details/80421646
  *
  * 2、该DEMO仅演示StaggerLayoutManager、GridLayoutManager、FlexLayoutManager的实现方式
  */
