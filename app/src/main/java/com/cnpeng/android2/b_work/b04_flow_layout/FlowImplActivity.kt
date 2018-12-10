@@ -132,14 +132,13 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
 
         val textPaint = Paint()
 
-        //CnPeng 2018/12/10 9:22 AM 配置字体大小
+        //CnPeng 2018/12/10 9:22 AM 配置字体大小,大小需要与条目xml中配置的一致
         textPaint.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 14f, resources.displayMetrics)
 
         //CnPeng 2018/12/7 4:46 PM 注意这个接口匿名对象的构建方式，前面加了个 object:
         gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 val spanCount = gridLayoutManager.spanCount;
-
 
                 //条目的padding和margin值。在 xml 中我们设置了margin 为5dp,padding为10dp
                 val itemMarginAndPadding = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 15f, resources.displayMetrics)
