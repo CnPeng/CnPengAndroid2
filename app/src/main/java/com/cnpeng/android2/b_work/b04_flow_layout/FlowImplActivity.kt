@@ -56,13 +56,9 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun initRecyclerView() {
         mDataList = initTestData()
-        mRvAdapter1 = FlowAdapter(mDataList)
-        rv_flowImpl.adapter = mRvAdapter1
 
         initGridLayoutManager()
-
-        //        initStaggerLayout(true, RecyclerView.VERTICAL)
-
+        initStaggerLayout(true, RecyclerView.VERTICAL)
         initFlexLayout()
     }
 
@@ -141,7 +137,8 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
 
         val textPaint = Paint()
 
-        textPaint.textSize = 28f
+        //CnPeng 2018/12/10 9:22 AM 配置字体大小
+        textPaint.textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 14f, resources.displayMetrics)
 
         //CnPeng 2018/12/7 4:46 PM 注意这个接口匿名对象的构建方式，前面加了个 object:
         gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -154,10 +151,10 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
 
                 val textWidth = textPaint.measureText(mDataList[position])
 
-                val itemWidth: Int = (itemMarginAndPadding + textWidth).toInt()
+                val itemWidth: Int = (itemMarginAndPadding * 2 + textWidth).toInt()
 
-                //如果文字的宽度超过屏幕的宽度，那么我们就设置为屏幕宽度
-                return if (itemWidth > spanCount) spanCount else itemWidth
+                //如果文字的宽度超过屏幕的宽度，那么我们就设置为屏幕宽度。由于强转为int可能会丢失精度，所以保险起见+1
+                return (if (itemWidth > spanCount) spanCount else itemWidth) + 1
             }
         }
 
@@ -166,6 +163,9 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initStaggerLayout(b: Boolean, orientation: Int) {
+        mRvAdapter1 = FlowAdapter(mDataList)
+        rv_flowImpl.adapter = mRvAdapter1
+
         mRvAdapter1.mIsStaggerVertical = b
         rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, orientation)
         rv_flowImpl.visibility = View.VISIBLE
