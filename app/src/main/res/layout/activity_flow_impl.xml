@@ -70,6 +70,7 @@
         android:layout_marginBottom="@dimen/dp10"
         android:background="@color/c_1b89d8"
         android:padding="@dimen/dp10"
+        android:layout_margin="5dp"
         android:text="GridLayoutManager"
         android:textColor="#fff"
         app:layout_constraintBottom_toTopOf="@id/tv_staggerV"

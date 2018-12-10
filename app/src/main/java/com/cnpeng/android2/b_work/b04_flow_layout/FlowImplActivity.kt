@@ -16,6 +16,7 @@ import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
 import kotlinx.android.synthetic.main.activity_flow_impl.*
+import org.jetbrains.anko.toast
 
 /**
  * CnPeng 2018/12/6 5:35 PM
@@ -28,10 +29,10 @@ import kotlinx.android.synthetic.main.activity_flow_impl.*
  *  -- RecyclerView+FlexLayoutManager   参考链接：https://mp.weixin.qq.com/s/Mi3cK7xujmEMI_rc51-r4g
  *  -- RecyclerView+GridLayoutManager+Span  参考链接：https://blog.csdn.net/zhq217217/article/details/80421646
  *
- * 2、该DEMO仅演示StaggerLayoutManager和FlexLayoutManager的实现方式
+ * 2、该DEMO仅演示StaggerLayoutManager、GridLayoutManager、FlexLayoutManager的实现方式
  */
 class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
-    lateinit var mRvAdapter1: FlowAdapter
+    lateinit var mStaggerAndGvAdapter: FlowAdapter
     lateinit var mActviity: FlowImplActivity
     lateinit var mDataList: List<String>
 
@@ -57,8 +58,11 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
     private fun initRecyclerView() {
         mDataList = initTestData()
 
+        mStaggerAndGvAdapter = FlowAdapter(mDataList)
+        rv_flowImpl.adapter = mStaggerAndGvAdapter
         initGridLayoutManager()
         initStaggerLayout(true, RecyclerView.VERTICAL)
+
         initFlexLayout()
     }
 
@@ -70,8 +74,8 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
      * java.lang.ClassCastException: androidx.recyclerview.widget.RecyclerView$LayoutParams cannot be cast to com.google.android.flexbox.FlexItem
      */
     private fun initFlexLayout() {
-        val mRvAdapter2 = FlowAdapter(mDataList)
-        rv_flowImpl2.adapter = mRvAdapter2
+        val flexAdapter = FlowAdapter(mDataList)
+        rv_flowImpl2.adapter = flexAdapter
         val flexLayoutManager = FlexboxLayoutManager(mActviity, FlexDirection.ROW)
         flexLayoutManager.flexWrap = FlexWrap.WRAP
         rv_flowImpl2.layoutManager = flexLayoutManager
@@ -105,24 +109,29 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         when (viewId) {
             R.id.tv_staggerH -> {
                 initStaggerLayout(false, RecyclerView.HORIZONTAL)
+                toast("水平Stagger")
             }
 
             R.id.tv_staggerV -> {
                 initStaggerLayout(true, RecyclerView.VERTICAL)
+                toast("垂直Stagger")
             }
 
             R.id.tv_flex -> {
                 rv_flowImpl.visibility = View.GONE
                 rv_flowImpl2.visibility = View.VISIBLE
+                toast("Flex")
             }
 
             R.id.tv_chip -> {
                 val intent = Intent(mActviity, ChipActivity::class.java)
                 startActivity(intent)
+                toast("Chip")
             }
 
             R.id.tv_grid -> {
                 initGridLayoutManager()
+                toast("GridLayout")
             }
         }
     }
@@ -159,14 +168,14 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         rv_flowImpl.layoutManager = gridLayoutManager
-        rv_flowImpl.adapter = FlowAdapter(mDataList)
+        //        rv_flowImpl.adapter = FlowAdapter(mDataList)
     }
 
     private fun initStaggerLayout(b: Boolean, orientation: Int) {
-        mRvAdapter1 = FlowAdapter(mDataList)
-        rv_flowImpl.adapter = mRvAdapter1
+        //        mRvAdapter1 = FlowAdapter(mDataList)
+        //        rv_flowImpl.adapter = mRvAdapter1
 
-        mRvAdapter1.mIsStaggerVertical = b
+        mStaggerAndGvAdapter.mIsStaggerVertical = b
         rv_flowImpl.layoutManager = StaggeredGridLayoutManager(4, orientation)
         rv_flowImpl.visibility = View.VISIBLE
         rv_flowImpl2.visibility = View.GONE
