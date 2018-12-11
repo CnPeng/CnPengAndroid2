@@ -21,10 +21,15 @@
             android:showDividers="middle">
 
             <TextView
+                android:id="@+id/tv_flexbox"
+                style="@style/main_text_item"
+                android:text="02_flexbox使用" />
+
+
+            <TextView
                 android:id="@+id/tv_chip"
                 style="@style/main_text_item"
                 android:text="01_chip和chipGroup使用" />
-
 
 
         </LinearLayout>

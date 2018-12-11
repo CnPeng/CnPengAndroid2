@@ -8,4 +8,244 @@
     tools:context=".d_mine.a02_flexboxlayout.FlexboxActivity"
     tools:showIn="@layout/app_bar_flexbox">
 
+    <TextView
+        android:id="@+id/tv_title1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp10"
+        android:text='不设置属性时的基本使用——layout_width="wrap_content"'
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title1">
+
+        <TextView
+            android:id="@+id/tv1_flexbox"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#55ff0000"
+            android:gravity="center"
+            android:text="tv1_flexbox" />
+
+        <TextView
+            android:id="@+id/tv2_flexbox"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#5500ff00"
+            android:gravity="center"
+            android:text="tv2_flexbox" />
+
+        <TextView
+            android:id="@+id/tv3_flexbox"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#550000ff"
+            android:gravity="center"
+            android:text="tv3_flexbox" />
+
+        <TextView
+            android:id="@+id/tv4_flexbox"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#55ffff00"
+            android:gravity="center"
+            android:text="tv4_flexbox" />
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flexbox1">
+
+        <TextView
+            android:id="@+id/tv1_linear"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#55ff0000"
+            android:gravity="center"
+            android:text="tv1_linear" />
+
+        <TextView
+            android:id="@+id/tv2_linear"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#5500ff00"
+            android:gravity="center"
+            android:text="tv2_linear" />
+
+        <TextView
+            android:id="@+id/tv3_linear"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#550000ff"
+            android:gravity="center"
+            android:text="tv3_linear" />
+
+        <TextView
+            android:id="@+id/tv4_linear"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#55ffff00"
+            android:gravity="center"
+            android:text="tv4_linear" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center"
+        android:padding="@dimen/dp10"
+        android:text='不设置属性时的基本使用——layout_width="match_parent"'
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_1" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexbox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title2">
+
+        <TextView
+            android:id="@+id/tv1_flexbox2"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#55ff0000"
+            android:gravity="center"
+            android:text="tv1_flexbox2" />
+
+        <TextView
+            android:id="@+id/tv2_flexbox2"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#5500ff00"
+            android:gravity="center"
+            android:text="tv2_flexbox2" />
+
+        <TextView
+            android:id="@+id/tv3_flexbox2"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#550000ff"
+            android:gravity="center"
+            android:text="tv3_flexbox2" />
+
+        <TextView
+            android:id="@+id/tv4_flexbox2"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#55ffff00"
+            android:gravity="center"
+            android:text="tv4_flexbox2" />
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flexbox2">
+
+        <TextView
+            android:id="@+id/tv1_linear2"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#55ff0000"
+            android:gravity="center"
+            android:text="tv1_linear2" />
+
+        <TextView
+            android:id="@+id/tv2_linear2"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#5500ff00"
+            android:gravity="center"
+            android:text="tv2_linear" />
+
+        <TextView
+            android:id="@+id/tv3_linear2"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#550000ff"
+            android:gravity="center"
+            android:text="tv3_linear" />
+
+        <TextView
+            android:id="@+id/tv4_linear2"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:background="#55ffff00"
+            android:gravity="center"
+            android:text="tv4_linear" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp10"
+        android:text='不设置属性时的基本使用——滚动"'
+        app:layout_constraintTop_toBottomOf="@id/linear2" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title3">
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/flexbox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv1_flexbox3"
+                android:layout_width="150dp"
+                android:layout_height="44dp"
+                android:background="#55ff0000"
+                android:gravity="center"
+                android:text="tv1_flexbox" />
+
+            <TextView
+                android:id="@+id/tv2_flexbox3"
+                android:layout_width="150dp"
+                android:layout_height="44dp"
+                android:background="#5500ff00"
+                android:gravity="center"
+                android:text="tv2_flexbox" />
+
+            <TextView
+                android:id="@+id/tv3_flexbox3"
+                android:layout_width="150dp"
+                android:layout_height="44dp"
+                android:background="#550000ff"
+                android:gravity="center"
+                android:text="tv3_flexbox" />
+
+            <TextView
+                android:id="@+id/tv4_flexbox3"
+                android:layout_width="150dp"
+                android:layout_height="44dp"
+                android:background="#55ffff00"
+                android:gravity="center"
+                android:text="tv4_flexbox" />
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </HorizontalScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
