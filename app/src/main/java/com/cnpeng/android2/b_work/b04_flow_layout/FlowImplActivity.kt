@@ -15,6 +15,7 @@ import com.cnpeng.android2.d_mine.a01_chips.ChipActivity
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
 import kotlinx.android.synthetic.main.activity_flow_impl.*
 import org.jetbrains.anko.toast
 
@@ -179,6 +180,10 @@ class FlowImplActivity : AppCompatActivity(), View.OnClickListener {
         rv_flowImpl2.adapter = flexAdapter
         val flexLayoutManager = FlexboxLayoutManager(mActviity, FlexDirection.ROW)
         flexLayoutManager.flexWrap = FlexWrap.WRAP
+
+        //CnPeng 2018/12/10 5:28 PM 条目从右向左排列，不设置时默认从左向右排列
+        flexLayoutManager.justifyContent = JustifyContent.FLEX_END
+
         rv_flowImpl2.layoutManager = flexLayoutManager
         rv_flowImpl2.visibility = View.GONE
     }
