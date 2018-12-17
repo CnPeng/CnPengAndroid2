@@ -3,47 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import">
-            <menu>
-                <item
-                    android:id="@+id/nav_share1"
-                    android:icon="@drawable/ic_menu_share"
-                    android:title="Share" />
-                <item
-                    android:id="@+id/nav_send1"
-                    android:icon="@drawable/ic_menu_send"
-                    android:title="Send" />
-            </menu>
-        </item>
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+    <!--<group android:checkableBehavior="single">-->
+    <item
+        android:id="@+id/nav_camera"
+        android:title="FlexboxLayout基本使用" />
 
-    <item android:title="Communicate">
+
+    <item
+        android:id="@+id/nav_gallery"
+        android:title="FlexboxLayout属性">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/flexDirection"
+                android:title="flexDirection" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/flexWrap"
+                android:title="flexWrap" />
+            <item
+                android:id="@+id/justifyContent"
+                android:title="justifyContent" />
+            <item
+                android:id="@+id/alignItems"
+                android:title="alignItems" />
+            <!--<item-->
+                <!--android:id="@+id/flexDirection"-->
+                <!--android:title="flexDirection" />-->
+            <!--<item-->
+                <!--android:id="@+id/flexDirection"-->
+                <!--android:title="flexDirection" />-->
         </menu>
+
+
     </item>
+    <item
+        android:id="@+id/nav_slideshow"
+        android:title="FlexboxLayout子View属性"></item>
+    <item
+        android:id="@+id/nav_manage"
+        android:title="FlexboxLayoutManager"></item>
+    <!--</group>-->
 
 </menu>

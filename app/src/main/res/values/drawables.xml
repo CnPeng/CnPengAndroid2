@@ -5,4 +5,8 @@
     <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
     <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
     <item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>
+    <item name="start_on" type="drawable">@android:drawable/star_on</item>
+    <item name="start_off" type="drawable">@android:drawable/star_off</item>
+    <item name="presence_online" type="drawable">@android:drawable/presence_online</item>
+    <item name="ic_media_play" type="drawable">@android:drawable/ic_media_play</item>
 </resources>

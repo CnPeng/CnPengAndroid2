@@ -23,12 +23,24 @@
 
     <include layout="@layout/content_flexbox" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--android:id="@+id/fab"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_margin="@dimen/fab_margin"-->
+    <!--android:src="@drawable/iv_open_drawer_round"/>-->
+    <!--&lt;!&ndash;app:srcCompat="@drawable/iv_open_drawer_round" />&ndash;&gt;-->
+
+    <TextView
+        android:id="@+id/tv_openSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:background="#f4f0a9"
+        android:padding="@dimen/dp10"
+        android:text="打开设置界面"
+        android:textStyle="bold" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
