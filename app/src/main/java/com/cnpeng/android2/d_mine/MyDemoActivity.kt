@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.R
 import com.cnpeng.android2.d_mine.a01_chips.ChipActivity
 import com.cnpeng.android2.d_mine.a02_flexboxlayout.FlexboxActivity
+import com.cnpeng.android2.d_mine.a03_admob.AdMobActivity
 import kotlinx.android.synthetic.main.activity_my_demo.*
 
 class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
@@ -27,6 +28,7 @@ class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
     private fun initClickEvent() {
         tv_chip.setOnClickListener(this)
         tv_flexbox.setOnClickListener(this)
+        tv_adMob.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -36,6 +38,7 @@ class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
         when (id) {
             R.id.tv_chip -> intent.setClass(mActivity, ChipActivity::class.java)
             R.id.tv_flexbox -> intent.setClass(mActivity, FlexboxActivity::class.java)
+            R.id.tv_adMob -> intent.setClass(mActivity, AdMobActivity::class.java)
         }
         startActivity(intent)
     }

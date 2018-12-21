@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.b_work.WorkDemoActivity
 import com.cnpeng.android2.d_mine.MyDemoActivity
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         setContentView(R.layout.activity_main)
         mActivity = this
+
+        //CnPeng 2018/12/21 5:25 PM 初始化adMob，示例id: ca-app-pub-3940256099942544~3347511713
+        MobileAds.initialize(this, "ca-app-pub-8994842234959408~1322966018");
 
         initClickListener()
     }

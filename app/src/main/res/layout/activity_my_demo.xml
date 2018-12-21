@@ -20,6 +20,12 @@
             android:orientation="vertical"
             android:showDividers="middle">
 
+
+            <TextView
+                android:id="@+id/tv_adMob"
+                style="@style/main_text_item"
+                android:text="03_adMob使用" />
+
             <TextView
                 android:id="@+id/tv_flexbox"
                 style="@style/main_text_item"

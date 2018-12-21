@@ -8,12 +8,17 @@
         android:icon="@mipmap/ic_launcher"
     -->
     <application
-        android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
+        <!--CnPeng 2018/12/21 5:22 PM 谷歌广告用的id-->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8994842234959408~1322966018"/>
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.WindowBackGroundTheme">
@@ -42,7 +47,8 @@
         <activity
             android:name=".d_mine.a02_flexboxlayout.FlexboxActivity"
             android:label="@string/title_activity_flexbox"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".d_mine.a03_admob.AdMobActivity"></activity>
     </application>
 
 </manifest>
