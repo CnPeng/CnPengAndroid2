@@ -98,4 +98,9 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
+
+    <!--CnPeng 2018/12/24 3:45 PM 广告单元id——正式发版时使用的 -->
+    <string name="adid_release">ca-app-pub-8994842234959408/9664490460</string>
+    <!--CnPeng 2018/12/24 3:45 PM 广告单元id——测试时使用的 -->
+    <string name="adid_test">ca-app-pub-3940256099942544/6300978111</string>
 </resources>

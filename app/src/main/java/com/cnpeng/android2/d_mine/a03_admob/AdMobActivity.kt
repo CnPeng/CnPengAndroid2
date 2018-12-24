@@ -59,7 +59,7 @@ class AdMobActivity : AppCompatActivity() {
     private fun initManualAdView(viewW: Int, viewH: Int, viewId: Int, viewIdToCons: Int) {
         val adView2 = AdView(this)
         adView2.id = viewId
-        adView2.adUnitId = "ca-app-pub-3940256099942544/6300978111"
+        adView2.adUnitId = "ca-app-pub-8994842234959408/9664490460"
         adView2.adSize = if (viewW == 0 || viewH == 0) AdSize.SMART_BANNER else {
             AdSize(viewW, viewH)
         }

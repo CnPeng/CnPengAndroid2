@@ -13,13 +13,14 @@
         tools:context=".d_mine.a03_admob.AdMobActivity">
 
 
-        <!--CnPeng 2018/12/21 5:32 PM 测试和开发只能使用测试的id，开发时才使用正式的广告单元id，否则可能封号-->
+        <!--CnPeng 2018/12/21 5:32 PM 测试和开发只能使用测试的id，开发时才使用正式的广告单元id，否则可能封号。测试id——ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+-->
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            ads:adUnitId="@string/adid_release"
             ads:layout_constraintLeft_toLeftOf="parent"
             ads:layout_constraintRight_toRightOf="parent"
             ads:layout_constraintTop_toTopOf="parent" />
