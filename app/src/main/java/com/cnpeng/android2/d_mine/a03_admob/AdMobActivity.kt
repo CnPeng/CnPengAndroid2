@@ -134,4 +134,17 @@ class AdMobActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onDestroy() {
+        val childCount = cons_parent.childCount
+        for (i in 0 until childCount) {
+            val adView=cons_parent.getChildAt(i)
+            if (adView is AdView){
+                //CnPeng 2018/12/24 2:09 PM 官方demo中有销毁的操作，所以照抄
+                adView.destroy()
+            }
+        }
+
+        super.onDestroy()
+    }
 }
