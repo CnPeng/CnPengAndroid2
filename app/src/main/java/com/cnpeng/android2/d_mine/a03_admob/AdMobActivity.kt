@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.cnpeng.android2.BuildConfig
 import com.cnpeng.android2.R
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import kotlinx.android.synthetic.main.activity_ad_mob.*
+import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.error
 import org.jetbrains.anko.px2dip
 
 class AdMobActivity : AppCompatActivity() {
@@ -59,7 +62,10 @@ class AdMobActivity : AppCompatActivity() {
     private fun initManualAdView(viewW: Int, viewH: Int, viewId: Int, viewIdToCons: Int) {
         val adView2 = AdView(this)
         adView2.id = viewId
-        adView2.adUnitId = "ca-app-pub-8994842234959408/9664490460"
+        //        adView2.adUnitId = "ca-app-pub-8994842234959408/9664490460"
+        adView2.adUnitId = resources.getString(BuildConfig.adUinitedID)
+        AnkoLogger("AdUnitId").error { "当前的构建类型是${BuildConfig.BUILD_TYPE},对应的adId是${adView2.adUnitId}" }
+
         adView2.adSize = if (viewW == 0 || viewH == 0) AdSize.SMART_BANNER else {
             AdSize(viewW, viewH)
         }
@@ -138,8 +144,8 @@ class AdMobActivity : AppCompatActivity() {
     override fun onDestroy() {
         val childCount = cons_parent.childCount
         for (i in 0 until childCount) {
-            val adView=cons_parent.getChildAt(i)
-            if (adView is AdView){
+            val adView = cons_parent.getChildAt(i)
+            if (adView is AdView) {
                 //CnPeng 2018/12/24 2:09 PM 官方demo中有销毁的操作，所以照抄
                 adView.destroy()
             }

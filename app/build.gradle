@@ -39,6 +39,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+            applicationIdSuffix ".release"
+            debuggable true
+
+            buildConfigField("int", "adUinitedID", "R.string.adid_release")
+        }
+
+        debug {
+            buildConfigField("int", "adUinitedID", "R.string.adid_test")
         }
     }
     externalNativeBuild {
