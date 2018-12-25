@@ -26,6 +26,11 @@ class AdMobActivity : AppCompatActivity() {
         //CnPeng 2018/12/24 10:29 AM BANNER
         initAdView1()
 
+        addManualAds()
+    }
+
+    private fun addManualAds() {
+
         //CnPeng 2018/12/24 10:16 AM LARGE_BANNER
         initManualAdView(320, 100, R.id.adView + 1, R.id.adView)
 
