@@ -25,5 +25,4 @@
         app:layout_anchor="@id/tv_showSnackBar"
         app:layout_anchorGravity="right|bottom" />
 
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
