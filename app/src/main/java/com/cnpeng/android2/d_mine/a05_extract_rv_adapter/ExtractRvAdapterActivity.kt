@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cnpeng.android2.R
 import kotlinx.android.synthetic.main.activity_extract_rv_adapter.*
-import kotlinx.android.synthetic.main.item_extract.*
 import kotlinx.android.synthetic.main.item_extract.view.*
 
 class ExtractRvAdapterActivity : AppCompatActivity() {
@@ -37,7 +36,8 @@ class ExtractRvAdapterActivity : AppCompatActivity() {
         //         }
         // )
 
-        rv_extract.adapter = CommonRvAdapter<String>(R.layout.item_extract, itemList
+        //构造CommonRvAdapter时，省略了其后的类型<String>
+        rv_extract.adapter = CommonRvAdapter(R.layout.item_extract, itemList
         ) { view: View, s: String ->
             initRvItem(view, s)
         }
