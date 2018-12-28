@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".d_mine.a04_actlanuchmode.ClearTopFlagActivity">
+
+    <TextView
+        android:id="@+id/tv_backToDemoAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff5555"
+        android:padding="@dimen/dp15"
+        android:text="点击回到MyDemoAct或新建当前页面实例"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_actID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_backToDemoAct"
+        tools:text="显示界面的id，判断是否重建" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

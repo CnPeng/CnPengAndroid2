@@ -16,10 +16,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
             android:divider="@drawable/shape_divider_dot"
             android:orientation="vertical"
             android:showDividers="middle">
 
+
+            <TextView
+                android:id="@+id/tv_clearTop"
+                style="@style/main_text_item"
+                android:text="04_clearTop和singleTak区别" />
 
             <TextView
                 android:id="@+id/tv_adMob"
