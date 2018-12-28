@@ -44,6 +44,10 @@ class ExtractRvAdapterActivity : AppCompatActivity() {
     }
 
     private fun initRvItem(view: View, s: String) {
+
+        //因为 CommonRvAdapter 中的嵌套类 BaseItemHolder 实现了 LayoutContainer 接口，所以此处可以使用 view.子View的ID 获取子View对象
         view.tv_extractItemDesc.text = s
+
+        // TODO: CnPeng 2018/12/28 6:03 PM 条目的点击、长按，都可以从这里实现。
     }
 }

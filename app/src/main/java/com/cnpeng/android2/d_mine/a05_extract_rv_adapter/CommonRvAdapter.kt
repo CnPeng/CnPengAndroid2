@@ -30,8 +30,9 @@ class CommonRvAdapter<T>(var itemLayoutId: Int, private var itemList: List<T>, v
      * CnPeng 2018/12/28 5:36 PM
      * 功用：
      * 说明：
-     * - 因为setDataToItem的参数为条目Bean，类型不明确，所以定义为T，所以BaseItemHolder就必须是一个模板类，所以BaseRvAdapter也必须是一个模板类
-     * - 不能声明为inner，否则 BaseRvAdapter中引用该Holder的地方会报错，提示：One type argument excepted for class BaseItemHolder<T>
+     * - 因为setDataToItem的参数为条目Bean，类型不明确，所以定义为T，所以BaseItemHolder就必须是一个模板类，所以 CommonRvAdapter 也必须是一个模板类
+     * - 不能声明为inner，否则 CommonRvAdapter 中引用该Holder的地方会报错，提示：One type argument excepted for class BaseItemHolder<T>
+     * - 此处实现了LayoutContainer接口，那么 CommonRvAdapter 构造中传入的方法内部就可以直接通过 view.子View的ID 获取子View对象
      */
     class BaseItemHolder<T>(override val containerView: View, val initItem: (View, T) -> Unit) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
