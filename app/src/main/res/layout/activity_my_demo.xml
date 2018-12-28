@@ -23,6 +23,11 @@
 
 
             <TextView
+                android:id="@+id/tv_extractRvAct"
+                style="@style/main_text_item"
+                android:text="05_抽取Rv适配器基类" />
+
+            <TextView
                 android:id="@+id/tv_clearTop"
                 style="@style/main_text_item"
                 android:text="04_clearTop和singleTak区别" />
