@@ -51,7 +51,9 @@
         <activity android:name=".d_mine.a03_admob.AdMobActivity" />
         <activity android:name=".d_mine.a04_actlanuchmode.ClearTopFlagActivity" />
         <activity android:name=".d_mine.TempActivity" />
-        <activity android:name=".d_mine.a05_extract_rv_adapter.ExtractRvAdapterActivity"></activity>
+        <activity android:name=".d_mine.a05_extract_rv_adapter.ExtractRvAdapterActivity" />
+        <activity android:name=".a_book1.BookOneActivity" />
+        <activity android:name=".a_book1.chapter7_coordinatorlayout.CoordinatorLayoutTestActivity"></activity>
     </application>
 
 </manifest>

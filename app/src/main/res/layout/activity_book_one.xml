@@ -21,24 +21,24 @@
             android:showDividers="middle">
 
             <TextView
-                android:id="@+id/tv_mineDemo"
+                android:id="@+id/tv_corLayout"
                 style="@style/main_text_item"
-                android:text="01_MineDemo" />
+                android:text="7.2.1_CoordinatorLayout" />
 
             <TextView
-                android:id="@+id/tv_workDemo"
+                android:id="@+id/tv_toolBar"
                 style="@style/main_text_item"
-                android:text="02_WorkDemo" />
+                android:text="7.2.2_ToolBar" />
 
             <TextView
-                android:id="@+id/tv_bookDemo1"
+                android:id="@+id/tv_appBarLayout"
                 style="@style/main_text_item"
-                android:text="03_Kotlin从零到精通Android开发" />
+                android:text="7.2.3_AppBarLayout" />
 
             <TextView
-                android:id="@+id/tv_blogDemo"
+                android:id="@+id/tv_collapsing"
                 style="@style/main_text_item"
-                android:text="04_BlogDemo" />
+                android:text="7.2.4_CollapsingToolbarLayout" />
 
         </LinearLayout>
     </ScrollView>

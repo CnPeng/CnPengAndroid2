@@ -1,14 +1,15 @@
 package com.cnpeng.android2
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.cnpeng.android2.a_book1.BookOneActivity
 import com.cnpeng.android2.b_work.WorkDemoActivity
 import com.cnpeng.android2.d_mine.MyDemoActivity
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 
 /**
  * CnPeng 2018/8/16 10:01 AM
@@ -45,25 +46,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun initClickListener() {
         tv_mineDemo.setOnClickListener(this)
         tv_workDemo.setOnClickListener(this)
-        tv_bookDemo.setOnClickListener(this)
+        tv_bookDemo1.setOnClickListener(this)
         tv_blogDemo.setOnClickListener(this)
 
     }
 
     override fun onClick(v: View?) {
-        val intent = Intent()
         val viewID = v?.id
 
         when (viewID) {
-            R.id.tv_mineDemo -> intent.setClass(mActivity, MyDemoActivity::class.java)
-            R.id.tv_workDemo -> intent.setClass(mActivity, WorkDemoActivity::class.java)
-            // TODO: CnPeng 2018/11/30 10:51 AM bookDemo 和 BlogDemo还么有增加跳转事件
-            R.id.tv_bookDemo -> Toast.makeText(mActivity, "暂无内容", Toast.LENGTH_SHORT).show()
-            R.id.tv_blogDemo -> Toast.makeText(mActivity, "暂无内容", Toast.LENGTH_SHORT).show()
-        }
-
-        if (null != intent.component) {
-            startActivity(intent)
+            R.id.tv_mineDemo -> startActivity<MyDemoActivity>()
+            R.id.tv_workDemo -> startActivity<WorkDemoActivity>()
+            R.id.tv_bookDemo1 -> startActivity<BookOneActivity>()
+            else -> Toast.makeText(mActivity, "暂无内容", Toast.LENGTH_SHORT).show()
         }
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coor_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".a_book1.chapter7_coordinatorlayout.CoordinatorLayoutTestActivity">
+
+    <TextView
+        android:id="@+id/tv_showSnackBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#efa659"
+        android:padding="@dimen/dp15"
+        android:text="显示SnackBar"
+        android:textColor="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp30"
+        android:src="@drawable/start_on"
+        app:layout_anchor="@id/tv_showSnackBar"
+        app:layout_anchorGravity="right|bottom" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
