@@ -36,10 +36,24 @@ class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
         val id = v?.id
 
         when (id) {
-            R.id.tv_chip -> intent.setClass(mActivity, ChipActivity::class.java)
+            R.id.tv_chip -> {
+                intent.setClass(mActivity, ChipActivity::class.java)
+            }
             R.id.tv_flexbox -> intent.setClass(mActivity, FlexboxActivity::class.java)
-            R.id.tv_adMob -> intent.setClass(mActivity, AdMobActivity::class.java)
+            R.id.tv_adMob -> {
+                intent.setClass(mActivity, AdMobActivity::class.java)
+            }
         }
         startActivity(intent)
+
+        // when (id) {
+        //     //这是anko库中的跳转方式
+        //     R.id.tv_chip -> startActivity<ChipActivity>()
+        //
+        //     //这是默认的跳转方式
+        //     R.id.tv_flexbox -> intent.setClass(mActivity, FlexboxActivity::class.java)
+        //     R.id.tv_adMob -> intent.setClass(mActivity, AdMobActivity::class.java)
+        // }
+        //   startActivity(intent)
     }
 }
