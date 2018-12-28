@@ -7,10 +7,34 @@
     tools:context=".d_mine.a05_extract_rv_adapter.ExtractRvAdapterActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_extract"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rv_extract"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_updateRvData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff5533"
+        android:padding="@dimen/dp15"
+        android:text="更新通用适配器列表数据"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_initByComAdapter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp10"
+        android:background="#ff5533"
+        android:padding="@dimen/dp15"
+        android:text="切换为通用适配器列表"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/tv_updateRvData"
+        app:layout_constraintLeft_toLeftOf="@id/tv_updateRvData"
+        app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

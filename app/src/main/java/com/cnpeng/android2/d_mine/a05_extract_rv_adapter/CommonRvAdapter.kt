@@ -9,10 +9,17 @@ import kotlinx.android.extensions.LayoutContainer
 /**
  * 作者：CnPeng
  * 时间：2018/12/28
- * 功用：
+ * 功用：通用的RvAdapter
  * 其他：
+ *
+ * @param itemLayoutId 条目视图对应的 layoutID
+ * @param itemList 条目bean集合。考虑到更新的问题，所以定义为 MutableList
+ * @param initItemView 函数参数，由外部提供具体实现. 这是kotlin高阶函数的表现形式
  */
-class CommonRvAdapter<T>(var itemLayoutId: Int, private var itemList: List<T>, val initItemView: (View, T) -> Unit) : RecyclerView.Adapter<CommonRvAdapter.BaseItemHolder<T>>() {
+class CommonRvAdapter<T>(var itemLayoutId: Int,
+                         private var itemList: MutableList<T>,
+                         private val initItemView: (View, T) -> Unit) : RecyclerView.Adapter<CommonRvAdapter.BaseItemHolder<T>>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonRvAdapter.BaseItemHolder<T> {
         val layoutInflater = LayoutInflater.from(parent.context)
         val itemView = layoutInflater.inflate(itemLayoutId, parent, false)
@@ -20,7 +27,6 @@ class CommonRvAdapter<T>(var itemLayoutId: Int, private var itemList: List<T>, v
     }
 
     override fun getItemCount(): Int = itemList.size
-
 
     override fun onBindViewHolder(holder: CommonRvAdapter.BaseItemHolder<T>, position: Int) {
         holder.setDataToItem(itemList[position])
@@ -34,10 +40,21 @@ class CommonRvAdapter<T>(var itemLayoutId: Int, private var itemList: List<T>, v
      * - 不能声明为inner，否则 CommonRvAdapter 中引用该Holder的地方会报错，提示：One type argument excepted for class BaseItemHolder<T>
      * - 此处实现了LayoutContainer接口，那么 CommonRvAdapter 构造中传入的方法内部就可以直接通过 view.子View的ID 获取子View对象
      */
-    class BaseItemHolder<T>(override val containerView: View, val initItem: (View, T) -> Unit) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    class BaseItemHolder<in T>(override val containerView: View, val initItem: (View, T) -> Unit) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
         fun setDataToItem(itemBean: T) {
             initItem(containerView, itemBean)
         }
+    }
+
+    /**
+     * CnPeng 2018/12/28 6:20 PM
+     * 功用：更新列表中的数据
+     * 说明：
+     */
+    fun updateData(newDataList: List<T>) {
+        itemList.clear()
+        itemList.addAll(newDataList)
+        notifyDataSetChanged()
     }
 }
