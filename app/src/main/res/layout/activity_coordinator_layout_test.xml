@@ -5,7 +5,7 @@
     android:id="@+id/coor_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".a_book1.chapter7_coordinatorlayout.CoordinatorLayoutTestActivity">
+    tools:context=".a_book1.chapter7.CoordinatorLayoutTestActivity">
 
     <TextView
         android:id="@+id/tv_showSnackBar"

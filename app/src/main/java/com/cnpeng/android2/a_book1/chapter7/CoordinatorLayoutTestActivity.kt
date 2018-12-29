@@ -1,4 +1,4 @@
-package com.cnpeng.android2.a_book1.chapter7_coordinatorlayout
+package com.cnpeng.android2.a_book1.chapter7
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
