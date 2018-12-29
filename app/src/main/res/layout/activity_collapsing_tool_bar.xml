@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".a_book1.chapter7.CollapsingToolBarActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="#ff0">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="left"
+            app:expandedTitleMarginStart="10dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:scrimAnimationDuration="1000"
+            app:title="CollapsingToolBar的标题">
+
+            <!--&lt;!&ndash; 时差模式1：app:title="ToolBar的标题"/  android:background="#f00" &ndash;&gt;-->
+            <!--<androidx.appcompat.widget.Toolbar-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--app:layout_collapseMode="parallax"-->
+            <!--app:layout_collapseParallaxMultiplier="0.2"-->
+            <!--app:titleTextColor="@color/white" />  -->
+
+            <!--&lt;!&ndash; pin模式：app:title="ToolBar的标题"/   &ndash;&gt;-->
+            <!--<androidx.appcompat.widget.Toolbar-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:background="#f00"-->
+            <!--app:layout_collapseMode="pin"-->
+            <!--app:layout_collapseParallaxMultiplier="0.2"-->
+            <!--app:titleTextColor="@color/white" />-->
+
+            <!-- app:title="ToolBar的标题"/ layout_collapseParallaxMultiplier的取值0-1，值越大，视差效果越明显 -->
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.1"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_collapsing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

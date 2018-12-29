@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.R
 import com.cnpeng.android2.a_book1.chapter7.AppBarLayoutActivity
+import com.cnpeng.android2.a_book1.chapter7.CollapsingToolBarActivity
 import com.cnpeng.android2.a_book1.chapter7.CoordinatorLayoutTestActivity
 import com.cnpeng.android2.a_book1.chapter7.ToolBarDemoActivity
 import kotlinx.android.synthetic.main.activity_book_one.*
@@ -28,6 +29,7 @@ class BookOneActivity : AppCompatActivity(), View.OnClickListener {
         tv_corLayout.setOnClickListener(this)
         tv_toolBar.setOnClickListener(this)
         tv_appBarLayout.setOnClickListener(this)
+        tv_collapsing.setOnClickListener(this)
 
     }
 
@@ -39,6 +41,7 @@ class BookOneActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_corLayout -> startActivity<CoordinatorLayoutTestActivity>()
             R.id.tv_toolBar -> startActivity<ToolBarDemoActivity>()
             R.id.tv_appBarLayout -> startActivity<AppBarLayoutActivity>()
+            R.id.tv_collapsing -> startActivity<CollapsingToolBarActivity>()
             else -> toast("暂未实现点击事件")
         }
     }
