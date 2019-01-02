@@ -40,7 +40,7 @@ class BookOneActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_toolBar -> startActivity<ToolBarDemoActivity>()
             R.id.tv_appBarLayout -> startActivity<AppBarLayoutActivity>()
             R.id.tv_collapsing -> startActivity<CollapsingToolBarActivity>()
-            R.id.tv_aliPay -> startActivity<ScrollAlipayActivity>()
+            R.id.tv_aliPay -> startActivity<MainAlipayActivity>()
             else -> toast("暂未实现点击事件")
         }
     }

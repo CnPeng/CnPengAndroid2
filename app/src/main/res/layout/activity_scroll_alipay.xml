@@ -12,13 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!--注意这里的scrollFlags中加入了snap，可以实现松手自动回滚的动作——类似于fling的效果-->
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:contentScrim="@color/colorAccent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
+            <!--四大基本功能-->
             <include
+                android:id="@+id/base_func"
                 layout="@layout/life_pay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,12 +36,14 @@
                 app:contentInsetStart="0dp"
                 app:layout_collapseMode="pin">
 
+                <!--四大基本功能展开时的标题栏-->
                 <include
                     android:id="@+id/tl_expand"
                     layout="@layout/toolbar_expand"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
+                <!--四大基本功能收起时的标题栏-->
                 <include
                     android:id="@+id/tl_collapse"
                     layout="@layout/toolbar_collapse"
