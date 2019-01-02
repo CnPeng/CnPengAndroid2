@@ -45,6 +45,11 @@
                 style="@style/main_text_item"
                 android:text="7.2.5_仿淘宝首页" />
 
+            <TextView
+                android:id="@+id/tv_viewPager"
+                style="@style/main_text_item"
+                android:text="7.3.1_ViewPager+PagerTabStrip" />
+
         </LinearLayout>
     </ScrollView>
 

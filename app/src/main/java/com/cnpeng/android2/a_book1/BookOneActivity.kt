@@ -28,6 +28,7 @@ class BookOneActivity : AppCompatActivity(), View.OnClickListener {
         tv_appBarLayout.setOnClickListener(this)
         tv_collapsing.setOnClickListener(this)
         tv_aliPay.setOnClickListener(this)
+        tv_viewPager.setOnClickListener(this)
 
     }
 
@@ -41,6 +42,7 @@ class BookOneActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_appBarLayout -> startActivity<AppBarLayoutActivity>()
             R.id.tv_collapsing -> startActivity<CollapsingToolBarActivity>()
             R.id.tv_aliPay -> startActivity<MainAlipayActivity>()
+            R.id.tv_viewPager -> startActivity<ViewPagerActivity>()
             else -> toast("暂未实现点击事件")
         }
     }
