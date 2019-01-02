@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.R
-import com.cnpeng.android2.a_book1.chapter7.AppBarLayoutActivity
-import com.cnpeng.android2.a_book1.chapter7.CollapsingToolBarActivity
-import com.cnpeng.android2.a_book1.chapter7.CoordinatorLayoutTestActivity
-import com.cnpeng.android2.a_book1.chapter7.ToolBarDemoActivity
+import com.cnpeng.android2.a_book1.chapter7.*
 import kotlinx.android.synthetic.main.activity_book_one.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -30,6 +27,7 @@ class BookOneActivity : AppCompatActivity(), View.OnClickListener {
         tv_toolBar.setOnClickListener(this)
         tv_appBarLayout.setOnClickListener(this)
         tv_collapsing.setOnClickListener(this)
+        tv_aliPay.setOnClickListener(this)
 
     }
 
@@ -42,6 +40,7 @@ class BookOneActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_toolBar -> startActivity<ToolBarDemoActivity>()
             R.id.tv_appBarLayout -> startActivity<AppBarLayoutActivity>()
             R.id.tv_collapsing -> startActivity<CollapsingToolBarActivity>()
+            R.id.tv_aliPay -> startActivity<ScrollAlipayActivity>()
             else -> toast("暂未实现点击事件")
         }
     }

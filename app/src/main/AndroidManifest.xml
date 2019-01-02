@@ -58,7 +58,8 @@
             android:name=".a_book1.chapter7.ToolBarDemoActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity android:name=".a_book1.chapter7.AppBarLayoutActivity" />
-        <activity android:name=".a_book1.chapter7.CollapsingToolBarActivity"></activity>
+        <activity android:name=".a_book1.chapter7.CollapsingToolBarActivity"/>
+        <activity android:name=".a_book1.chapter7.ScrollAlipayActivity"/>
     </application>
 
 </manifest>

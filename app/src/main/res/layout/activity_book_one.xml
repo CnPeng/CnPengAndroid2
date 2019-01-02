@@ -40,6 +40,11 @@
                 style="@style/main_text_item"
                 android:text="7.2.4_CollapsingToolbarLayout" />
 
+            <TextView
+                android:id="@+id/tv_aliPay"
+                style="@style/main_text_item"
+                android:text="7.2.5_仿淘宝首页" />
+
         </LinearLayout>
     </ScrollView>
 
