@@ -104,4 +104,7 @@
     <string name="adid_release1">ca-app-pub-8994842234959408/9664490460</string>
     <!--CnPeng 2018/12/24 3:45 PM 广告单元id——测试时使用的 -->
     <string name="adid_test">ca-app-pub-3940256099942544/6300978111</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

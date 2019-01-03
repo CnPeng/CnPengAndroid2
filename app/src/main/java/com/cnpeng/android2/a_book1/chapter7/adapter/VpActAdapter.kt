@@ -19,7 +19,7 @@ class VpActAdapter(private var funcList: MutableList<AlipayBaseFuncItem>, val co
     private val itemViews = mutableListOf<View>()
 
     init {
-        //􏱎􏱗􏱰􏳿􏰺􏰶􏰲􏰭􏰐􏰰􏰾􏰬􏰒􏰀􏱏􏱅􏰽􏰎􏰛􏱈􏱂􏱳􏱁􏱪􏱌􏱜􏱕􏱲􏰚􏳇􏰑􏰹􏱍􏱙􏰅 􏱁􏰣􏱪􏱌􏰦􏱲􏰚􏳇􏰷􏰏􏱃􏰅主构造函数只初始化被声明的成员，其他未从主构造中声明的变量可以放在 init 中初始化
+        //􏱎􏱗􏱰􏳿􏰺􏰶􏰲􏰭􏰐􏰰􏰾􏰬􏰒􏰀􏱏􏱅􏰽􏰎􏰛􏱈􏱂􏱳􏱁􏱪􏱌􏱜􏱕􏱲􏰚􏳇􏰑􏰹􏱍􏱙􏰅􏱁􏰣􏱪􏱌􏰦􏱲􏰚􏳇􏰷􏰏􏱃􏰅主构造函数只初始化被声明的成员，其他未从主构造中声明的变量可以放在 init 中初始化
         for (it in funcList) {
             val itemView = ImageView(context)
             itemView.setImageResource(it.picID)
