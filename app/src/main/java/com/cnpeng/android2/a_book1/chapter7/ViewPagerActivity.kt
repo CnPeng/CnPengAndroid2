@@ -10,6 +10,7 @@ import com.cnpeng.android2.a_book1.chapter7.adapter.VpActAdapter
 import com.cnpeng.android2.a_book1.chapter7.bean.AlipayBaseFuncItem
 import kotlinx.android.synthetic.main.activity_view_pager.*
 import org.jetbrains.anko.toast
+import java.io.File
 
 class ViewPagerActivity : AppCompatActivity() {
 
