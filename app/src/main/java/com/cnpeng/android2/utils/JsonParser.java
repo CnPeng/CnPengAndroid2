@@ -9,6 +9,27 @@ import org.json.JSONTokener;
  */
 public class JsonParser {
 
+
+    /**
+     * 功用：
+     * 说明：
+     * //  完整json传示例
+     * //   {
+     * //        "sn":1,
+     * //        "ls":true,
+     * //        "bg":0,
+     * //        "ed":0,
+     * //        "ws":[{
+     * //            "bg":0,
+     * //            "cw":[{
+     * //                "sc":0,
+     * //                "w":"理性语音识别。"
+     * //              }],
+     * //            "slot":"WFST"
+     * //          }],
+     * //        "sc":0
+     * //      }
+     */
     public static String parseIatResult(String json) {
         StringBuffer ret = new StringBuffer();
         try {

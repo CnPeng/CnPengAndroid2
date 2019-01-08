@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.R
 import com.cnpeng.android2.utils.JsonParser
 import com.iflytek.cloud.*
+import com.iflytek.cloud.util.ResourceUtil
 import com.tbruyelle.rxpermissions2.RxPermissions
 import kotlinx.android.synthetic.main.activity_sound_write.*
 import org.jetbrains.anko.AnkoLogger
@@ -28,7 +29,8 @@ class SoundWriteActivity : AppCompatActivity() {
     lateinit var mRecognizer: SpeechRecognizer
 
     var mRecognizeResults: MutableMap<String, String> = mutableMapOf()
-    private val mEngineType = SpeechConstant.TYPE_CLOUD
+    //    private val mEngineType = SpeechConstant.TYPE_CLOUD
+    private val mEngineType = SpeechConstant.TYPE_LOCAL
     var mIsRecognizerSuccess = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,12 +99,32 @@ class SoundWriteActivity : AppCompatActivity() {
         mRecognizer.setParameter(SpeechConstant.AUDIO_FORMAT, "wav")
         mRecognizer.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory().toString() + "/msc/讯飞语音听写.wav")
 
+        if (mEngineType.equals(SpeechConstant.TYPE_LOCAL)) {
+            // 设置本地识别资源——离线语音识别
+            mRecognizer.setParameter(ResourceUtil.ASR_RES_PATH, getResourcePath());
+        }
+
         //开始识别，并设置监听器——这样其实就是开始录音了.并且获取是否识别成功的响应
         mIsRecognizerSuccess = ErrorCode.SUCCESS == mRecognizer.startListening(mRecogListener);
 
         if (!mIsRecognizerSuccess) {
             toast("语音识别失败，请重新打开页面再次尝试")
         }
+    }
+
+    /**
+     * CnPeng 2019/1/8 7:44 PM
+     * 功用：获取离线语音识别所使用的工具在本地的存储路径
+     * 说明：如果路径不对或者没有这两个文件，会报错23002
+     */
+    private fun getResourcePath(): String? {
+        val tempBuffer = StringBuffer()
+        //识别通用资源：链接到放置 common.jet / sms_16k.jet 在assets中的路径
+        tempBuffer.append(ResourceUtil.generateResourcePath(this, ResourceUtil.RESOURCE_TYPE.assets, "iat/common.jet"))
+        tempBuffer.append(";")
+        tempBuffer.append(ResourceUtil.generateResourcePath(this, ResourceUtil.RESOURCE_TYPE.assets, "iat/sms_16k.jet"))
+        //识别8k资源-使用8k的时候请解开注释
+        return tempBuffer.toString()
     }
 
     private val mRecogListener = object : RecognizerListener {
