@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.os.Environment
 import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.R
-import com.cnpeng.android2.utils.JsonParser
 import com.iflytek.cloud.*
 import com.iflytek.cloud.util.ResourceUtil
 import com.tbruyelle.rxpermissions2.RxPermissions

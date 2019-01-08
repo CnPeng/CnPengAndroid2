@@ -1,4 +1,4 @@
-package com.cnpeng.android2.utils;
+package com.cnpeng.android2.d_mine.a06_sound_wirte;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -6,6 +6,8 @@ import org.json.JSONTokener;
 
 /**
  * Json结果解析类
+ *
+ * 该内容是直接从讯飞DEMO中复制来的。
  */
 public class JsonParser {
 
