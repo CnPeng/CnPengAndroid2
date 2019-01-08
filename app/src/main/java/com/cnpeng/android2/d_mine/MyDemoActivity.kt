@@ -9,6 +9,7 @@ import com.cnpeng.android2.d_mine.a02_flexboxlayout.FlexboxActivity
 import com.cnpeng.android2.d_mine.a03_admob.AdMobActivity
 import com.cnpeng.android2.d_mine.a04_actlanuchmode.ClearTopFlagActivity
 import com.cnpeng.android2.d_mine.a05_extract_rv_adapter.ExtractRvAdapterActivity
+import com.cnpeng.android2.d_mine.a06_sound_wirte.SoundWriteActivity
 import kotlinx.android.synthetic.main.activity_my_demo.*
 import org.jetbrains.anko.clearTop
 import org.jetbrains.anko.intentFor
@@ -36,6 +37,7 @@ class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
         tv_adMob.setOnClickListener(this)
         tv_clearTop.setOnClickListener(this)
         tv_extractRvAct.setOnClickListener(this)
+        tv_xfyun.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -54,6 +56,9 @@ class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.tv_extractRvAct ->
                 startActivity<ExtractRvAdapterActivity>()
+            R.id.tv_xfyun -> {
+                startActivity<SoundWriteActivity>()
+            }
 
             else -> toast("暂未定义点击事件")
         }

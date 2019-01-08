@@ -21,6 +21,10 @@
             android:orientation="vertical"
             android:showDividers="middle">
 
+            <TextView
+                android:id="@+id/tv_xfyun"
+                style="@style/main_text_item"
+                android:text="06_讯飞语音识别" />
 
             <TextView
                 android:id="@+id/tv_extractRvAct"

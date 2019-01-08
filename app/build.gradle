@@ -58,6 +58,13 @@ android {
     androidExtensions {
         experimental = true
     }
+
+    sourceSets {
+        main {
+            //CnPeng 2019/1/8 3:34 PM 不做这个指定的话，初始化讯飞识别时 SpeechRecognizer.createRecognizer(this, mInitListener) 会报空
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {

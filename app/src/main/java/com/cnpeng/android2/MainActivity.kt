@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.a_book1.BookOneActivity
 import com.cnpeng.android2.b_work.WorkDemoActivity
 import com.cnpeng.android2.d_mine.MyDemoActivity
-import com.google.android.gms.ads.MobileAds
+import com.cnpeng.android2.utils.TripleLibInitUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 
@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
         mActivity = this
 
-        //CnPeng 2018/12/21 5:25 PM 初始化adMob，示例id: ca-app-pub-3940256099942544~3347511713
-        MobileAds.initialize(this, "ca-app-pub-8994842234959408~1322966018");
+        //CnPeng 2019/1/8 3:54 PM 统一管理三方库的初始化
+        TripleLibInitUtils(this).initTripleLib()
 
         initClickListener()
     }
