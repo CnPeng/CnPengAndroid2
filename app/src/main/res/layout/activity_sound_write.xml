@@ -4,6 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/dp15"
     tools:context=".d_mine.a06_sound_wirte.SoundWriteActivity">
+
+
+    <TextView
+        android:id="@+id/tv_titleHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="你刚才说的内容为："
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/shape_stroke"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_titleHint">
+
+        <TextView
+            android:id="@+id/tv_xfResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="left"
+            android:isScrollContainer="true"
+            android:overScrollMode="ifContentScrolls"
+            android:padding="5dp"
+            android:text="这里显示的是语音转换后的文本内容\n点击按钮后，4秒不说话则显示未说话的提示语"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_titleHint" />
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/tv_recordStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/green"
+        android:padding="@dimen/dp15"
+        android:text="点击开始说话"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

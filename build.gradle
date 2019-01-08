@@ -21,6 +21,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+
+        //RxPermissions需要使用
+        maven { url 'https://jitpack.io' }
     }
 }
 
