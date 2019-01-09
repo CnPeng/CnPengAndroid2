@@ -154,7 +154,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="音调：" />
+                android:text="音调(0--100)：" />
 
             <EditText
                 android:id="@+id/et_pitch"
@@ -162,20 +162,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="0-100"
+                android:inputType="number"
+                android:text="50"
                 android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/tv_pitchConfirm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#e9e8e7"
+                android:background="@android:drawable/btn_default_small"
                 android:paddingLeft="@dimen/dp10"
                 android:paddingTop="5dp"
                 android:paddingRight="@dimen/dp10"
                 android:paddingBottom="5dp"
                 android:text="确定" />
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -186,7 +186,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="音量：" />
+                android:text="音量(0--100)：" />
 
             <EditText
                 android:id="@+id/et_volume"
@@ -194,13 +194,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="0-100"
+                android:inputType="number"
+                android:text="50"
                 android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/tv_volumeConfirm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#e9e8e7"
+                android:background="@android:drawable/btn_default_small"
                 android:paddingLeft="@dimen/dp10"
                 android:paddingTop="5dp"
                 android:paddingRight="@dimen/dp10"
@@ -218,21 +220,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="语速：" />
+                android:text="语速(在线0-100，离线0-200)：" />
 
             <EditText
                 android:id="@+id/et_speed"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="在线0-100，离线0-200"
+                android:inputType="number"
+                android:text="50"
+                android:hint="0-100"
                 android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/tv_speedConfirm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#e9e8e7"
+                android:background="@android:drawable/btn_default_small"
                 android:paddingLeft="@dimen/dp10"
                 android:paddingTop="5dp"
                 android:paddingRight="@dimen/dp10"

@@ -10,6 +10,7 @@ import android.view.View
 import com.cnpeng.android2.R
 import com.cnpeng.android2.utils.BaseActivity
 import com.iflytek.cloud.*
+import com.iflytek.cloud.SpeechConstant.TYPE_CLOUD
 import com.iflytek.cloud.util.ResourceUtil
 import kotlinx.android.synthetic.main.activity_text2_sound.*
 import org.jetbrains.anko.AnkoLogger
@@ -28,6 +29,9 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
     var mVoicer = "xiaoyan"
     var mBufferPercent = 0
     var mSpeakPercent = 0
+    var mVolume = 50
+    var mSpeed = 50
+    var mPitch = 50
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,14 +40,27 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         initSpeechSynthesize()
         initClickEvent()
         initEngineSelectEvent()
+        initSettingEvent()
+    }
+
+    private fun initSettingEvent() {
+        tv_pitchConfirm.setOnClickListener(this)
+        tv_volumeConfirm.setOnClickListener(this)
+        tv_speedConfirm.setOnClickListener(this)
+
     }
 
     private fun initEngineSelectEvent() {
         rg_engineType.setOnCheckedChangeListener { group, checkedId ->
             when (checkedId) {
-                R.id.rb_onLine -> mEngineType = SpeechConstant.TYPE_CLOUD
+                R.id.rb_onLine -> {
+                    mEngineType = SpeechConstant.TYPE_CLOUD
+                    if (mSpeed in 101..200) {
+                        toast("在线模式语速只能在0--100之间")
+                    }
+                }
                 R.id.rb_offLine -> mEngineType = SpeechConstant.TYPE_LOCAL
-                else->toast("啥情况？怎么会有其他id？")
+                else -> toast("啥情况？怎么会有其他id？")
             }
         }
     }
@@ -80,7 +97,63 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
                 mSpeechSynthesizer!!.stopSpeaking()
                 et_input.text = SpannableStringBuilder(mText2Convert)
             }
+
+            R.id.tv_volumeConfirm -> changeVolume()
+            R.id.tv_speedConfirm -> changeSpeed()
+            R.id.tv_pitchConfirm -> changePitch()
             else -> toast("暂未实现")
+        }
+    }
+
+    /**
+     * CnPeng 2019/1/9 4:25 PM
+     * 功用：改变音调
+     * 说明：
+     */
+    private fun changePitch() {
+        val tempPitch = et_pitch.text.toString().toInt()
+        if (tempPitch in 0..100) {
+            mPitch = tempPitch
+            toast("新设置的音调为$mPitch")
+        } else {
+            toast("音调取值0--100")
+            et_pitch.text = SpannableStringBuilder(mPitch.toString())
+        }
+    }
+
+    /**
+     * CnPeng 2019/1/9 4:20 PM
+     * 功用：改变语速
+     * 说明：
+     */
+    private fun changeSpeed() {
+        val tempSpeed = et_speed.text.toString().toInt()
+        if (TYPE_CLOUD == mEngineType) {
+            if (tempSpeed in 0..100) {
+                mSpeed = tempSpeed
+            } else {
+                toast("在线引擎语速只能在0--100之间")
+                et_speed.text = SpannableStringBuilder(mSpeed.toString())
+            }
+        } else {
+            if (tempSpeed in 0..200) {
+                mSpeed = tempSpeed
+                toast("新设置的语速为$mSpeed")
+            } else {
+                toast("离线引擎语速只能在0--200之间")
+                et_speed.text = SpannableStringBuilder(mSpeed.toString())
+            }
+        }
+    }
+
+    private fun changeVolume() {
+        val tempVolume = et_volume.text.toString().toInt()
+        if (tempVolume in 0..100) {
+            mVolume = tempVolume
+            toast("新设置的音量为$mVolume")
+        } else {
+            et_volume.text = SpannableStringBuilder(mVolume.toString())
+            toast("音量取值只能为1--100之间的值")
         }
     }
 
@@ -116,28 +189,26 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         if (null == mSpeechSynthesizer)
             return
 
-        if (!mIsNetAvailable) {
-            toast("当前网络不可用，已经自动切换为离线模式")
-            mEngineType = SpeechConstant.TYPE_LOCAL
-        }
 
         // 清空参数
         mSpeechSynthesizer!!.setParameter(SpeechConstant.PARAMS, null)
         // 根据合成引擎设置相应参数
-        if (mEngineType == SpeechConstant.TYPE_CLOUD) {
-            mSpeechSynthesizer!!.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD)
-            mSpeechSynthesizer!!.setParameter(SpeechConstant.TTS_DATA_NOTIFY, "1")
-            // 设置在线合成发音人
-            mSpeechSynthesizer!!.setParameter(SpeechConstant.VOICE_NAME, mVoicer)
-            //设置合成语速
-            mSpeechSynthesizer!!.setParameter(SpeechConstant.SPEED, "50")
-            //设置合成音调
-            mSpeechSynthesizer!!.setParameter(SpeechConstant.PITCH, "50")
-            //设置合成音量
-            mSpeechSynthesizer!!.setParameter(SpeechConstant.VOLUME, "50")
-        } else {
+        if (!mIsNetAvailable) {
+            toast("当前网络不可用，已经自动切换为离线模式")
+            mEngineType = SpeechConstant.TYPE_LOCAL
+
             mSpeechSynthesizer!!.setParameter(ResourceUtil.TTS_RES_PATH, getResourcePath());
         }
+        mSpeechSynthesizer!!.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD)
+        mSpeechSynthesizer!!.setParameter(SpeechConstant.TTS_DATA_NOTIFY, "1")
+        // 设置在线合成发音人
+        mSpeechSynthesizer!!.setParameter(SpeechConstant.VOICE_NAME, mVoicer)
+        //设置合成语速
+        mSpeechSynthesizer!!.setParameter(SpeechConstant.SPEED, mSpeed.toString())
+        //设置合成音调
+        mSpeechSynthesizer!!.setParameter(SpeechConstant.PITCH, mPitch.toString())
+        //设置合成音量
+        mSpeechSynthesizer!!.setParameter(SpeechConstant.VOLUME, mVolume.toString())
 
         //设置播放器音频流类型
         mSpeechSynthesizer!!.setParameter(SpeechConstant.STREAM_TYPE, "3")
