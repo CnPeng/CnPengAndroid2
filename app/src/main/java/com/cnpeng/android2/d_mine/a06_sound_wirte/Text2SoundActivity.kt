@@ -65,8 +65,10 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
             R.id.tv_start -> startSynthesize()
             R.id.tv_pause -> mSpeechSynthesizer!!.pauseSpeaking()
             R.id.tv_restart -> mSpeechSynthesizer!!.resumeSpeaking()
-            R.id.tv_cancel -> mSpeechSynthesizer!!.stopSpeaking()
-
+            R.id.tv_cancel -> {
+                mSpeechSynthesizer!!.stopSpeaking()
+                et_input.text = SpannableStringBuilder(mText2Convert)
+            }
             else -> toast("暂未实现")
         }
     }
