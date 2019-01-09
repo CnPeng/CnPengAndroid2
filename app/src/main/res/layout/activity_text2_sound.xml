@@ -21,6 +21,7 @@
             android:gravity="start"
             android:hint="请输入需要转换为语音的内容"
             android:padding="5dp"
+            android:text="@string/large_text"
             android:textSize="14sp"
             tools:ignore="Autofill" />
 
@@ -226,9 +227,9 @@
                 android:id="@+id/et_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="0-100"
                 android:inputType="number"
                 android:text="50"
-                android:hint="0-100"
                 android:textSize="13sp" />
 
             <TextView

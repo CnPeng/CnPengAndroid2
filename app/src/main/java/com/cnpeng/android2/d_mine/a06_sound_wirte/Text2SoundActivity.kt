@@ -1,5 +1,6 @@
 package com.cnpeng.android2.d_mine.a06_sound_wirte
 
+import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Environment
@@ -15,6 +16,7 @@ import com.iflytek.cloud.util.ResourceUtil
 import kotlinx.android.synthetic.main.activity_text2_sound.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.error
+import org.jetbrains.anko.selector
 import org.jetbrains.anko.toast
 
 /**
@@ -43,6 +45,39 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         initEngineSelectEvent()
         initSettingEvent()
         initAudioStreamSelectEvent()
+        initVoicerSelectEvent()
+    }
+
+    /**
+     * CnPeng 2019/1/9 5:15 PM
+     * 功用：改变播报人
+     * 说明：
+     */
+    private fun initVoicerSelectEvent() {
+        val onlineVoicerList = resources.getStringArray(R.array.voicer_cloud_entries).toList()
+        val onLinevoiceEntryList = resources.getStringArray(R.array.voicer_cloud_values).toList()
+
+        val offlineVoicerList = onlineVoicerList.subList(0, 2)
+        val offLinevoiceEntryList = onLinevoiceEntryList.subList(0, 2)
+
+        tv_viocer.setOnClickListener {
+            val voicerListToShow = if (mIsNetAvailable && SpeechConstant.TYPE_CLOUD == mEngineType) {
+                onlineVoicerList
+            } else {
+                offlineVoicerList
+            }
+
+            val entryListToShow = if (mIsNetAvailable && SpeechConstant.TYPE_CLOUD == mEngineType) {
+                onLinevoiceEntryList
+            } else {
+                offLinevoiceEntryList
+            }
+
+            selector("选择发音人", voicerListToShow) { _: DialogInterface, i: Int ->
+                tv_viocer.text = voicerListToShow[i]
+                mVoicer = entryListToShow[i]
+            }
+        }
     }
 
     /**
