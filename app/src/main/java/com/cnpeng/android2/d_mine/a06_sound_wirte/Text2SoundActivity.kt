@@ -10,6 +10,7 @@ import android.view.View
 import com.cnpeng.android2.R
 import com.cnpeng.android2.utils.BaseActivity
 import com.iflytek.cloud.*
+import com.iflytek.cloud.util.ResourceUtil
 import kotlinx.android.synthetic.main.activity_text2_sound.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.error
@@ -23,7 +24,7 @@ import org.jetbrains.anko.toast
 class Text2SoundActivity : BaseActivity(), View.OnClickListener {
     var mText2Convert = "这是要转换的文字哈，哈哈哈哈哈哈哈哈哈哈哈"
     var mSpeechSynthesizer: SpeechSynthesizer? = null
-    var mEngineType = SpeechConstant.TYPE_CLOUD
+    var mEngineType = SpeechConstant.TYPE_LOCAL
     var mVoicer = "xiaoyan"
     var mBufferPercent = 0
     var mSpeakPercent = 0
@@ -89,6 +90,13 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         if (ErrorCode.SUCCESS != startResponseCode) {
             toast("转换失败，错误码为：$startResponseCode")
         }
+
+        //	/**
+        //	 * 只保存音频不进行播放接口,调用此接口请注释startSpeaking接口
+        //	 * text:要合成的文本，uri:需要保存的音频全路径，listener:回调接口
+        //	*/
+        /*var path = Environment.getExternalStorageDirectory()+"/tts.pcm";
+        var code = mSpeechSynthesizer.synthesizeToUri(text, path, mTtsListener);*/
     }
 
     private fun setSynthesizeParam() {
@@ -98,21 +106,20 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         // 清空参数
         mSpeechSynthesizer!!.setParameter(SpeechConstant.PARAMS, null)
         // 根据合成引擎设置相应参数
-        //        if (mEngineType == SpeechConstant.TYPE_CLOUD) {
-        mSpeechSynthesizer!!.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD)
-        mSpeechSynthesizer!!.setParameter(SpeechConstant.TTS_DATA_NOTIFY, "1")
-        // 设置在线合成发音人
-        mSpeechSynthesizer!!.setParameter(SpeechConstant.VOICE_NAME, mVoicer)
-        //设置合成语速
-        mSpeechSynthesizer!!.setParameter(SpeechConstant.SPEED, "50")
-        //设置合成音调
-        mSpeechSynthesizer!!.setParameter(SpeechConstant.PITCH, "50")
-        //设置合成音量
-        mSpeechSynthesizer!!.setParameter(SpeechConstant.VOLUME, "50")
-        //        } else {
-        //            mSpeechSynthesizer!!.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_LOCAL)
-        //            mSpeechSynthesizer!!.setParameter(SpeechConstant.VOICE_NAME, "")
-        //        }
+        if (mEngineType == SpeechConstant.TYPE_CLOUD) {
+            mSpeechSynthesizer!!.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD)
+            mSpeechSynthesizer!!.setParameter(SpeechConstant.TTS_DATA_NOTIFY, "1")
+            // 设置在线合成发音人
+            mSpeechSynthesizer!!.setParameter(SpeechConstant.VOICE_NAME, mVoicer)
+            //设置合成语速
+            mSpeechSynthesizer!!.setParameter(SpeechConstant.SPEED, "50")
+            //设置合成音调
+            mSpeechSynthesizer!!.setParameter(SpeechConstant.PITCH, "50")
+            //设置合成音量
+            mSpeechSynthesizer!!.setParameter(SpeechConstant.VOLUME, "50")
+        } else {
+            mSpeechSynthesizer!!.setParameter(ResourceUtil.TTS_RES_PATH, getResourcePath());
+        }
 
         //设置播放器音频流类型
         mSpeechSynthesizer!!.setParameter(SpeechConstant.STREAM_TYPE, "3")
@@ -122,6 +129,18 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         // 设置音频保存路径，保存音频格式支持pcm、wav，设置路径为sd卡请注意WRITE_EXTERNAL_STORAGE权限
         mSpeechSynthesizer!!.setParameter(SpeechConstant.AUDIO_FORMAT, "pcm")
         mSpeechSynthesizer!!.setParameter(SpeechConstant.TTS_AUDIO_PATH, Environment.getExternalStorageDirectory().toString() + "/msc/tts.pcm")
+    }
+
+    private fun getResourcePath(): String {
+        val tempBuffer = StringBuffer()
+        //识别通用资源：链接到放置 common.jet / xiaofeng.jet / xiaoyan.jet 在assets中的路径
+        tempBuffer.append(ResourceUtil.generateResourcePath(this, ResourceUtil.RESOURCE_TYPE.assets, "tts/common.jet"))
+        tempBuffer.append(";")
+        tempBuffer.append(ResourceUtil.generateResourcePath(this, ResourceUtil.RESOURCE_TYPE.assets, "tts/xiaofeng.jet"))
+        tempBuffer.append(";")
+        tempBuffer.append(ResourceUtil.generateResourcePath(this, ResourceUtil.RESOURCE_TYPE.assets, "tts/xiaoyan.jet"))
+        //识别8k资源-使用8k的时候请解开注释
+        return tempBuffer.toString()
     }
 
     private val mSynthesizerListener = object : SynthesizerListener {
@@ -138,7 +157,7 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
             mSpeakPercent = percent
             tv_percent.text = "当前合成进度：$mBufferPercent,当前播放进度:$mSpeakPercent"
 
-            //CnPeng 2019/1/9 3:18 PM 改变当前正在播放内容的背景色
+            //CnPeng 2019/1/9 3:18 PM 改变当前正在播放内容的背景色——这地方有一个问题，就是最后一个文字不变背景色。因为100%时endPos、percent不返回值
             val spannableStringBuilder = SpannableStringBuilder(mText2Convert)
             spannableStringBuilder.setSpan(BackgroundColorSpan(Color.LTGRAY), begainPos, endPos, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
             et_input.text = spannableStringBuilder
