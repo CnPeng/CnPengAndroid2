@@ -25,7 +25,7 @@ import org.json.JSONObject
  */
 class SoundWriteActivity : BaseActivity() {
 
-    lateinit var mRecognizer: SpeechRecognizer
+    var mRecognizer: SpeechRecognizer? = null
 
     var mRecognizeResults: MutableMap<String, String> = mutableMapOf()
     var mEngineType = SpeechConstant.TYPE_CLOUD
@@ -73,42 +73,46 @@ class SoundWriteActivity : BaseActivity() {
     }
 
     private fun startRecognizer() {
+        if (null == mRecognizer) {
+            return
+        }
+
 
         tv_netInfo.text = "当前网络信息：\n网络是否可用——${mIsNetAvailable}\n当前网络类型名称${mNetTypeName}"
 
         mIsRecognizerSuccess = false
 
-        mRecognizer.setParameter(SpeechConstant.PARAMS, null)
+        mRecognizer!!.setParameter(SpeechConstant.PARAMS, null)
 
         if (!mIsNetAvailable) {
             // 设置本地识别资源——离线语音识别
-            mRecognizer.setParameter(ResourceUtil.ASR_RES_PATH, getResourcePath());
+            mRecognizer!!.setParameter(ResourceUtil.ASR_RES_PATH, getResourcePath());
             mEngineType = SpeechConstant.TYPE_LOCAL
         }
 
         //设置返回结果格式，目前支持json,xml以及plain 三种格式，其中plain为纯听写文本内容
-        mRecognizer.setParameter(SpeechConstant.RESULT_TYPE, "json");
+        mRecognizer!!.setParameter(SpeechConstant.RESULT_TYPE, "json");
         //此处engineType为“cloud”——引擎类型，在线或离线
-        mRecognizer.setParameter(SpeechConstant.ENGINE_TYPE, mEngineType);
+        mRecognizer!!.setParameter(SpeechConstant.ENGINE_TYPE, mEngineType);
         //设置语音输入语言，zh_cn为简体中文
-        mRecognizer.setParameter(SpeechConstant.LANGUAGE, "zh_cn");
+        mRecognizer!!.setParameter(SpeechConstant.LANGUAGE, "zh_cn");
         //设置结果返回语言
-        mRecognizer.setParameter(SpeechConstant.ACCENT, "mandarin");
+        mRecognizer!!.setParameter(SpeechConstant.ACCENT, "mandarin");
         // 设置语音前端点:静音超时时间，单位ms，即用户多长时间不说话则当做超时处理
         //取值范围{1000～10000}
-        mRecognizer.setParameter(SpeechConstant.VAD_BOS, "4000");
+        mRecognizer!!.setParameter(SpeechConstant.VAD_BOS, "4000");
         //设置语音后端点:后端点静音检测时间，单位ms，即用户停止说话多长时间内即认为不再输入，
         //自动停止录音，范围{0~10000}
-        mRecognizer.setParameter(SpeechConstant.VAD_EOS, "1000");
+        mRecognizer!!.setParameter(SpeechConstant.VAD_EOS, "1000");
         //设置标点符号,设置为"0"返回结果无标点,设置为"1"返回结果有标点
-        mRecognizer.setParameter(SpeechConstant.ASR_PTT, "1");
+        mRecognizer!!.setParameter(SpeechConstant.ASR_PTT, "1");
 
         // 设置音频保存路径，保存音频格式支持pcm、wav，设置路径为sd卡请注意WRITE_EXTERNAL_STORAGE权限
-        mRecognizer.setParameter(SpeechConstant.AUDIO_FORMAT, "wav")
-        mRecognizer.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory().toString() + "/msc/讯飞语音听写.wav")
+        mRecognizer!!.setParameter(SpeechConstant.AUDIO_FORMAT, "wav")
+        mRecognizer!!.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory().toString() + "/msc/讯飞语音听写.wav")
 
         //开始识别，并设置监听器——这样其实就是开始录音了.并且获取是否识别成功的响应
-        mIsRecognizerSuccess = ErrorCode.SUCCESS == mRecognizer.startListening(mRecogListener);
+        mIsRecognizerSuccess = ErrorCode.SUCCESS == mRecognizer!!.startListening(mRecogListener);
 
         if (!mIsRecognizerSuccess) {
             toast("语音识别失败，请重新打开页面再次尝试")
