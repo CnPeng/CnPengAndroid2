@@ -4,8 +4,8 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Environment
-import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.R
+import com.cnpeng.android2.utils.BaseActivity
 import com.iflytek.cloud.*
 import com.iflytek.cloud.util.ResourceUtil
 import com.tbruyelle.rxpermissions2.RxPermissions
@@ -23,13 +23,13 @@ import org.json.JSONObject
  * - 相关API在该网址中：http://mscdoc.xfyun.cn/android/api/
  * - SDK集成文档：https://doc.xfyun.cn/msc_android/%E8%AF%AD%E9%9F%B3%E5%90%AC%E5%86%99.html
  */
-class SoundWriteActivity : AppCompatActivity() {
+class SoundWriteActivity : BaseActivity() {
 
     lateinit var mRecognizer: SpeechRecognizer
 
     var mRecognizeResults: MutableMap<String, String> = mutableMapOf()
-    //    private val mEngineType = SpeechConstant.TYPE_CLOUD
-    private val mEngineType = SpeechConstant.TYPE_LOCAL
+    var mEngineType = SpeechConstant.TYPE_CLOUD
+    //    private val mEngineType = SpeechConstant.TYPE_LOCAL
     var mIsRecognizerSuccess = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +38,7 @@ class SoundWriteActivity : AppCompatActivity() {
 
         initRecognizer()
         initClickListener()
+        tv_netInfo.text = "当前网络信息：\n网络是否可用——${mIsNetAvailable}\n当前网络类型名称${mNetTypeName}"
     }
 
     private fun initRecognizer() {
@@ -73,9 +74,17 @@ class SoundWriteActivity : AppCompatActivity() {
 
     private fun startRecognizer() {
 
+        tv_netInfo.text = "当前网络信息：\n网络是否可用——${mIsNetAvailable}\n当前网络类型名称${mNetTypeName}"
+
         mIsRecognizerSuccess = false
 
         mRecognizer.setParameter(SpeechConstant.PARAMS, null)
+
+        if (!mIsNetAvailable) {
+            // 设置本地识别资源——离线语音识别
+            mRecognizer.setParameter(ResourceUtil.ASR_RES_PATH, getResourcePath());
+            mEngineType = SpeechConstant.TYPE_LOCAL
+        }
 
         //设置返回结果格式，目前支持json,xml以及plain 三种格式，其中plain为纯听写文本内容
         mRecognizer.setParameter(SpeechConstant.RESULT_TYPE, "json");
@@ -97,11 +106,6 @@ class SoundWriteActivity : AppCompatActivity() {
         // 设置音频保存路径，保存音频格式支持pcm、wav，设置路径为sd卡请注意WRITE_EXTERNAL_STORAGE权限
         mRecognizer.setParameter(SpeechConstant.AUDIO_FORMAT, "wav")
         mRecognizer.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory().toString() + "/msc/讯飞语音听写.wav")
-
-        if (mEngineType.equals(SpeechConstant.TYPE_LOCAL)) {
-            // 设置本地识别资源——离线语音识别
-            mRecognizer.setParameter(ResourceUtil.ASR_RES_PATH, getResourcePath());
-        }
 
         //开始识别，并设置监听器——这样其实就是开始录音了.并且获取是否识别成功的响应
         mIsRecognizerSuccess = ErrorCode.SUCCESS == mRecognizer.startListening(mRecogListener);
