@@ -32,6 +32,7 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
     var mVolume = 50
     var mSpeed = 50
     var mPitch = 50
+    var mAudioStream = 3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +42,27 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         initClickEvent()
         initEngineSelectEvent()
         initSettingEvent()
+        initAudioStreamSelectEvent()
+    }
+
+    /**
+     * CnPeng 2019/1/9 5:05 PM
+     * 功用：初始化音频流的选择事件
+     * 说明：
+     * 具体取值对照 AudioSystem 中的 STRAM_xxx, 如 STREAM_VOICE_CALL、STREAM_MUSIC
+     */
+    private fun initAudioStreamSelectEvent() {
+        rg_audioStream.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.rb_call -> mAudioStream = 0
+                R.id.rb_sys -> mAudioStream = 1
+                R.id.rb_ring -> mAudioStream = 2
+                R.id.rb_music -> mAudioStream = 3
+                R.id.rb_alarm -> mAudioStream = 4
+                R.id.rb_notify -> mAudioStream = 5
+                else -> toast("没实现")
+            }
+        }
     }
 
     private fun initSettingEvent() {
@@ -211,7 +233,7 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         mSpeechSynthesizer!!.setParameter(SpeechConstant.VOLUME, mVolume.toString())
 
         //设置播放器音频流类型
-        mSpeechSynthesizer!!.setParameter(SpeechConstant.STREAM_TYPE, "3")
+        mSpeechSynthesizer!!.setParameter(SpeechConstant.STREAM_TYPE, mAudioStream.toString())
         // 设置播放合成音频打断音乐播放，默认为true
         mSpeechSynthesizer!!.setParameter(SpeechConstant.KEY_REQUEST_FOCUS, "true")
 

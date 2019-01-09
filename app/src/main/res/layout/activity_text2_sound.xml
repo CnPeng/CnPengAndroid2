@@ -255,6 +255,7 @@
             android:layout_height="wrap_content">
 
             <RadioGroup
+                android:id="@+id/rg_audioStream"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -279,7 +280,7 @@
                     android:text="系统" />
 
                 <RadioButton
-                    android:id="@+id/rb_bell"
+                    android:id="@+id/rb_ring"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="铃声" />
