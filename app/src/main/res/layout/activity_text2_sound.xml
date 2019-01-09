@@ -19,9 +19,9 @@
             android:layout_height="200dp"
             android:background="@drawable/shape_stroke_blue_1dp"
             android:gravity="start"
-            android:hint="请输入需要转换为语音的内容"
+            android:hint="请输入需要转换为语音的内容, 单次不要超过2048个字符 或 60s 的内容，否则会报错内存不足"
             android:padding="5dp"
-            android:text="@string/large_text"
+            android:text="@string/large_text2"
             android:textSize="14sp"
             tools:ignore="Autofill" />
 
