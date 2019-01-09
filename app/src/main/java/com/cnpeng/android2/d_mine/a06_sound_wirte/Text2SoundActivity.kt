@@ -24,7 +24,7 @@ import org.jetbrains.anko.toast
 class Text2SoundActivity : BaseActivity(), View.OnClickListener {
     var mText2Convert = "这是要转换的文字哈，哈哈哈哈哈哈哈哈哈哈哈"
     var mSpeechSynthesizer: SpeechSynthesizer? = null
-    var mEngineType = SpeechConstant.TYPE_LOCAL
+    var mEngineType = SpeechConstant.TYPE_CLOUD
     var mVoicer = "xiaoyan"
     var mBufferPercent = 0
     var mSpeakPercent = 0
@@ -103,6 +103,11 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         if (null == mSpeechSynthesizer)
             return
 
+        if (!mIsNetAvailable) {
+            toast("当前网络不可用，已经自动切换为离线模式")
+            mEngineType = SpeechConstant.TYPE_LOCAL
+        }
+
         // 清空参数
         mSpeechSynthesizer!!.setParameter(SpeechConstant.PARAMS, null)
         // 根据合成引擎设置相应参数
@@ -131,6 +136,11 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
         mSpeechSynthesizer!!.setParameter(SpeechConstant.TTS_AUDIO_PATH, Environment.getExternalStorageDirectory().toString() + "/msc/tts.pcm")
     }
 
+    /**
+     * CnPeng 2019/1/9 4:00 PM
+     * 功用：获取离线包在本地的路径
+     * 说明：
+     */
     private fun getResourcePath(): String {
         val tempBuffer = StringBuffer()
         //识别通用资源：链接到放置 common.jet / xiaofeng.jet / xiaoyan.jet 在assets中的路径

@@ -77,7 +77,6 @@ class SoundWriteActivity : BaseActivity() {
             return
         }
 
-
         tv_netInfo.text = "当前网络信息：\n网络是否可用——${mIsNetAvailable}\n当前网络类型名称${mNetTypeName}"
 
         mIsRecognizerSuccess = false
