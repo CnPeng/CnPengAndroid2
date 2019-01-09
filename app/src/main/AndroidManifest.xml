@@ -88,7 +88,8 @@
         <activity android:name=".a_book1.chapter7.MainAlipayActivity" />
         <activity android:name=".a_book1.chapter7.ViewPagerActivity" />
         <activity android:name=".d_mine.a06_sound_wirte.SoundWriteActivity" />
-        <activity android:name=".utils.BaseActivity"/>
+        <activity android:name=".utils.BaseActivity" />
+        <activity android:name=".d_mine.a06_sound_wirte.Text2SoundActivity"></activity>
     </application>
 
 </manifest>

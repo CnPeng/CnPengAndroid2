@@ -9,4 +9,5 @@
     <item name="start_off" type="drawable">@android:drawable/star_off</item>
     <item name="presence_online" type="drawable">@android:drawable/presence_online</item>
     <item name="ic_media_play" type="drawable">@android:drawable/ic_media_play</item>
+
 </resources>

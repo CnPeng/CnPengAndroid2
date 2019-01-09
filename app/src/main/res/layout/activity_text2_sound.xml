@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp10"
+    tools:context=".d_mine.a06_sound_wirte.Text2SoundActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/et_input"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/shape_stroke_blue_1dp"
+            android:gravity="start"
+            android:hint="请输入需要转换为语音的内容"
+            android:padding="5dp"
+            android:textSize="14sp"
+            tools:ignore="Autofill" />
+
+        <TextView
+            android:id="@+id/tv_speechStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="当前播放状态：" />
+
+        <TextView
+            android:id="@+id/tv_percent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="当前合成进度：0，当前播放进度 0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10">
+
+            <TextView
+                android:id="@+id/tv_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#0f0"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="开始合成" />
+
+            <TextView
+                android:id="@+id/tv_pause"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#f5ed79"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="暂停播放" />
+
+            <TextView
+                android:id="@+id/tv_restart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#0f0"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="继续播放" />
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#f97369"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="取消" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_voicerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="发音人"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_viocer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@android:drawable/arrow_down_float"
+            android:drawablePadding="5dp"
+            android:padding="5dp"
+            android:text="小燕——女青、中英、普通话" />
+
+        <TextView
+            android:id="@+id/tv_selectEngineHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="请选择引擎类型"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_engineType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_onLine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="使用在线合成"
+                android:textColor="#666" />
+
+            <RadioButton
+                android:id="@+id/rb_offLine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="使用离线合成"
+                android:textColor="#666" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:text="相关设置"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_pitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="音调：" />
+
+            <EditText
+                android:id="@+id/et_pitch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="0-100"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_pitchConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e9e8e7"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingTop="5dp"
+                android:paddingRight="@dimen/dp10"
+                android:paddingBottom="5dp"
+                android:text="确定" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="音量：" />
+
+            <EditText
+                android:id="@+id/et_volume"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="0-100"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_volumeConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e9e8e7"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingTop="5dp"
+                android:paddingRight="@dimen/dp10"
+                android:paddingBottom="5dp"
+                android:text="确定" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_speedSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="语速：" />
+
+            <EditText
+                android:id="@+id/et_speed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="在线0-100，离线0-200"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_speedConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#e9e8e7"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingTop="5dp"
+                android:paddingRight="@dimen/dp10"
+                android:paddingBottom="5dp"
+                android:text="确定" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_audioStream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="音频流类型" />
+
+        <HorizontalScrollView
+            android:id="@+id/hsv_audioStream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_music"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="音乐" />
+
+                <RadioButton
+                    android:id="@+id/rb_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="通话" />
+
+                <RadioButton
+                    android:id="@+id/rb_sys"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="系统" />
+
+                <RadioButton
+                    android:id="@+id/rb_bell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="铃声" />
+
+                <RadioButton
+                    android:id="@+id/rb_alarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="闹铃" />
+
+                <RadioButton
+                    android:id="@+id/rb_notify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="通知" />
+
+            </RadioGroup>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</ScrollView>

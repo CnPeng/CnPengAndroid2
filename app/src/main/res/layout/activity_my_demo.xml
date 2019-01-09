@@ -22,9 +22,14 @@
             android:showDividers="middle">
 
             <TextView
+                android:id="@+id/tv_xfyun2"
+                style="@style/main_text_item"
+                android:text="07_讯飞语音识别——转为声音" />
+
+            <TextView
                 android:id="@+id/tv_xfyun"
                 style="@style/main_text_item"
-                android:text="06_讯飞语音识别" />
+                android:text="06_讯飞语音识别——转为文字" />
 
             <TextView
                 android:id="@+id/tv_extractRvAct"

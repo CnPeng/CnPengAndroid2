@@ -10,6 +10,7 @@ import com.cnpeng.android2.d_mine.a03_admob.AdMobActivity
 import com.cnpeng.android2.d_mine.a04_actlanuchmode.ClearTopFlagActivity
 import com.cnpeng.android2.d_mine.a05_extract_rv_adapter.ExtractRvAdapterActivity
 import com.cnpeng.android2.d_mine.a06_sound_wirte.SoundWriteActivity
+import com.cnpeng.android2.d_mine.a06_sound_wirte.Text2SoundActivity
 import kotlinx.android.synthetic.main.activity_my_demo.*
 import org.jetbrains.anko.clearTop
 import org.jetbrains.anko.intentFor
@@ -38,6 +39,7 @@ class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
         tv_clearTop.setOnClickListener(this)
         tv_extractRvAct.setOnClickListener(this)
         tv_xfyun.setOnClickListener(this)
+        tv_xfyun2.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -58,6 +60,9 @@ class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity<ExtractRvAdapterActivity>()
             R.id.tv_xfyun -> {
                 startActivity<SoundWriteActivity>()
+            }
+            R.id.tv_xfyun2 -> {
+                startActivity<Text2SoundActivity>()
             }
 
             else -> toast("暂未定义点击事件")
