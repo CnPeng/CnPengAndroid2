@@ -35,6 +35,17 @@ class Text2SoundActivity : BaseActivity(), View.OnClickListener {
 
         initSpeechSynthesize()
         initClickEvent()
+        initEngineSelectEvent()
+    }
+
+    private fun initEngineSelectEvent() {
+        rg_engineType.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.rb_onLine -> mEngineType = SpeechConstant.TYPE_CLOUD
+                R.id.rb_offLine -> mEngineType = SpeechConstant.TYPE_LOCAL
+                else->toast("啥情况？怎么会有其他id？")
+            }
+        }
     }
 
     private fun initSpeechSynthesize() {
