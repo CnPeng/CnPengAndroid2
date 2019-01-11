@@ -1,5 +1,7 @@
 package com.cnpeng.android2.b_work.b05_open_lamp
 
+import android.content.pm.PackageManager
+import android.hardware.Camera
 import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_open_or_close_lamp.*
 
 class OpenOrCloseLampActivity : AppCompatActivity() {
     var mIsLampOpen = false
+    var mCamera: Camera? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +42,30 @@ class OpenOrCloseLampActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             } else {
-                // TODO: CnPeng 2019/1/11 4:22 PM API 23之前开启和关闭Lamp
-
+                // CnPeng 2019/1/11 4:22 PM API 23之前开启和关闭Lamp
+                if (mIsLampOpen) {
+                    if (null != mCamera) {
+                        mCamera!!.stopPreview()
+                        mCamera!!.release()
+                        mCamera = null
+                        mIsLampOpen = false
+                    }
+                } else {
+                    val featureInfos = packageManager.systemAvailableFeatures;
+                    for (featureInfo in featureInfos) {
+                        if (PackageManager.FEATURE_CAMERA_FLASH == (featureInfo.name)) {
+                            // 判断设备是否支持闪光灯
+                            if (null == mCamera) {
+                                mCamera = Camera.open();
+                            }
+                            val cameraParameters = mCamera!!.parameters;
+                            cameraParameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                            mCamera!!.parameters = cameraParameters;
+                            mCamera!!.startPreview();
+                            mIsLampOpen = true
+                        }
+                    }
+                }
             }
         }
     }
