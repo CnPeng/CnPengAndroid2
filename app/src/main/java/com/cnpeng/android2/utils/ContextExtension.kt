@@ -1,6 +1,7 @@
 package com.cnpeng.android2.utils
 
 import android.content.Context
+import android.hardware.camera2.CameraManager
 import android.net.ConnectivityManager
 import android.net.ConnectivityManager.*
 import android.net.NetworkInfo
@@ -21,6 +22,10 @@ import android.net.NetworkInfo
  */
 val Context.connectivityManager: ConnectivityManager
     get() = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+
+val Context.cameraManager: CameraManager
+    get() = getSystemService(Context.CAMERA_SERVICE) as CameraManager
 
 val Context.networkInfo: NetworkInfo?
     get() {

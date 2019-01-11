@@ -29,6 +29,13 @@
     <!-- 如需使用人脸识别，还要添加：摄相头权限，拍照需要用到 -->
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+
+
     <!--
         android:roundIcon="@mipmap/ic_launcher_round"
         android:icon="@mipmap/ic_launcher"
@@ -89,7 +96,8 @@
         <activity android:name=".a_book1.chapter7.ViewPagerActivity" />
         <activity android:name=".d_mine.a06_sound_wirte.SoundWriteActivity" />
         <activity android:name=".utils.BaseActivity" />
-        <activity android:name=".d_mine.a06_sound_wirte.Text2SoundActivity"></activity>
+        <activity android:name=".d_mine.a06_sound_wirte.Text2SoundActivity" />
+        <activity android:name=".b_work.b05_open_lamp.OpenOrCloseLampActivity"></activity>
     </application>
 
 </manifest>

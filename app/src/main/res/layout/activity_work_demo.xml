@@ -22,6 +22,11 @@
 
 
             <TextView
+                android:id="@+id/tv_lampSwitch"
+                style="@style/main_text_item"
+                android:text="05_开关手电筒" />
+
+            <TextView
                 android:id="@+id/tv_flow"
                 style="@style/main_text_item"
                 android:text="04_流式视图的实现总结" />
