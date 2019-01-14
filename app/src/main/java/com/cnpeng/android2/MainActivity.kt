@@ -56,6 +56,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      * CnPeng 2019/1/14 8:49 PM
      * 功用：在调用setContentView之前个性化view的外观
      * 说明：该段内容参考：https://juejin.im/post/5bcd6f1551882577e71c8c88?utm_source=gold_browser_extension
+     *
+     * 根据上面链接说的 https://juejin.im/post/5b9682ebe51d450e543e3495 中所谓不再定义shape/slector文件，就是利用了
+     * 下面的原理，遍历了attrs，如果是自定义的attr，则直接通过代码编写 shape/selector 饭后设置给对应的view ，这样就减少了
+     * shape/selector 的编写，也减少了自定义view的数量
      */
     private fun cusViewByDelegate() {
         setFactory2(LayoutInflater.from(this), object : LayoutInflater.Factory2 {
