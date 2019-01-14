@@ -1,9 +1,15 @@
 package com.cnpeng.android2
 
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.LayoutInflaterCompat.setFactory2
 import com.cnpeng.android2.a_book1.BookOneActivity
 import com.cnpeng.android2.b_work.WorkDemoActivity
 import com.cnpeng.android2.d_mine.MyDemoActivity
@@ -24,6 +30,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var mActivity: MainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        cusViewByDelegate()
+
         super.onCreate(savedInstanceState)
 
         /**
@@ -41,6 +50,37 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         TripleLibInitUtils(this).initTripleLib()
 
         initClickListener()
+    }
+
+    /**
+     * CnPeng 2019/1/14 8:49 PM
+     * 功用：在调用setContentView之前个性化view的外观
+     * 说明：该段内容参考：https://juejin.im/post/5bcd6f1551882577e71c8c88?utm_source=gold_browser_extension
+     */
+    private fun cusViewByDelegate() {
+        setFactory2(LayoutInflater.from(this), object : LayoutInflater.Factory2 {
+            override fun onCreateView(parent: View?, name: String?, context: Context?, attrs: AttributeSet?): View? {
+                val delegate = delegate
+                val view = delegate.createView(parent, name, context!!, attrs!!)
+
+                if (null != view && view is TextView) {
+                    //CnPeng 2019/1/14 8:36 PM 此处做个性化处理
+                    view.setTextColor(Color.WHITE)
+                }
+
+                //CnPeng 2019/1/14 8:47 PM 也可以根据配置的属性动态改变view的展示外观，此时需要在 attrs.xml 中先声明属性，然后在xml 中引用
+                //   int n = attrs.getAttributeCount();
+                //   for (int i = 0; i < n; i++) {
+                //       Log.e(TAG, attrs.getAttributeName(i) + " , " + attrs.getAttributeValue(i));
+                //   }
+
+                return view
+            }
+
+            override fun onCreateView(name: String?, context: Context?, attrs: AttributeSet?): View? {
+                return onCreateView(null, name, context, attrs)
+            }
+        });
     }
 
     private fun initClickListener() {

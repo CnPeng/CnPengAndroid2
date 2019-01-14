@@ -45,9 +45,14 @@ class OpenOrCloseLampActivity : AppCompatActivity() {
                 // CnPeng 2019/1/11 4:22 PM API 23之前开启和关闭Lamp
                 if (mIsLampOpen) {
                     if (null != mCamera) {
-                        mCamera!!.stopPreview()
-                        mCamera!!.release()
-                        mCamera = null
+                        //  mCamera!!.stopPreview()
+                        //  mCamera!!.release()
+                        //  mCamera = null
+                        val cameraParameters = mCamera!!.parameters;
+                        cameraParameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+                        mCamera!!.parameters = cameraParameters;
+                        mCamera!!.startPreview();
+
                         mIsLampOpen = false
                     }
                 } else {
