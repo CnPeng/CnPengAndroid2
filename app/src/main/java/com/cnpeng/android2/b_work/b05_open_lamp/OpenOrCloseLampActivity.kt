@@ -2,8 +2,7 @@ package com.cnpeng.android2.b_work.b05_open_lamp
 
 import android.content.pm.PackageManager
 import android.hardware.Camera
-import android.os.Build
-import android.os.Bundle
+import android.os.*
 import androidx.appcompat.app.AppCompatActivity
 import com.cnpeng.android2.R
 import com.cnpeng.android2.utils.cameraManager
