@@ -102,7 +102,10 @@ class ChipActivity : AppCompatActivity(), View.OnClickListener, CompoundButton.O
                 R.id.chipInGroup2_1 -> hintStr = "被选中的是 chipInGroup2_1 "
                 R.id.chipInGroup2_2 -> hintStr = "被选中的是 chipInGroup2_2 "
                 R.id.chipInGroup2_3 -> hintStr = "被选中的是 chipInGroup2_3 "
-                else -> hintStr = "没有选中任何chip"
+                else -> {
+                    hintStr = "没有选中任何chip__手动设置一个作为默认选中"
+                    chipInGroup2_1.isChecked = true
+                }
             }
             Toast.makeText(mActivity, hintStr, Toast.LENGTH_SHORT).show()
         }

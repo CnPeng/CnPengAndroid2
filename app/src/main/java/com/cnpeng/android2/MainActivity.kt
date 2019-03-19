@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
@@ -69,7 +70,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 if (null != view && view is TextView) {
                     //CnPeng 2019/1/14 8:36 PM 此处做个性化处理
-                    view.setTextColor(Color.WHITE)
+                    view.setTextColor(Color.BLUE)
                 }
 
                 //CnPeng 2019/1/14 8:47 PM 也可以根据配置的属性动态改变view的展示外观，此时需要在 attrs.xml 中先声明属性，然后在xml 中引用
@@ -104,5 +105,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_bookDemo1 -> startActivity<BookOneActivity>()
             else -> Toast.makeText(mActivity, "暂无内容", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("Main", "获取焦点——onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("Main", "失去焦点——onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("Main", "停止——onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("Main", "销毁——onDestroy")
     }
 }

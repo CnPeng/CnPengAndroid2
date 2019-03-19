@@ -180,6 +180,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Filter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checked="true"
                         android:text="chipInGroup2——1"
                         android:textAppearance="?android:textAppearanceMedium" />
 
