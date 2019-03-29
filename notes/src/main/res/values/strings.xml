@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CnPengAndroid2</string>
+    <string name="app_name">CnPengNotes</string>
     <string name="showBottomPopWithAnim">点击从页面底部弹出带有动画效果的POP</string>
     <string name="title_activity_work_demo">WorkDemoActivity</string>
     <string name="large_text">
