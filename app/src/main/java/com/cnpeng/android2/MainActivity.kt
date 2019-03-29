@@ -14,6 +14,7 @@ import androidx.core.view.LayoutInflaterCompat.setFactory2
 import com.cnpeng.android2.a_book1.BookOneActivity
 import com.cnpeng.android2.b_work.WorkDemoActivity
 import com.cnpeng.android2.d_mine.MyDemoActivity
+import com.cnpeng.android2.d_mine.TempActivity
 import com.cnpeng.android2.utils.TripleLibInitUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
@@ -93,7 +94,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         tv_workDemo.setOnClickListener(this)
         tv_bookDemo1.setOnClickListener(this)
         tv_blogDemo.setOnClickListener(this)
-
+        tv_temp.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -103,6 +104,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_mineDemo -> startActivity<MyDemoActivity>()
             R.id.tv_workDemo -> startActivity<WorkDemoActivity>()
             R.id.tv_bookDemo1 -> startActivity<BookOneActivity>()
+            R.id.tv_temp -> startActivity<TempActivity>()
             else -> Toast.makeText(mActivity, "暂无内容", Toast.LENGTH_SHORT).show()
         }
     }
