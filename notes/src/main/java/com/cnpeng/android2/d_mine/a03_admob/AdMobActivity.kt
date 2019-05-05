@@ -8,10 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.cnpeng.android2.BuildConfig
 import com.cnpeng.android2.R
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.*
 import kotlinx.android.synthetic.main.activity_ad_mob.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.error
@@ -23,6 +20,7 @@ class AdMobActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ad_mob)
 
+        MobileAds.initialize(this, "ca-app-pub-8994842234959408~1322966018");
         //CnPeng 2018/12/24 10:29 AM BANNER
         initAdView1()
 
@@ -97,6 +95,7 @@ class AdMobActivity : AppCompatActivity() {
     }
 
     private fun initAdView1() {
+        //.addTestDevice("CA5A25B3F4A24716EA8E34CA2C4D5999")
         val adRequest = AdRequest.Builder().build()
 
         adView.loadAd(adRequest)

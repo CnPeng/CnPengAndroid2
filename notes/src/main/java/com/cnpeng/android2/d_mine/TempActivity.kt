@@ -15,6 +15,15 @@ class TempActivity : AppCompatActivity() {
 
         binding.tvTemp.text = "啥FUCK"
     }
+
+
+    fun getMax(a: Int, b: Int): Int {
+        return if (a > b) a else b
+    }
+
+    fun cusFunc(){
+        val a=getMax(3,5)
+    }
 }
 
 
