@@ -97,7 +97,8 @@
         <activity android:name=".d_mine.a06_sound_wirte.SoundWriteActivity" />
         <activity android:name=".utils.BaseActivity" />
         <activity android:name=".d_mine.a06_sound_wirte.Text2SoundActivity" />
-        <activity android:name=".b_work.b05_open_lamp.OpenOrCloseLampActivity"></activity>
+        <activity android:name=".b_work.b05_open_lamp.OpenOrCloseLampActivity"/>
+        <activity android:name=".d_mine.a07_item_touch_helper.ItemTouchActivity"/>
     </application>
 
 </manifest>

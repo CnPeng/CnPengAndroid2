@@ -22,6 +22,11 @@
             android:showDividers="middle">
 
             <TextView
+                android:id="@+id/tv_itemTouch"
+                style="@style/main_text_item"
+                android:text="08_ItemTouchHelper实现侧滑删除" />
+
+            <TextView
                 android:id="@+id/tv_xfyun2"
                 style="@style/main_text_item"
                 android:text="07_讯飞语音识别——转为声音" />

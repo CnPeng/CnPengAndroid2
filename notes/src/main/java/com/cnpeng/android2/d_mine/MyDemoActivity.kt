@@ -11,6 +11,7 @@ import com.cnpeng.android2.d_mine.a04_actlanuchmode.ClearTopFlagActivity
 import com.cnpeng.android2.d_mine.a05_extract_rv_adapter.ExtractRvAdapterActivity
 import com.cnpeng.android2.d_mine.a06_sound_wirte.SoundWriteActivity
 import com.cnpeng.android2.d_mine.a06_sound_wirte.Text2SoundActivity
+import com.cnpeng.android2.d_mine.a07_item_touch_helper.ItemTouchActivity
 import kotlinx.android.synthetic.main.activity_my_demo.*
 import org.jetbrains.anko.clearTop
 import org.jetbrains.anko.intentFor
@@ -40,12 +41,12 @@ class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
         tv_extractRvAct.setOnClickListener(this)
         tv_xfyun.setOnClickListener(this)
         tv_xfyun2.setOnClickListener(this)
+        tv_itemTouch.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        val id = v?.id
 
-        when (id) {
+        when (v?.id) {
             R.id.tv_chip ->
                 startActivity<ChipActivity>()
             R.id.tv_flexbox ->
@@ -63,6 +64,10 @@ class MyDemoActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.tv_xfyun2 -> {
                 startActivity<Text2SoundActivity>()
+            }
+
+            R.id.tv_itemTouch -> {
+                startActivity<ItemTouchActivity>()
             }
 
             else -> toast("暂未定义点击事件")
