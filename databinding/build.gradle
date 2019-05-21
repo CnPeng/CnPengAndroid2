@@ -4,8 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
 
-
-
     defaultConfig {
         applicationId "com.cnpeng.databinding"
         minSdkVersion 21
@@ -22,6 +20,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dataBinding{
+        enabled=true
     }
 
 }
