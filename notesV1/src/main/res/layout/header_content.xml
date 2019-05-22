@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data></data>
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="#ccc"
+            android:gravity="center"
+            android:text="这是头布局--content,放置帖子详细描述"/>
+    </FrameLayout>
+</layout>

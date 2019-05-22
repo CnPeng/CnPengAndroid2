@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <ImageView
+        android:id="@+id/iv_ratingbarTest"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/pikaqiu"/>
+
+    <!--普通可以允许用户改变的RatingBar;因继承自ProgressBar所以可以设置progres和max-->
+    <!--使用ProgressTint只会修改指定的RatingBar的颜色，但需要在API21 之后才有效，低版本不支持-->
+    <RatingBar
+        android:id="@+id/ratingBar01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:numStars="5"
+        android:progress="255"
+        android:progressTint="@color/abec06"
+        android:stepSize="0.5"/>
+
+    <!--不允许用户改变的单纯指示用的RatingBar-->
+    <RatingBar
+        android:id="@+id/ratingBar_Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="3"/>
+
+    <!--改变指示图标,直接指定progressDrawable,如果想控制多个图片间的间距，就在切图的时候预留空白区域-->
+    <RatingBar
+        android:id="@+id/ratingBar02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:progressDrawable="@drawable/layerlist_ratingbar2"
+        android:rating="3"
+        android:stepSize="0.5"/>
+
+
+</LinearLayout>

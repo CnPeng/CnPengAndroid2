@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    
+    <ToggleButton
+        android:id="@+id/tb_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:textOff="TB状态：关闭"
+        android:textOn="TB状态：开启"/>
+
+    <!--Switch -->
+    <Switch
+        android:id="@+id/switch_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:checked="true"
+        android:textOff="关闭"
+        android:textOn="开启"/>
+
+    <LinearLayout android:id="@+id/ll_TbAndSwitch"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/dp10"
+                  android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/abec06"
+            android:text="根据开关状态改变排列方式01"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="根据开关状态改变排列方式02"/>
+
+    </LinearLayout>
+</LinearLayout>

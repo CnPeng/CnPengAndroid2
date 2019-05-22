@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+                 android:shadowColor="@color/colorAccent"
+                 android:shadowDx="3"
+                 android:shadowDy="5"
+                 android:text="ssss"
+                 android:shadowRadius="2"
+                 android:checkMark="@drawable/radio_select"
+                 android:orientation="vertical"/>
+

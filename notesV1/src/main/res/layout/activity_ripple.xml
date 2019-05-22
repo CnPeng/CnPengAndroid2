@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/dp10">
+
+            <!--无界水波纹效果，所谓无界，实际是以空间宽度或高度中的大值作为直径绘制一个园-->
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_1"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="不设置mask/wrapContent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_1"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="不设置mask/match_parent" />
+
+            <!--有界水波纹效果。水波纹效果只在控件内绘制-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_2"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="mask/match_parent/drawable_color" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_3"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="mask/match_parent/drawable_drawable" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/ripple_4"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="match_parent/drawable_shape" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ripple_5"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="match_parent/drawable_shape" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ripple_6"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="match_parent/drawable_shape" />
+
+
+            <!--测试代码控制ripple颜色-->
+            <TextView
+                android:id="@+id/tv_rippleBg1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@drawable/ripple_1"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="代码控制更改ripple.xml中的颜色" />
+
+            <!--测试代码控制ripple颜色-->
+            <TextView
+                android:id="@+id/tv_rippleBg2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="代码编写ripple作为Tv背景_无derawable_无mask" />
+
+            <!--测试代码控制ripple颜色-->
+            <TextView
+                android:id="@+id/tv_rippleBg3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="代码控制ripple3_有drawable_无mask" />
+
+            <!--测试代码控制ripple颜色-->
+            <TextView
+                android:id="@+id/tv_rippleBg4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="代码控制ripple4_无drawable_有mask" />
+
+            <!--测试代码控制ripple颜色-->
+            <TextView
+                android:id="@+id/tv_rippleBg5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="代码控制ripple5_有drawable_有mask" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</layout>
+

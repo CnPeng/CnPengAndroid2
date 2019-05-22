@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--效果1 -->
+<!--必须给ll加背景，否则如果图片过小，将无法完全覆盖下一张图，默认透明背景；还必须指定高度，否则也无法完全覆盖-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="500dp"
+              android:background="@drawable/shape_bk_stackitem"
+              android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_svItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    />
+</LinearLayout>
+
+<!--效果2 -->
+<!--宽高填充父窗体，不指定缩放类型-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+              <!--android:layout_width="match_parent"-->
+              <!--android:layout_height="match_parent"-->
+              <!--android:background="@drawable/shape_bk_stackitem"-->
+              <!--android:orientation="vertical">-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_svItem"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+    <!--/>-->
+
+<!--</LinearLayout>-->

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+    </data>
+    <TextView android:id="@+id/tv_item_suspendLv"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#ffc"
+              android:orientation="vertical"
+              android:padding="10dp"
+              android:text="suibian"
+              android:textSize="15sp"/>
+</layout>

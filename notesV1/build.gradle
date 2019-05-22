@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.cnpeng.cnpeng_demos2017_01"
+        minSdkVersion 21
+        versionName "1.0"
+        targetSdkVersion 28
+        versionCode 1
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+        manifestPlaceholders = [hostName: "cnpeng", category: "android.intent.category", action: "android.intent.action"]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true;
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //noinspection GradleCompatible
+//    implementation 'com.android.support:appcompat-v7:27.1.1'
+//    //noinspection GradleCompatible
+//    implementation 'com.android.support:recyclerview-v7:27.1.1'
+//    //noinspection GradleCompatible
+//    implementation 'com.android.support:design:27.1.1'
+//    implementation 'com.android.support.constraint:constraint-layout:2.0.0-beta1'
+
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta1'
+
+    androidTestImplementation 'junit:junit:4.12'
+    implementation 'org.jsoup:jsoup:1.10.3'
+    implementation 'org.apache.commons:commons-lang3:3.5'
+    implementation 'jp.wasabeef:richeditor-android:1.2.2'
+    //图片选择器（含视频音频的选择，含拍照录视频功能）
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.0'
+    //图片加载——Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //图片加载——picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'org.kie.modules:com-google-code-gson:6.5.0.Final'
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}

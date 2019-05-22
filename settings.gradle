@@ -1,1 +1,1 @@
-include ':notes', ':databinding'
+include ':notesV2', ':databinding', ':notesV1'

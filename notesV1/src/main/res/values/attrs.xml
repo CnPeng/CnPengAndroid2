@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EditTextWithDel">
+        <attr name="android:textSize"/>
+        <attr name="android:textColor"/>
+        <attr name="android:textColorHint"/>
+        <attr name="android:maxLines"/>
+        <attr name="android:inputType"/>
+        <attr name="android:maxLength"/>
+        <attr name="android:drawableRight"/>
+        <attr name="android:drawablePadding"/>
+        <attr name="android:hint"/>
+        <attr name="android:text"/>
+        <attr name="android:ellipsize"/>
+        <attr name="android:cursorVisible"/>
+        <attr name="android:textColorLink"/>
+        <attr name="android:autoLink"/>
+        <attr name="android:gravity"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable name="handler"
+                  type="com.cnpeng.b_25_clickSpanAndItemClick.ClickSpanAndItemClickHandler"/>
+        <variable name="content" type="android.text.SpannableString"/>
+    </data>
+    <LinearLayout android:id="@+id/ll_parent"
+                  xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:onClick="@{handler.itemClick}"
+                  android:orientation="horizontal"
+                  android:padding="@dimen/dp10">
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp20"
+            android:src="@drawable/sun"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{handler.itemClick}"
+                android:padding="@dimen/dp10"
+                android:text="@{content}"
+                android:textIsSelectable="true"/>
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp10"
+                android:visibility="gone"
+                android:text="babbabbabababababababbbabba"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        tools:context="com.cnpeng.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider1"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#e0fce0"
+                android:divider="@drawable/divider1"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/bt_tempActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="temp"
+                    android:textAllCaps="false" />
+
+                <!--项目借鉴系列：倒序排列-->
+
+                <!--项目借鉴系列：倒序排列-->
+                <TextView
+                    android:id="@+id/bt_ripple"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_35_ripple的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_checkNotify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_34_检查是否开启通知权限"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_rvAdapter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_33_Rv适配器封装"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_largeImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_32_图片选择器"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_picSelector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_31_图片选择器"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_richText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_30_富文本编辑器"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_ImageSpanAndSpannableString"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b01_ImageSpan和SpannableString配合使用给TextView任意位置插入图片"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_drawerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b02_给DrawerLayout侧边栏加入沉浸式"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_suspendAndLv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b04_lv上拉时展示一个悬浮条固定在屏幕顶端"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_suspendAndLv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b0402_lv上拉时展示一个悬浮条固定在屏幕顶端"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_dismissAlertDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b05_关闭AlertDialog"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_objectAnimator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b06_不使用头布局时如何移除LV顶部的View"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_bottomNavigationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b07_BottomNavigationView 的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_ClTbVpRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b08_具有顶部悬浮条的RV（头滚出去就不再回来）"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_textureView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b09_TextureView展示拍照预览"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_TransitionDrawable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b10_1_TransitionDrawable的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_TransitionDrawable2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b10_2_自定义圆形/圆角Drawable的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_AddAppToSysShare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b11_将应用加入系统分享界面"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_CustomCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b12_自定义日历"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_CustomUserAgent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b13_自定义UserAgent"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_ScreenShotInAPP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b14_应用内截屏的实现"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_cornerAlertDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b15_圆角的alertdialog"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_customDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b16_自定义的alertdialog"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_shake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b17_摇一摇（Shake）"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_customSwitchTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b18_自定义switchTextView"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_vector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b19_vector的使用总结"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_shortCut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b20_快捷方式的实现总结"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_lvLoacalRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b21_ListView的单条(局部)刷新"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_RefreshFmInVp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b23_跨页面刷新VP中Fragment中的数据"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_showComplexH5Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_24_展示复杂的H5文本(关键字加点击，展示图片)"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_clickSpanAndItemClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_25_带有ClickSpan的条目被点击"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_takePhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_26_调用系统相机拍照"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_suspendRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_27_带有顶部悬浮的RV(头可以自由滚入滚出)"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_collapsing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="b_28_视差特效"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+
+            <!--以下为基础系列-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/divider1"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/bt_webview_Test01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="01自定义WebView错误提示"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_viewStub_02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="02ViewStub使用介绍01"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_withoutXML"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="03完全用代码创建布局"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_ImageBrowserV1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="04简易图片浏览器V1"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_ScrollBall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="05跟随手指移动的小球"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_TableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="06表格布局的基本使用"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_neonLamp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="07使用帧布局实现霓虹灯效果"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_plumBlossom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="08使用相对布局实现梅花效果"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_caculater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="09使用网格布局实现计算器界面"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_textView01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="10TextView的基本使用01"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_9Patch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="11 点九图 9Patch 的基本使用"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_RBAndCB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="12 RadioTextView与CheckBox基本使用"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_TbAndSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="13 ToggleTextView和Switch的基本使用"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_TcAndAc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="14 时钟控件TextClock和AnalogClock"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_chronometer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="15 Chronometer计时器"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_ImageBrowserV2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="16 简易图片浏览器V2"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_ImageTextViewAndZoomTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="17 ImageTextView和ZoomTextView"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_QucikContactBadge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="18 QucikContactBadge关联联系人"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_ListView01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="19 ListView自定义分割线并用entries指定内容"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_ArrayAdapter01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="20 使用ArrayAdapter展示ListView"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_ListActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="21 使用ListActivity展示ListView"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_simpleAdapterActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="22 使用SimpleAdapter展示ListView"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_autoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="23 AutoCompleteTextView"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_GridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="24 GridView的基本使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_ExpandableListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="25 ExpandableListView的基本使用"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="26 使用Spinner展示下拉列表"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_AdapterViewFlipperActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="27 使用AdapterViewFlipper展示自动播放的图片库"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_StackView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="28 使用StackView展示叠加图"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_progressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="29 ProgressBar的使用"
+                    android:textAllCaps="false" />
+
+
+                <TextView
+                    android:id="@+id/bt_progressBar2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="30 显示在标题栏上的progressBar"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_RatingBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="31 根据RatingBar的进度动态改变图片透明度"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_ViewSwitcher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="32 ViewSwitcher的基本使用" />
+
+                <TextView
+                    android:id="@+id/bt_ViewSwitcher2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="32 ViewSwitcher仿写安卓的launcher界面"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_ImageSwitcher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="33 ImageSwitcher实现带动画的图片浏览器"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_TextSwitcher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="34 TextSwitcher的基本使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_ViewFlipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="35_ViewFlipper实现自动播放的图片库"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_imageToast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="36_带有图片的Toast"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="37_calendarView日历视图的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_calendarPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="38_calendarPicker日期选择器的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_datePickerDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="39_DatePickerDialog和TimePickerDialog的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_NumberPicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="40_NumberPicker的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_SearchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="41_Searchview的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_tabhost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="42_TabHost的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_scrollview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="43_ScrollView的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="44_Notification的使用"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/bt_alertDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="45_AlertDialog的使用"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/divider1"
+                android:orientation="vertical"
+                android:background="#f9dada"
+                android:showDividers="middle">
+
+                <!--进阶学习系列-->
+                <TextView
+                    android:id="@+id/bt_CustomView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ellipsize="marquee"
+
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="c1_自定义View"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

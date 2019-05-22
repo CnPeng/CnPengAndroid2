@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--没有使用点九图且宽度填充父窗体，图片全部拉伸，文字居左上角-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/images"
+        android:text="没有使用点九图的"
+        android:textColor="@color/colorAccent"/>
+
+    <!--使用了点九图且宽度包裹内容，指定部分拉伸，且文字居于指定位置。当文字变化时会从指定位置向两端扩展，且图片宽度随着文字的宽度而变化-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@drawable/iamg2"
+        android:text="测试点九图"
+        android:textColor="@color/colorAccent"/>
+
+    <!--使用了点九图的且宽度填充父窗体，指定部分拉伸，文字居于纵向的指定位置，水平方向未起作用-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@drawable/iamg3"
+        android:text="测试点九图"
+        android:textColor="@color/colorAccent"/>
+
+</LinearLayout>

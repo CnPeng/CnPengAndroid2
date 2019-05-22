@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:entries="@array/listViewEntries"/>
+
+    <!--必须在定义完lv之后再定义悬浮部分，也就是说把悬浮条目放在上面，
+    否则lv滚动的时候条目会覆盖在悬浮层上，而且也能看到明显的悬浮条目切换过程-->
+    <TextView
+        android:id="@+id/tv_suspend_backup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ccedc7"
+        android:gravity="center"
+        android:visibility="gone"/>
+</RelativeLayout>

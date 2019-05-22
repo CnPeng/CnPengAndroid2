@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="showTitleBk" type="int"/>
+        <variable name="showPB" type="int"/>
+        <import type="android.view.View"/>
+    </data>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+     
+        <!--内容列表-->
+        <ListView
+            android:id="@+id/lv_suspendTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!--预置需要悬浮的部分，默认隐藏；LV滚动的时候，动态控制其隐藏和显示-->
+        <TextView android:id="@+id/tv_title_bk"
+                  android:layout_width="match_parent"
+                  android:layout_height="44dp"
+                  android:background="#dff7d5"
+                  android:gravity="center"
+                  android:text="这是标题栏，用来展示帖子统计数据"
+                  android:visibility="@{showTitleBk}"/>
+        <!--进度条，下拉刷新时用来提示-->
+        <ProgressBar
+            android:id="@+id/pb_suspendLV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:visibility="@{showPB}"/>
+       
+    </RelativeLayout>
+
+
+</layout>

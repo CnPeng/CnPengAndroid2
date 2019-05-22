@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bk_imagetoast"
+    android:orientation="vertical"
+    android:padding="@dimen/dp5">
+
+    <!--顶部间距-->
+    <androidx.legacy.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp15"/>
+
+    <!--帖子详情-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/shape_bk_dla"
+        android:gravity="center"
+        android:text="这里是帖子的详细内容区域"
+        android:textSize="18sp"/>
+
+    <!--顶部间距-->
+    <androidx.legacy.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp15"/>
+
+    <!--&lt;!&ndash;评论数量统计&ndash;&gt;-->
+    <!--<TextView-->
+        <!--android:id="@+id/tv_commentCount"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="44dp"-->
+        <!--android:background="#dfd8ca"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:text="全部评论【999】"-->
+    />
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <AutoCompleteTextView
+        android:id="@+id/actv_01"
+        android:layout_width="@dimen/dp200"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1"
+        android:dropDownHorizontalOffset="@dimen/dp25"
+        android:dropDownWidth="wrap_content"
+        android:popupBackground="@color/abec06"/>
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/mactv_01"
+        android:layout_width="@dimen/dp200"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1"
+        android:dropDownHorizontalOffset="@dimen/dp25"
+        android:dropDownVerticalOffset="@dimen/dp25"
+        android:dropDownWidth="wrap_content"
+        android:popupBackground="@color/abec06"/>
+</LinearLayout>

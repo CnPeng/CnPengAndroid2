@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/item1"
+          android:icon="@drawable/hot_green"
+          android:title="Item1"/>
+    <item android:id="@+id/item2"
+          android:icon="?android:attr/actionModeShareDrawable"
+          android:title="Item2"/>
+    <item android:id="@+id/item3"
+          android:icon="@drawable/act_attentioned"
+          android:title="Item3"/>
+    <item android:id="@+id/item4"
+          android:icon="@android:drawable/btn_star_big_off"
+          android:title="Item4"/>
+    <item android:id="@+id/item5"
+          android:icon="@drawable/mainfocus"
+          android:title="Item5"/>
+
+</menu>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="@dimen/dp350"
+        android:layout_height="@dimen/dp350"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="@dimen/dp300"
+        android:layout_height="@dimen/dp300"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="@dimen/dp250"
+        android:layout_height="@dimen/dp250"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="@dimen/dp200"
+        android:layout_height="@dimen/dp200"
+        android:layout_gravity="center"/>
+</FrameLayout>

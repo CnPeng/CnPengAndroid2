@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+    <!--RV 添加分割线的两种方式，一是 给条目设置 margin 值，二是 addItemDecoration-->
+    <TextView
+        android:id="@+id/tv_rvItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#22ff00ff"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="333333"/>
+</LinearLayout>

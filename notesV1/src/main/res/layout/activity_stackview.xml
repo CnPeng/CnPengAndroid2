@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+    
+    <!--loopViews 为true 表示循环播放-->
+    <StackView
+        android:id="@+id/stackView01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:loopViews="true"/>
+
+    <Button
+        android:id="@+id/bt_pre_sv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="上一个"/>
+
+    <Button
+        android:id="@+id/bt_next_sv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="下一个"/>
+</RelativeLayout>

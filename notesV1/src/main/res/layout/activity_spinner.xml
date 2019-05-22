@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--entries 实现-->
+    <Spinner
+        android:id="@+id/spinner_entries"
+        android:layout_width="wrap_content"
+        android:dropDownHorizontalOffset="@dimen/dp300"
+        android:dropDownVerticalOffset="@dimen/dp35"
+        android:layout_height="wrap_content"
+        android:entries="@array/books"/>
+
+    <!--dropdown模式展示Spinner，使用ArrayAdapter-->
+    <Spinner
+        android:id="@+id/spinner_adapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp35"
+        android:layout_marginTop="@dimen/dp35"
+    />
+    
+    
+    <!--注意这里的prompt 属性必须是引用类型的字符串，不能硬编码！！而且只有在spinnerMode 的取值模式是dialog的时候才有效-->
+    <!--dialog模式展示spinnser，使用arrayAdapter-->
+    <Spinner
+        android:id="@+id/spinner_adapter1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp70"
+        android:layout_marginTop="@dimen/dp70"
+        android:prompt="@string/app_name"
+        android:spinnerMode="dialog"/>
+
+    <!--使用BaseAdapter实现的-->
+    <Spinner
+        android:id="@+id/spinner_adapter2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp100"
+        android:layout_marginTop="@dimen/dp100"
+    />
+
+</LinearLayout>

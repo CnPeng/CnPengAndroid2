@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cnpeng.cnpeng_demos2017_01">
+
+    <!--声明权限-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--震动的权限。4.4及以上不需要声明权限，但低于4.4 时需要声明权限-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!--闪光灯的权限-->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <!--拍照的权限，以及拍照的属性-自动聚焦-->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--不要动，下面这一堆是为了匹配各个厂商手机生成快捷方式的权限！！-->
+    <uses-permission android:name='com.android.launcher.permission.INSTALL_SHORTCUT' />
+    <uses-permission android:name='com.android.launcher.permission.UNINSTALL_SHORTCUT' />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name='com.sonyericsson.home.permission.BROADCAST_BADGE' />
+    <uses-permission android:name='com.htc.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.htc.launcher.permission.UPDATE_SHORTCUT' />
+    <uses-permission android:name='com.anddoes.launcher.permission.UPDATE_COUNT' />
+    <uses-permission android:name='com.miui.mihome2.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.miui.mihome2.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.aliyun.homeshell.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.aliyun.homeshell.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.lenovo.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.lenovo.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.iLoong.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.iLoong.permission.READ_SETTINGS' />
+    <uses-permission android:name='cn.nubia.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='cn.nubia.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.smartisanos.launcher.WRITE_DATABASE' />
+    <uses-permission android:name='com.smartisanos.launcher.READ_DATABASE' />
+    <uses-permission android:name='com.smartisanos.launcher.data.ExportDataProvider' />
+    <uses-permission android:name='com.teslacoilsw.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.teslacoilsw.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.meizu.flyme.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.meizu.flyme.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.ztemt.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.ztemt.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.zte.lqsoft.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.zte.lqsoft.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.baoruan.launcher2.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.baoruan.launcher2.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.fineos.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.fineos.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.ibingo.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.ibingo.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.zui.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.zui.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.qihoo360.screenlock.permission.READ_LOCAL_THEME' />
+    <uses-permission android:name='com.qihoo360.screenlock.permission.WRITE_LOCAL_THEME' />
+    <uses-permission android:name='com.zte.mifavor.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.zte.mifavor.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.lo.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.lo.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.android.tpwlauncher2.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.android.tpwlauncher2.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.android.sprdlauncher1.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.android.sprdlauncher1.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.s.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.s.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.zte.mobile.ZteLauncher3D.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.zte.mobile.ZteLauncher3D.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.android.launcher23.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.android.launcher23.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.mgyun.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.mgyun.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.asus.launcher3.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.asus.launcher3.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.tsf.shell.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.tsf.shell.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.tul.aviate.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.tul.aviate.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.lenovo.launcherhdmarket.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.lenovo.launcherhdmarket.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.hola.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.hola.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.qihoo360.home.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.qihoo360.home.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.slim.slimlauncher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.slim.slimlauncher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.huaqin.launcherEx.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.huaqin.launcherEx.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.epic.launcher.tw.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.epic.launcher.tw.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.android.lewalauncher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.android.lewalauncher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.Dean.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.Dean.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='app.cobo.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='app.cobo.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.alphalp.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.alphalp.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.lollipop.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.lollipop.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.l.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.l.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.dlto.atom.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.dlto.atom.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.android.sprdlauncher2.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.android.sprdlauncher2.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.konka.launcher2.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.konka.launcher2.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.mycheering.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.mycheering.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.microsoft.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.microsoft.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.nicelauncher.lolauncher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.nicelauncher.lolauncher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.jui.launcher3.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.jui.launcher3.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.android.launcher2.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.android.launcher2.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.qihoo360.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.qihoo360.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.lge.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.lge.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='net.qihoo.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='net.qihoo.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='org.adw.launcher_donut.permission.READ_SETTINGS' />
+    <uses-permission android:name='org.adw.launcher_donut.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.huawei.launcher3.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.huawei.launcher3.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.sec.android.app.twlauncher.settings.READ_SETTINGS' />
+    <uses-permission android:name='com.sec.android.app.twlauncher.settings.WRITE_SETTINGS' />
+    <uses-permission android:name='com.anddoes.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.anddoes.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.tencent.qqlauncher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.tencent.qqlauncher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.huawei.launcher2.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.huawei.launcher2.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.ebproductions.android.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.ebproductions.android.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='telecom.mdesk.permission.READ_SETTINGS' />
+    <uses-permission android:name='telecom.mdesk.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='dianxin.permission.ACCESS_LAUNCHER_DATA' />
+    <uses-permission android:name='com.modaco.android.launchergb.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.modaco.android.launchergb.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.sec.android.app.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.sec.android.app.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.bbk.launcher2.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.bbk.launcher2.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.android.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.htc.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.sec.android.app.twlauncher.WRITE_SETTINGS' />
+    <uses-permission android:name='com.sec.android.app.twlauncher.READ_SETTINGS' />
+    <uses-permission android:name='org.adw.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='org.adw.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='org.adwfreak.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='org.adwfreak.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.gau.go.launcherex.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.gau.go.launcherex.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.fede.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.fede.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.oppo.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.oppo.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.nd.android.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.nd.android.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.android.mylauncher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.android.mylauncher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.huawei.android.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.huawei.android.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.huawei.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.huawei.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.mx.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.mx.launcher.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.android.launcher3.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.android.launcher3.permission.WRITE_SETTINGS' />
+    <uses-permission android:name='com.google.android.launcher.permission.READ_SETTINGS' />
+    <uses-permission android:name='com.google.android.launcher.permission.WRITE_SETTINGS' />
+    <!--上面这一段是为了创建快捷方式时兼容更多手机型号而申请的权限-->
+
+
+    <application
+        android:name="com.cnpeng.CnPengApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/gongfuxiongmao"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+
+        <activity android:name="com.cnpeng.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.cnpeng.a_01_WebView01.WebViewTestActivity01" />
+
+        <activity android:name="com.cnpeng.a_02_ViewStubTest.ViewStubTestActivitiy" />
+
+        <activity android:name="com.cnpeng.a_03_CreateViewWithoutXML.CreateViewWithoutXMLActivity" />
+
+        <activity android:name="com.cnpeng.a_04_ImageBrowser_V1.ImageBrowserActivityV1" />
+
+        <activity android:name="com.cnpeng.a_05_scrollBallWithFinger.ScrollBallActivity" />
+
+        <activity android:name="com.cnpeng.a_06_tablelayoutTest.TableLayoutTestActivity" />
+
+        <activity android:name="com.cnpeng.a_07_frameLayout_NoenLamp.NeonLampActivity" />
+
+        <activity android:name="com.cnpeng.a_08_relativeLayout_plumBlossom.PlumBlossomActivity" />
+
+        <activity android:name="com.cnpeng.a_09_gridLayout_caculater.CaculaterActivity" />
+
+        <activity android:name="com.cnpeng.a_10_textView_01.TextView01Activtiy" />
+
+        <activity android:name="com.cnpeng.a_11_9PatchTest.NinePatchActivity" />
+
+        <activity android:name="com.cnpeng.a_12_RadioButtonAndCheckBox.RadioButtonAndCheckBoxActivity" />
+
+        <activity android:name="com.cnpeng.a_13_ToogleButtonAndSwitch.TBAndSwitchActivity" />
+
+        <activity android:name="com.cnpeng.a_14_TextClockAndAnalogClock.TcAndAcActivity" />
+
+        <activity android:name="com.cnpeng.a_15_chronometer.ChronometerActivity" />
+
+        <activity android:name="com.cnpeng.A_16_ImageBrowserV2.ImageBrowserV2Activtiy" />
+
+        <activity android:name="com.cnpeng.a_17_imageButtonAndZoomButton.ImageButtonAndZoomButtonActivity" />
+
+        <activity android:name="com.cnpeng.a_18_QuickContactBadge.QuickContactBadgeActivity" />
+
+        <activity android:name="com.cnpeng.a_19_ListView01.ListView01Activity" />
+
+        <activity android:name="com.cnpeng.a_20_showLvWithArrayAdapter.ArrayAdapterActivity" />
+
+        <activity android:name="com.cnpeng.a_21_ListActivity.MyListActivity" />
+        <activity android:name="com.cnpeng.a_23_autoCompleteTextView.AutoCompleteTextViewActivity" />
+        <activity android:name="com.cnpeng.a_24_gridView.GridViewActivity" />
+        <activity android:name="com.cnpeng.a_25_expandableListView.ExpandableListViewActivity" />
+        <activity
+            android:name="com.cnpeng.a_26_spinner.SpinnerActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light" />
+        <activity android:name="com.cnpeng.a_27_AdapterViewFlipper.AdapterViewFlipperActivity" />
+        <activity android:name="com.cnpeng.a_28_stackView.StackViewActivity" />
+        <activity android:name="com.cnpeng.a_29_progressBar.ProgressBarActivity" />
+        <activity android:name="com.cnpeng.a_30_SeekBar.SeekBarActivtiy" />
+        <activity android:name="com.cnpeng.a_31_RatingBar.RatingBarActivity" />
+        <activity android:name="com.cnpeng.a_32_ViewSwitcher.ViewSwitcherActivity" />
+        <activity android:name="com.cnpeng.a_32_ViewSwitcher.ViewSwitcherActivity2" />
+        <activity android:name="com.cnpeng.a_33_ImageSwitcher.ImageSwitcherActivity" />
+        <activity android:name="com.cnpeng.a_34_textSwitcher.TextSwitcherActvity" />
+        <activity android:name="com.cnpeng.a_35_viewFlipper.ViewFlipperActviity" />
+        <activity android:name="com.cnpeng.a_36_Toast.ImageToastActivity" />
+        <activity android:name="com.cnpeng.a_37_calendarView.CalendarViewActivity" />
+        <activity android:name="com.cnpeng.a_38_DatePiackerAndTimePicker.DatePickerAndTimerPickerActivity" />
+        <activity android:name="com.cnpeng.a_39_DatePickerDialogAndTimerPickerDialg.DatePickerDialogAndTimerPickerDialogActvitiy" />
+        <activity android:name="com.cnpeng.a_40_NumberPicker.NumberPickerActivity" />
+        <activity android:name="com.cnpeng.a_41_SearchView.SearchViewActivtiy" />
+        <activity android:name="com.cnpeng.a_42_tabHost.TabHostActivity" />
+        <activity android:name="com.cnpeng.a_43_scrollView.ScrollViewActivity" />
+        <activity android:name="com.cnpeng.a_44_notification.NotificationActivity" />
+        <activity android:name="com.cnpeng.a_45_alertDialog.AlertDialogActivity" />
+
+
+        <activity android:name="com.cnpeng.b_01_spannableString_ImageSpan.SpannableStringAndImageSpanActivity" />
+        <activity
+            android:name="com.cnpeng.b_02_DrawerLayoutAndImmersion.DrawerLayoutActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.cnpeng.b_04_suspendAndListView.SuspendAndListViewActivity" />
+        <activity android:name="com.cnpeng.b_04_suspendAndListView.SuspendAndListViewActivity2" />
+        <activity android:name="com.cnpeng.b_05_alertDialog_dismiss.DissmissAlertDialog" />
+        <activity android:name="com.cnpeng.b_06_ObjectAnimator.ObjectAnimatorAndListViewActivity" />
+        <activity android:name="com.cnpeng.b_07_bottomNavigationView.BottomNavigationViewActivity" />
+        <activity
+            android:name="com.cnpeng.b_08_suspendRv1.SuspendRvActivity1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.cnpeng.b_09_TextureView.TextureViewActivity" />
+        <activity android:name="com.cnpeng.b_10_AndroidDrawables.TransitionDrawableActivity" />
+        <activity android:name="com.cnpeng.b_10_AndroidDrawables.CustomDrawableActivity" />
+        <activity android:name="com.cnpeng.b_11_AddAppToSysShare.AddAppToSysShareActivity">
+            <!--将应用加入系统分享界面，并处理分享过来的数据-->
+            <intent-filter>
+                <action android:name="${action}.SEND" />
+                <action android:name="${action}.SEND_MULTIPLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/*" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="text/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="multipart/*" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cnpeng.b_12_customCalendar.CustomCalendarActivity" />
+        <activity android:name="com.cnpeng.b_13_customUserAgent.CustomUserAgentActivity" />
+        <activity android:name="com.cnpeng.b_14_screenShotInApp.ScreenShotActivity" />
+        <activity android:name="com.cnpeng.b_15_cornerAlertDialog.CornerAlertDialogActivity" />
+        <activity android:name="com.cnpeng.b_16_customDialog.CustomDialogActivity" />
+        <activity
+            android:name="com.cnpeng.b_17_shake.ShakeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.cnpeng.b_18_customSwitchButton.CustomSwitchButtonActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.cnpeng.b_20_shortCut.ShortCutActivity">
+            <!--需要加意图过滤器，不加的话无法打开快捷方式指定的页面-->
+            <intent-filter>
+                <action android:name="${action}.CREATE_SHORTCUT" />
+
+                <category android:name="${category}.DEFAULT" />
+                <category android:name="${category}.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name="com.cnpeng.b_21_listViewLocalRefresh.ListViewLocalRefreshActivity" />
+        <activity android:name="com.cnpeng.b_23_RefreshFragmentInViewPager.RefreshFmInVpActivity" />
+        <activity android:name="com.cnpeng.b_24_showH5TextInTextView.ShowH5TextActivity" />
+        <activity android:name="com.cnpeng.b_25_clickSpanAndItemClick.ClickSpanAndItemClickActivity" />
+        <activity android:name="com.cnpeng.b_26_TakePhotoWithSysMethod.TakePhotoActivity" />
+        <activity android:name="com.cnpeng.b_27_suspendRv.SuspendRvActivity2" />
+        <activity
+            android:name="com.cnpeng.b_28_collspaningToolBar.CollapsingToolBarActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.cnpeng.b_30_RichTextEditor.RichTextEditorActivity" />
+        <activity android:name="com.cnpeng.b_31_picAndVideoSelector.PicSelectorActivity" />
+        <activity android:name="com.cnpeng.b_32_largeImage.LargeImageViewActivity" />
+        <activity android:name="com.cnpeng.c_01_customView.CustomViewActivity" />
+        <activity android:name="com.cnpeng.b_33_BaseRvAdapter.BaseRvAdapterActivity" />
+        <activity android:name="com.cnpeng.b_34_checkNotify.CheckNotifyActivity" />
+        <activity android:name="com.cnpeng.b_35_rippleDrawable.RippleDrawableActivity" />
+        <activity android:name="com.cnpeng.TempActivity" />
+
+        <receiver android:name="com.cnpeng.b_29_lockOrUnLockBroadCast.UnLockBroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!--<action android:name="${action}.USER_PRESENT" />-->
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>

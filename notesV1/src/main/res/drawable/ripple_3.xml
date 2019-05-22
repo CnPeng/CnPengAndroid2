@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="@color/colorAccent"
+    tools:targetApi="lollipop">
+
+    <!--这里使用drawable时，并不是所有drawable都生效。需要带有透明边框.否则，图片不生效。而且，绘制出来之后会更改掉原图的色彩信息，
+    图片的颜色值会变为 ripple 节点中的 color 值；ripple 只会在该图片区域内有效；图片会被拉伸-->
+    <item
+        android:id="@android:id/mask"
+        android:drawable="@drawable/act_attentioned" />
+    <!--android:drawable="@drawable/square_team_selected"/>-->
+</ripple>

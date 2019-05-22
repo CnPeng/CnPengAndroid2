@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data class="ShortCutBinding">
+        <variable name="handler"
+                  type="com.cnpeng.b_20_shortCut.ShortCutHandler"/>
+
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:background="@drawable/inset"
+                  android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_shortCut_broadcast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:gravity="center"
+            android:onClick="@{handler.createShortCut}"
+            android:text="使用广播的形式实现快捷方式"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:gravity="center"
+            android:text="新方式--静态模式"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:gravity="center"
+            android:text="新方式--动态模式"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:gravity="center"
+            android:text="新方式--图钉模式"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:gravity="center"
+            android:text="新方式--小控件模式"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:gravity="center"
+            android:onClick="@{handler.deleteShortCut}"
+            android:text="删除快捷方式"/>
+
+        <TextView 
+            android:id="@+id/tv_scroll"
+            android:layout_width="match_parent"
+            android:maxHeight="80dp"
+            android:text="textView.setMovementMethod(ScrollingMovementMethod.getInstance());  textView.setMovementMethod(ScrollingMovementMethod.getInstance());  textView.setMovementMethod(ScrollingMovementMethod.getInstance());  textView.setMovementMethod(ScrollingMovementMethod.getInstance());  textView.setMovementMethod(ScrollingMovementMethod.getInstance());  textView.setMovementMethod(ScrollingMovementMethod.getInstance());  "
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>

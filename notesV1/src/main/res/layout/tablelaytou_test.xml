@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <TableLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+        <!--直接使用控件表示单独一行一列未使用tablerow-->
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01 直接在TableLayout中写控件，会单占一行"/>
+    </TableLayout>
+    
+    <!--用Space做区域分割，onDraw空实现，没有无用绘制-->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp10"/>
+
+    <!--拉伸直至占满-->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+        <TableRow>
+
+            <Button android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02-1普通列"/>
+            <Button android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02-2拉伸列--被拉伸到填满父控件"/>
+        </TableRow>
+    </TableLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp10"/>
+    
+    <!--收缩 直至完全不可见或只剩一个细线。当前测试6.0是细线其他基本都看不见了-->
+    <TableLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:shrinkColumns="1">
+        <TableRow>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="03-1普通列"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="03-2收缩列"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="03-3普通列--03-2被收缩没了啊啊啊啊啊啊啊啊"/>
+        </TableRow>
+    </TableLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp10"/>
+    
+    <!--合并即隐藏 -->
+    <TableLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:collapseColumns="1">
+        <TableRow>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="04-1普通列"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="04-2合并列"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="04-3普通列--04-2被合并没了"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

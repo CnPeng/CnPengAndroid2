@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<RelativeLayout-->
+<!--android:id="@+id/custom_toast_container"-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content">-->
+
+<!--&lt;!&ndash;风格2 吐司左上角展示图标&ndash;&gt;-->
+<!--<TextView-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_centerVertical="true"-->
+<!--android:layout_marginLeft="28dp"-->
+<!--android:layout_marginTop="50dp"-->
+<!--android:background="@drawable/shape_bk_imagetoast"-->
+<!--android:paddingBottom="10dp"-->
+<!--android:paddingLeft="20dp"-->
+<!--android:paddingRight="20dp"-->
+<!--android:paddingTop="10dp"-->
+<!--android:text="这是一个带有图片的Toast提示框"/>-->
+
+<!--<ImageView-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:src="@mipmap/ic_launcher"/>-->
+
+<!--</RelativeLayout>-->
+
+
+<!--实现风格1 简单的更改背景色，添加图片-->
+<TextView
+    android:id="@+id/custom_toast_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bk_imagetoast"
+    android:drawableLeft="@mipmap/ic_launcher"
+    android:gravity="center"
+    android:padding="5dp"
+    android:text="这是一个带有图片的Toast提示框"/>
+
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/custom_toast_container"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--&lt;!&ndash;这种在预览的时候没问题，但实际上并不好使！！！&ndash;&gt;-->
+    <!--<TextView-->
+    <!--android:id="@+id/tv_imagetoast"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="@drawable/shape_bk_imagetoast"-->
+    <!--android:paddingBottom="10dp"-->
+    <!--android:paddingLeft="20dp"-->
+    <!--android:paddingRight="20dp"-->
+    <!--android:paddingTop="10dp"-->
+    <!--android:text="这是一个带有图片的Toast提示框"/>-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@id/tv_imagetoast"-->
+    <!--android:layout_alignLeft="@id/tv_imagetoast"-->
+    <!--android:layout_marginBottom="-15dp"-->
+    <!--android:src="@mipmap/ic_launcher"/>-->
+
+    <!--</RelativeLayout>-->

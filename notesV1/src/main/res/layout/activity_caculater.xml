@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout android:id="@+id/gl_caculater"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="4"
+            android:rowCount="6">
+
+    <!--columnSpan必须要写，否则后面添加的各种数字按钮就只能显示最后一列-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:background="#e9e7e7"
+        android:padding="@dimen/dp5"
+        android:text="0"
+        android:textSize="50sp"/>
+
+    <!--columnSpan必须要写，否则后面添加的各种数字按钮就只能显示最后一列-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="4"
+        android:padding="@dimen/dp5"
+        android:text="清除数据"/>
+
+</GridLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

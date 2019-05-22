@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bt_imageToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="点击展示带有图片的Toast"/>
+
+    <!--Button使用负的margin值时，位置虽然发生了变化，但是button 自带的灰色背景会覆盖控件-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bt_imageToast"
+        android:layout_alignLeft="@id/bt_imageToast"
+        android:layout_marginBottom="-25dp"
+        android:src="@mipmap/ic_launcher"/>
+
+</RelativeLayout>

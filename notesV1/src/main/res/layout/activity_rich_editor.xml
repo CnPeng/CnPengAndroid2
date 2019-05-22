@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="handler"
+                  type="com.cnpeng.b_30_RichTextEditor.RichEditorHandler"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/divider1"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{handler.save}"
+                android:padding="@dimen/dp5"
+                android:text="保存"/>
+
+            <TextView
+                android:id="@+id/preview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{handler.preview}"
+                android:text="预览"/>
+
+        </LinearLayout>
+
+        <jp.wasabeef.richeditor.RichEditor
+            android:id="@+id/richEditor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/f9cf87">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/action_undo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.unDo}"
+                    android:padding="3dp"
+                    android:src="@drawable/undo"/>
+
+                <ImageButton
+                    android:id="@+id/action_redo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.reDo}"
+                    android:padding="3dp"
+                    android:src="@drawable/redo"/>
+
+                <ImageButton
+                    android:id="@+id/action_bold"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.bold}"
+                    android:padding="3dp"
+                    android:src="@drawable/bold"/>
+
+                <ImageButton
+                    android:id="@+id/action_italic"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.italic}"
+                    android:padding="3dp"
+                    android:src="@drawable/italic"/>
+
+
+                <!--删除线-->
+                <ImageButton
+                    android:id="@+id/action_strikethrough"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.strikeThrough}"
+                    android:padding="3dp"
+                    android:src="@drawable/strikethrough"/>
+
+                <ImageButton
+                    android:id="@+id/action_underline"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.underLine}"
+                    android:padding="3dp"
+                    android:src="@drawable/underline"/>
+
+                <ImageButton
+                    android:id="@+id/action_heading1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.heading1}"
+                    android:padding="3dp"
+                    android:src="@drawable/h1"/>
+
+                <ImageButton
+                    android:id="@+id/action_heading2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.heading2}"
+                    android:padding="3dp"
+                    android:src="@drawable/h2"/>
+
+                <ImageButton
+                    android:id="@+id/action_heading3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.heading3}"
+                    android:padding="3dp"
+                    android:src="@drawable/h3"/>
+
+                <ImageButton
+                    android:id="@+id/action_heading4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.heading4}"
+                    android:padding="3dp"
+                    android:src="@drawable/h4"/>
+
+                <ImageButton
+                    android:id="@+id/action_heading5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.heading5}"
+                    android:padding="3dp"
+                    android:src="@drawable/h5"/>
+
+                <!--无序列表-->
+                <ImageButton
+                    android:id="@+id/action_insert_bullets"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:padding="3dp"
+                    android:onClick="@{handler.bullets}"
+                    android:src="@drawable/bullets"/>
+
+                <!--有序列表-->
+                <ImageButton
+                    android:id="@+id/action_insert_numbers"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:padding="3dp"
+                    android:onClick="@{handler.numbers}"
+                    android:src="@drawable/numbers"/>
+
+                <!--引用-->
+                <ImageButton
+                    android:id="@+id/action_blockquote"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:onClick="@{handler.blockquote}"
+                    android:padding="3dp"
+                    android:src="@drawable/blockquote"/>
+
+                <!--插入图片-->
+                <ImageButton
+                    android:id="@+id/action_insert_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:padding="3dp"
+                    android:onClick="@{handler.insertImage}"
+                    android:src="@drawable/insert_image"/>
+
+                <!--插入链接-->
+                <ImageButton
+                    android:id="@+id/action_insert_link"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:contentDescription="@null"
+                    android:padding="3dp"
+                    android:onClick="@{handler.link}"
+                    android:src="@drawable/insert_link"/>
+
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_heading6"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:onClick="@{handler.heading6}"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/h6"/>-->
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_indent"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/indent"/>-->
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_outdent"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/outdent"/>-->
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_txt_color"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:onClick="@{handler.textColor}"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/txt_color"/>-->
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_bg_color"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:onClick="@{hanlder.bgColor}"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/bg_color"/>-->
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_insert_checkbox"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@android:drawable/checkbox_on_background"/>-->
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_subscript"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/subscript"/>-->
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_superscript"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/superscript"/>-->
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_align_left"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:onClick="@{hanlder.alignLeft}"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/justify_left"/>-->
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_align_center"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:onClick="@{hanlder.alignCenter}"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/justify_center"/>-->
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/action_align_right"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:background="@null"-->
+                <!--android:contentDescription="@null"-->
+                <!--android:padding="3dp"-->
+                <!--android:src="@drawable/justify_right"/>-->
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+</layout>

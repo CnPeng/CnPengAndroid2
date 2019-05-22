@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_whichItemSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+    <!--
+    itemBackground  item的背景  ,设置之后将无法看到默认的水波纹效果
+    itemIconTint    item图标的颜色，可以是固定值，可以是 颜色selector(定义在 res —— color 目录)
+    itemTextColor   item文字的颜色，可以是固定值，可以是 颜色selector
+    
+    如果不设置itemIconTint和 itemTextColor的时候，当某一个item被选中，选中时图标和文字的颜色是 当前主题的 colorPrimary 颜色
+  
+    background    整个底部导航的背景色，设置之后，在切换被选中的item时依旧具有水波纹效果。（设置background 也是为了能够明显的区分底部导航和上方的具体内容）
+    -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_001"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/e7e7e6"
+        app:itemIconTint="@color/selectot_bnv"
+        app:itemTextColor="@color/selectot_bnv"
+        app:menu="@menu/menu_bottom_navigation"/>
+
+
+</RelativeLayout>

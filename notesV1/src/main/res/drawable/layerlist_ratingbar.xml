@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--重点是这里的id ，引用的android包下的id，替换进度图条的drawable 就靠这两个id。不能随便定义-->
+    <item
+        android:id="@android:id/background">
+        <bitmap android:src="@drawable/all_s"></bitmap>
+    </item>
+    <item android:id="@android:id/progress">
+        <bitmap android:src="@drawable/all"></bitmap>
+    </item>
+</layer-list>

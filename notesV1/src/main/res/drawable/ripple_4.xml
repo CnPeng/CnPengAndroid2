@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--以此作为 backGround时，控件初始时使用 item 作为bg ; 按压时会有一个色值渐变效果，按住不松时会显示 ripple 和 item 中颜色的混合值；
+松手的瞬间会显示 ripple 中色值，然后再渐变为item中的色值-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="@color/colorAccent"
+    tools:targetApi="lollipop">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/blue" />
+            <corners android:radius="@dimen/dp10" />
+        </shape>
+    </item>
+
+</ripple>

@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#739ef2</item>
+        <item name="colorPrimaryDark">#739ef2</item>
+        <item name="colorAccent">#739ef2</item>
+        <item name="android:listDivider">@drawable/shape_bk_dla</item>
+        <item name="android:colorForeground">@android:color/background_light</item>
+    </style>
+
+    <!--这个是用来更改RatingBar 的默认图片的，其实可以直接给RatingBar设置 progressDrawbale-->
+    <style name="myRatingBar" parent="Base.Widget.AppCompat.RatingBar">
+        <!-- Customize your theme here. -->
+        <item name="android:progressDrawable">@drawable/layerlist_ratingbar</item>
+        <item name="android:maxHeight">@dimen/dp15</item>
+        <item name="android:minHeight">@dimen/dp15</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="android:listDivider">@drawable/shape_bk_dla</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!--<item name="android:alertDialogIcon">@drawable/ic_view_headline_black_24dp</item>-->
+    <style name="DialogIOS" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="layout">@layout/custom_alertdialog</item>
+        <item name="android:windowBackground">@drawable/shape_bk_rect_cornor_white</item>
+    </style>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="@color/colorAccent"
+    tools:targetApi="lollipop">
+
+    <!--为drawable 赋一个color 值，是不生效的-->
+    <item
+        android:id="@android:id/mask"
+        android:drawable="@color/blue" />
+</ripple>

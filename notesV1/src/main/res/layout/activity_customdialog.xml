@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data class="CustomDialogBinding">
+
+    </data>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical">
+            <Button
+                android:id="@+id/bt_customHeight1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高度--window.setLayout()"
+
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/bt_customHeight2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高度--window2.setAttributes()"
+
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_customHeight3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高度--viewTreeObserver.addOnPreDrawListener()"
+
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_customHeight4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高度--viewTreeObserver.addOnGlobalLayoutListener()"
+
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_customHeight5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高度--view.onLayoutChangeListener()"
+
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_customWidth1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宽度--window.setLayout()"
+
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/bt_customWidth2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宽度--window2.setAttributes()"
+
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/bt_customWidth3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宽度--viewTreeObserver.addOnPreDrawListener()"
+
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/bt_customWidth4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宽度--viewTreeObserver.addOnGlobalLayoutListener()"
+
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_customWidth5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宽度--view.onLayoutChangeListener()"
+
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_maxHeight1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最大高度_viewTreeObserver.addOnPreDrawListener()"
+
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/bt_maxHeight2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最大高度_viewTreeObserver.addOnGlobalLayoutListener()"
+                android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/bt_maxHeight3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最大高度_viewTreeObserver.addOnGlobalLayoutListener()"
+                android:textAllCaps="false"/>
+
+            <Button
+                android:id="@+id/bt_customDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="通过包装AlertDialog实现自定义Dialog"
+                android:textAllCaps="false"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

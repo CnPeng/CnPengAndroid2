@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="@dimen/dp15">
+    <!--01 字母全大写-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="01 字母全都大写：abcdefg"
+        android:textAllCaps="true"
+        android:textSize="20sp"/>
+
+    <!--02 电话，邮箱，添加超链接。添加后点击超链接会直接调用对应的软件，如点击电话会直接调出拨号界面-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:autoLink="email|phone"
+        android:text="02 电话邮箱添加超链接： \n\t\t电话:01012345678，\n\t\t邮箱：893612134@qq.com"
+        android:textSize="20sp"/>
+
+    <!--03 添加阴影效果-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:shadowColor="@color/colorAccent"
+        android:shadowDx="15"
+        android:shadowDy="5"
+        android:shadowRadius="2"
+        android:text="03 添加阴影效果"
+        android:textSize="20sp"/>
+
+    <!--04 文字用密码的形式显示,TextView 如果直接设置password会提示让你用EditText,并且password已经废弃，用inputType设置-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:hint="04 提示：输入的内容将会以密码圆点的形式显示"
+        android:inputType="textPassword"
+        android:textColorHint="#ccc"
+        android:textSize="20sp"/>
+
+    <!--05 只允许输入电话号码，同上，不要直接用TextView设置phoneNumber已经废弃。-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="05 提示：只能输入电话号码及相关符号"
+        android:inputType="phone"
+        android:textColorHint="#ccc"
+        android:textSize="20sp"/>
+
+    <!--06 只能输入数字-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="06 提示：只能输入数字"
+        android:inputType="number"
+        android:textColorHint="#ccc"
+        android:textSize="20sp"/>
+
+
+    <!--07 当文本不可编辑时能否被选中,true 长按可以选中，false 长按不可选-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:text="07 测试文本是否可以被选中"
+        android:textIsSelectable="true"
+        android:textSize="20sp"/>
+
+    <!--08 文本框在初次获取焦点时全选——长按全选，selectAllOnFocus 需要textIsSelectable 的配合-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:selectAllOnFocus="true"
+        android:text="08 文本框获取焦点时直接全选内容"
+        android:textIsSelectable="true"
+        android:textSize="20sp"/>
+
+    <!--09 CheckedTextView checkMark对应的图标显示在末尾.另外，依旧可以使用drawabeLeft等属性-->
+    <CheckedTextView
+        android:id="@+id/ctv_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:checkMark="@drawable/xiangguan"
+        android:text="09 CheckedTextView"
+        android:textSize="20sp"/>
+
+</LinearLayout>

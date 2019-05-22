@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--普通ImageButton，这里的缩放模式使用了fitCenter-->
+    <ImageButton
+        android:layout_width="@dimen/dp150"
+        android:layout_height="@dimen/dp150"
+        android:scaleType="fitCenter"
+        android:src="@drawable/gongfuxiongmao"/>
+
+    <!--使用selector的ImageButton,这里的缩放模式使用了centerCrop-->
+    <ImageButton
+        android:layout_width="@dimen/dp150"
+        android:layout_height="@dimen/dp150"
+        android:scaleType="centerCrop"
+        android:src="@drawable/selector_imagebutton"/>
+
+    <!--普通线性布局引入两个ZoomButton，分别引用android 预设置的drawable 资源-->
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+        <ZoomButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_plus"/>
+        <ZoomButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_minus"/>
+    </LinearLayout>
+
+    <!--直接使用ZoomControls 实现放大缩小按钮-->
+    <ZoomControls
+        android:id="@+id/bt_zoomControls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

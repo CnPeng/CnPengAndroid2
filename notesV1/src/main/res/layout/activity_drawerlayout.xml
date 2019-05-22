@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawerLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start">
+
+    <!--主体内容：含toolbar、content、fab-->
+    <include
+        android:id="@+id/contentBody"
+        layout="@layout/maincontent_dla"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!--侧边栏的内容， app:insetForeground="#00000000" 能处理掉nv展示时顶部状态栏半透明的情况-->
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/header_dla"
+        app:insetForeground="#00000000"
+        app:menu="@menu/menu_dla"/>
+</androidx.drawerlayout.widget.DrawerLayout>

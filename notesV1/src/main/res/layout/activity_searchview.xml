@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  android:iconifiedByDefault="false"时，设置  android:focusableInTouchMode="true" 
+让SV 默认时无法获取焦点，只有当被触摸是才有焦点，而且是触摸控件的任意位置都可以获取焦点-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <!--原生的搜索框-->
+    <SearchView
+        android:id="@+id/searchView_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bk_stackitem"
+        android:iconifiedByDefault="false"
+        android:queryHint="请输入搜索内容"/>
+
+    <!--用Lv展示预置的搜索提示，并实现预置搜索提示的选中事件-->
+    <ListView
+        android:id="@+id/lv_searchView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>

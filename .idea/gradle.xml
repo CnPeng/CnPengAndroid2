@@ -9,7 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/databinding" />
-            <option value="$PROJECT_DIR$/notes" />
+            <option value="$PROJECT_DIR$/notesV1" />
+            <option value="$PROJECT_DIR$/notesV2" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

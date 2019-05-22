@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/item_1_1"
+              android:icon="@android:drawable/ic_menu_help"
+              android:title="Item"/>
+        <item android:id="@+id/item_1_2"
+              android:icon="@android:drawable/ic_lock_power_off"
+              android:title="Item"/>
+        <item android:id="@+id/item_1_3"
+              android:icon="@android:drawable/ic_menu_manage"
+              android:title="Item"/>
+    </group>
+    <item android:title="其他">
+        <menu>
+            <item android:id="@+id/item_2_1"
+                  android:icon="@android:drawable/presence_away"
+                  android:title="Item"/>
+            <item android:id="@+id/item_2_2"
+                  android:icon="@android:drawable/btn_star_big_on"
+                  android:title="Item"/>
+        </menu>
+    </item>
+</menu>

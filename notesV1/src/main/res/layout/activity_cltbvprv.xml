@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/ll_ClTbVpRv"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_titleBar_ClTbVpRv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_bk_stackitem"
+        android:padding="10dp"
+        android:text="这是标题栏"
+        android:textSize="16sp"/>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cl_ClTbVpRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--顶部需要控制滚出或者不滚出的部分-->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar_clTbVpRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--&lt;!&ndash;这里面定义了需要滚出去的部分，谁要滚出去就定义 layout_scrollFlags &ndash;&gt;-->
+            <!--<....widget.CollapsingToolbarLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_scrollFlags="scroll">-->
+            <!--app:layout_scrollFlags="scroll|exitUntilCollapsed"> 同下-->
+            <!--app:layout_scrollFlags="scroll|enterAlwaysCollapsed"> 同下-->
+            <!--app:layout_scrollFlags="scroll|snap"> 同单纯用scroll-->
+            <!--app:layout_scrollFlags="scroll"> 内容滚到顶部之后，如果想让TV回来，还需要再手动拉一下-->
+            <!--app:layout_scrollFlags="scroll|enterAlways">  内容还没滚到顶部，TV就滚回来了-->
+
+            <TextView
+                android:id="@+id/tv_search_clTbVpRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_bk_stackitem"
+                android:drawableLeft="@android:drawable/ic_search_category_default"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:text="点击搜索"
+                android:textSize="16sp"
+                app:layout_collapseMode="parallax"
+                app:layout_scrollFlags="scroll"
+            />
+
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--主体内容部分-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <!--导航标签-->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tb_clTbVpRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="fixed"/>
+
+            <!--左右侧滑-->
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_clTbVpRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </androidx.viewpager.widget.ViewPager>
+
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

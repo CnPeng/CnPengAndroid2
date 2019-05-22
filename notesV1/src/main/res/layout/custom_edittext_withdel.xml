@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/ll_root_ETwithDel"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+>
+
+    <EditText
+        android:id="@+id/et_input_ETwithDel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@null"
+        android:hint="请输入内容"
+        android:maxLines="1"
+        android:textColor="@color/c_36362c"
+        android:textColorHint="@color/a7a7a6"
+        android:textSize="14sp"/>
+    <ImageView
+        android:id="@+id/iv_del_ETwithDel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp5"
+        android:src="@drawable/del"
+        android:visibility="gone"/>
+
+</LinearLayout>

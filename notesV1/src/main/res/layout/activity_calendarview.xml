@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="请选择你的生日"/>
+
+    <!--注意：除了firstDayOfWeek外，其他几个参数在API23中被废弃了，同时，在5.0及以上版本中这几个参数是不生效的，但5.0以下必须设置，否则会不能显示日历-->
+    <CalendarView
+        android:id="@+id/calendarView_01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:firstDayOfWeek="1"
+        android:focusedMonthDateColor="#ffe30f"
+        android:selectedDateVerticalBar="@color/colorAccent"
+        android:selectedWeekBackgroundColor="@color/abec06"
+        android:showWeekNumber="true"
+        android:shownWeekCount="4"
+        android:unfocusedMonthDateColor="#aa3344"
+        android:weekSeparatorLineColor="#00f"/>
+</LinearLayout>
