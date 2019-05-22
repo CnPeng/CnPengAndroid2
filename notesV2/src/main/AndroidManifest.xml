@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cnpeng.android2">
-
     <!-- 连接网络权限，用于执行云端语音能力 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
@@ -28,18 +27,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- 如需使用人脸识别，还要添加：摄相头权限，拍照需要用到 -->
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera.flash" />
 
-
-    <!--
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:icon="@mipmap/ic_launcher"
-    -->
     <application
         android:icon="@drawable/logo"
         android:label="@string/app_name"
@@ -97,8 +90,10 @@
         <activity android:name=".d_mine.a06_sound_wirte.SoundWriteActivity" />
         <activity android:name=".utils.BaseActivity" />
         <activity android:name=".d_mine.a06_sound_wirte.Text2SoundActivity" />
-        <activity android:name=".b_work.b05_open_lamp.OpenOrCloseLampActivity"/>
-        <activity android:name=".d_mine.a07_item_touch_helper.ItemTouchActivity"/>
+        <activity android:name=".b_work.b05_open_lamp.OpenOrCloseLampActivity" />
+        <activity android:name=".d_mine.a07_item_touch_helper.ItemTouchActivity" />
+        <activity android:name=".d_mine.a08_rv_suspend.RvSuspendActivity"></activity>
+
     </application>
 
 </manifest>
